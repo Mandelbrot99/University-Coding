@@ -1,0 +1,96 @@
+
+
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\usepackage[hyperfootnotes = false, colorlinks,
+pdfpagelabels,
+pdfstartview = FitH,
+bookmarksopen = true,
+bookmarksnumbered = true,
+linkcolor = black,
+plainpages = false,
+hypertexnames = false,
+citecolor = black]{hyperref}
+\usepackage{verbatim}
+\usepackage{mathrsfs}
+\usepackage{amsmath,amssymb,amsthm,mathrsfs,amsfonts} 
+\usepackage[english]{babel}
+\usepackage{tikz-cd}
+\usepackage{amstext}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+%\usepackage[autooneside=false,headsepline,markcase=noupper]{scrlayer-scrpage}	Kopfzeile
+\usepackage{blindtext}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{physics} 
+\usepackage{IEEEtrantools}
+\usepackage[]{algorithm2e}
+\SetAlFnt{\small}
+\usepackage{chngcntr}
+\makeatletter
+\renewcommand{\@algocf@capt@plain}{above}% formerly {bottom}
+\makeatother
+\counterwithout{algocf}{section}
+\counterwithin*{algocf}{subsection}
+\renewcommand{\thealgocf}{\arabic{section}.\arabic{subsection}.\arabic{algocf}}
+\usepackage{graphicx, caption}
+\usepackage{grffile}
+\usepackage{float}
+\graphicspath{ {../images/} }
+
+
+%------------Zeilenabstand--------
+
+\onehalfspacing 
+
+
+\numberwithin{equation}{section}
+
+%------------Kapitelanzeige--------
+
+\renewcommand{\thesection}{\arabic{section}}
+\titleformat{\section}
+{\Large\scshape}{}{0em}{}
+% Kapielüberschriften in gleicher Schrift wie Text
+\setkomafont{sectioning}{\rmfamily\bfseries} 
+
+
+%------------Seitendesign--------
+
+%\setlength{\parindent}{0em}
+\setlength{\textheight}{24cm}
+%\setlength{\textwidth}{15cm}
+%\setlength{\oddsidemargin}{1cm}
+%\setlength{\evensidemargin}{0.0cm}
+\setlength{\topmargin}{-2cm}
+%\setlength{\footskip}{1cm}
+%\setlength{\headheight}{1.1\baselineskip}
+%\setcounter{section}{0}
+%\allowdisplaybreaks
+
+%----------Kopfzeile-------------
+
+%\usepackage{scrlayer-scrpage}
+%\automark[subsection]{section}
+%\pagestyle{scrheadings}
+
+%\clearscrheadfoot
+%\ohead{  \ifstr{\rightbotmark}{\leftmark}{}{\rightbotmark}}
+%\ihead{\leftmark}
+%\rohead*{\pagemark}
+
+
+
+%\makeatletter
+% Damit die letzte (\botmark) statt der ersten (\firstmark) Marke auf
+% einer Seite für die "rechte Marke" genommen wird:
+%\providecommand*{\rightbotmark}{\expandafter\@rightmark\botmark\@empty\@empty}
+\makeatother
+
+
+\showboxdepth=0
+\showboxbreadth=0
