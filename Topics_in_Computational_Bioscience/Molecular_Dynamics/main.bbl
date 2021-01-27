@@ -1,3 +1,33 @@
-\begin{thebibliography}{}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{YMA{\etalchar{+}}21}
+
+\bibitem[BP07]{PhysRevLett.98.146401}
+J\"org Behler and Michele Parrinello.
+\newblock Generalized neural-network representation of high-dimensional
+  potential-energy surfaces.
+\newblock {\em Phys. Rev. Lett.}, 98:146401, Apr 2007.
+
+\bibitem[CTS{\etalchar{+}}17]{Chmiela_2017}
+Stefan Chmiela, Alexandre Tkatchenko, Huziel~E. Sauceda, Igor Poltavsky,
+  Kristof~T. Schütt, and Klaus-Robert Müller.
+\newblock Machine learning of accurate energy-conserving molecular force
+  fields.
+\newblock {\em Science Advances}, 3(5):e1603015, May 2017.
+
+\bibitem[KB17]{kingma2017adam}
+Diederik~P. Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization, 2017.
+
+\bibitem[YMA{\etalchar{+}}21]{article}
+Shuwen Yue, Maria Muniz, Marcos Andrade, Linfeng Zhang, Roberto Car, and
+  Athanassios Panagiotopoulos.
+\newblock When do short-range atomistic machine-learning models fall short?
+\newblock {\em The Journal of Chemical Physics}, 154:034111, 01 2021.
+
+\bibitem[ZHW{\etalchar{+}}18]{PhysRevLett.120.143001}
+Linfeng Zhang, Jiequn Han, Han Wang, Roberto Car, and Weinan E.
+\newblock Deep potential molecular dynamics: A scalable model with the accuracy
+  of quantum mechanics.
+\newblock {\em Phys. Rev. Lett.}, 120:143001, Apr 2018.
 
 \end{thebibliography}

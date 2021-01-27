@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.21)  25 JAN 2021 17:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.21)  27 JAN 2021 09:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2577,16 +2577,11 @@ Package caption Info: End \AtBeginDocument code.
 
 
 (./Introduction.tex
-
-LaTeX Warning: Citation `PhysRevLett.120.143001' on page 1 undefined on input l
-ine 5.
-
 LaTeX Font Info:    Try loading font information for U+rsfs on input line 5.
-(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 5.
-
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -2600,34 +2595,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--7
 
 \hbox(0.0+0.0)x455.24411 []
 
-
-LaTeX Warning: Citation `kingma2017adam' on page 1 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Chmiela_2017' on page 1 undefined on input line 14.
-
-
-LaTeX Warning: Citation `PhysRevLett.98.146401' on page 1 undefined on input li
-ne 14.
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
-
-\hbox(0.0+0.0)x455.24411 []
-
 [1
 
 
-] [2]
+]) [2]
 \openout2 = `Summary.aux'.
 
 
 No file Summary.tex.
 (./main.bbl
+Underfull \hbox (badness 1509) in paragraph at lines 11--16
+[]\OT1/cmr/m/n/10.95 Stefan Chmiela, Alexan-dre Tkatchenko, Huziel E. Sauceda, 
+Igor Poltavsky,
 
-LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
-               before end of `thebibliography' environment on input line 3.
+\hbox(8.80704+2.73749)x399.162, glue set 2.47453 []
 
 ) [3
 
@@ -2639,45 +2620,34 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 39.
  (./main.aux (./Titelseite.aux) (./Introduction.aux) (./Summary.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 39.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 39.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 77F40FB047D4D1B4730050E7FC0A37C2;44
-(rerunfilecheck)             After:  DEC22F79C3EDAB602733C1006AE29560;84.
-
-LaTeX Warning: There were undefined references.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: DEC22F79C3EDAB602733C1006AE29560;84.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 39.
  ) 
 Here is how much of TeX's memory you used:
- 42635 strings out of 492982
- 959359 string characters out of 6134896
- 1222016 words of memory out of 5000000
- 45591 multiletter control sequences out of 15000+600000
- 540997 words of font info for 64 fonts, out of 8000000 for 9000
+ 42645 strings out of 492982
+ 959507 string characters out of 6134896
+ 1220249 words of memory out of 5000000
+ 45597 multiletter control sequences out of 15000+600000
+ 540689 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,8n,100p,10428b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (4 pages, 151719 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (4 pages, 152226 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 104 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 29 words of extra memory for PDF output out of 10000 (max. 10000000)
 
