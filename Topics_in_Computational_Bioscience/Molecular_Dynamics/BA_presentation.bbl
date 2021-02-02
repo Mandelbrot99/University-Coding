@@ -1,0 +1,16 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{YMA{\etalchar{+}}21}
+
+\bibitem[YMA{\etalchar{+}}21]{article}
+Shuwen Yue, Maria Muniz, Marcos Andrade, Linfeng Zhang, Roberto Car, and
+  Athanassios Panagiotopoulos.
+\newblock When do short-range atomistic machine-learning models fall short?
+\newblock {\em The Journal of Chemical Physics}, 154:034111, 01 2021.
+
+\bibitem[ZHW{\etalchar{+}}18]{PhysRevLett.120.143001}
+Linfeng Zhang, Jiequn Han, Han Wang, Roberto Car, and Weinan E.
+\newblock Deep potential molecular dynamics: A scalable model with the accuracy
+  of quantum mechanics.
+\newblock {\em Phys. Rev. Lett.}, 120:143001, Apr 2018.
+
+\end{thebibliography}
