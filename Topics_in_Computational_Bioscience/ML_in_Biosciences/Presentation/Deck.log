@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.21)  11 FEB 2021 17:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.21)  11 FEB 2021 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1448,7 +1448,7 @@ Package pdftex.def Info: Theme/Logos/OxfordLogoV3.png  used on input line 201.
 ] [29
 
 ]
-<ML3.png, id=238, 763.85374pt x 183.68625pt>
+<ML3.png, id=239, 763.85374pt x 183.68625pt>
 File: ML3.png Graphic file (type png)
 <use ML3.png>
 Package pdftex.def Info: ML3.png  used on input line 225.
@@ -1461,7 +1461,7 @@ Package pdftex.def Info: Theme/Logos/OxfordLogoV3.png  used on input line 225.
 [30
 
  <./ML3.png>]
-<ML2.png, id=245, 377.41pt x 280.04625pt>
+<ML2.png, id=246, 377.41pt x 280.04625pt>
 File: ML2.png Graphic file (type png)
 <use ML2.png>
 Package pdftex.def Info: ML2.png  used on input line 245.
@@ -1473,7 +1473,7 @@ Package pdftex.def Info: Theme/Logos/OxfordLogoV3.png  used on input line 245.
  [31
 
  <./ML2.png>]
-<ML4.png, id=253, 384.43625pt x 254.9525pt>
+<ML4.png, id=254, 384.43625pt x 254.9525pt>
 File: ML4.png Graphic file (type png)
 <use ML4.png>
 Package pdftex.def Info: ML4.png  used on input line 267.
@@ -1556,38 +1556,48 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 303.
  (./Deck.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 303.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 303.
-Package rerunfilecheck Info: File `Deck.out' has not changed.
-(rerunfilecheck)             Checksum: 89B4F74A8421691356E033E85D34797E;562.
+
+
+Package rerunfilecheck Warning: File `Deck.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Deck.out':
+(rerunfilecheck)             Before: 89B4F74A8421691356E033E85D34797E;562
+(rerunfilecheck)             After:  08BC74824BC61CDB8596CAC5C8C240A2;590.
  ) 
 Here is how much of TeX's memory you used:
- 23665 strings out of 492982
- 444740 string characters out of 6134896
+ 23666 strings out of 492982
+ 444755 string characters out of 6134896
  524136 words of memory out of 5000000
  26610 multiletter control sequences out of 15000+600000
  23450 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,16n,62p,797b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Deck.pdf (40 pages, 484078 bytes).
+pdfTeX warning (dest): name{Outline0.4.1.22} has been referenced but does not
+ exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on Deck.pdf (40 pages, 484108 bytes).
 PDF statistics:
- 392 PDF objects out of 1000 (max. 8388607)
- 308 compressed objects within 4 object streams
- 91 named destinations out of 1000 (max. 500000)
+ 393 PDF objects out of 1000 (max. 8388607)
+ 309 compressed objects within 4 object streams
+ 92 named destinations out of 1000 (max. 500000)
  145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -53,8 +53,8 @@
 \end{center}
 \end{frame}
 
-\subsection{Catastophic Forgetting I}
-\begin{frame}{Catastrophic Forgetting}
+\subsection{Catastophic Forgetting}
+\begin{frame}{Catastrophic Forgetting I}
 	\begin{itemize}
 		\item<1-> Performance on previous task catastrophically deteriorates when new task is learned
 		\item<2-> Stability vs. Plasticity	
@@ -73,7 +73,7 @@
 	\caption{Illustration of Catastrophic Forgetting \cite{zenke2017continual}}
 \end{figure}
 \end{frame}
-
+\subsection{Overcoming Catastrophic Forgetting}
 
 \begin{frame}{Overcoming Catastrophic Forgetting I}
 \begin{enumerate}
@@ -155,7 +155,7 @@ All information (including which parameters are important) about task $A$ absorb
       \vfill
   \end{frame}
   
-\subsection{Idea}
+
 \begin{frame}[fragile]{Idea I}
 How does learning task $k$ change the total loss? Let $\bm g = \partial_{\bm \theta} \mathcal L$:
 \begin{align}

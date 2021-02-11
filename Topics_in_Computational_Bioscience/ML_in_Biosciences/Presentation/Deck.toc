@@ -1,8 +1,8 @@
 \beamer@sectionintoc {2}{Problem Description}{3}{0}{1}
 \beamer@subsectionintoc {2}{1}{Machine vs. Human learning}{4}{0}{1}
-\beamer@subsectionintoc {2}{2}{Catastophic Forgetting I}{8}{0}{1}
+\beamer@subsectionintoc {2}{2}{Catastophic Forgetting}{8}{0}{1}
+\beamer@subsectionintoc {2}{3}{Overcoming Catastrophic Forgetting}{13}{0}{1}
 \beamer@sectionintoc {3}{Elastic Weight Consolidation}{16}{0}{2}
 \beamer@sectionintoc {4}{Continual Learning Through Synaptic Intelligence}{21}{0}{3}
-\beamer@subsectionintoc {4}{1}{Idea}{22}{0}{3}
 \beamer@sectionintoc {5}{Comparison and Outlook}{29}{0}{4}
 \beamer@subsectionintoc {5}{1}{Experiments}{29}{0}{4}
