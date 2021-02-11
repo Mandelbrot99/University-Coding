@@ -1,0 +1,74 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\sectionentry {1}{Outline}{2}{Outline}{0}}
+\headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {2}{2}}
+\headcommand {\beamer@subsectionpages {2}{2}}
+\headcommand {\sectionentry {2}{Problem Description}{3}{Problem Description}{0}}
+\headcommand {\slideentry {2}{0}{1}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{4}{Machine vs. Human learning}}
+\headcommand {\slideentry {2}{1}{1}{4/7}{Machine vs. Human learning}{0}}
+\headcommand {\beamer@framepages {4}{7}}
+\headcommand {\beamer@subsectionpages {4}{7}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{8}{Catastophic Forgetting I}}
+\headcommand {\slideentry {2}{2}{1}{8/11}{Catastophic Forgetting I}{0}}
+\headcommand {\beamer@framepages {8}{11}}
+\headcommand {\slideentry {2}{2}{2}{12/12}{Catastophic Forgetting I}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {2}{2}{3}{13/14}{Catastophic Forgetting I}{0}}
+\headcommand {\beamer@framepages {13}{14}}
+\headcommand {\slideentry {2}{2}{4}{15/15}{Catastophic Forgetting I}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@sectionpages {3}{15}}
+\headcommand {\beamer@subsectionpages {8}{15}}
+\headcommand {\sectionentry {3}{Elastic Weight Consolidation}{16}{Elastic Weight Consolidation}{0}}
+\headcommand {\slideentry {3}{0}{1}{16/16}{}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {3}{0}{2}{17/17}{}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {3}{0}{3}{18/20}{}{0}}
+\headcommand {\beamer@framepages {18}{20}}
+\headcommand {\beamer@sectionpages {16}{20}}
+\headcommand {\beamer@subsectionpages {16}{20}}
+\headcommand {\sectionentry {4}{Continual Learning Through Synaptic Intelligence}{21}{Continual Learning Through Synaptic Intelligence}{0}}
+\headcommand {\slideentry {4}{0}{1}{21/21}{}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{22}{Idea}}
+\headcommand {\slideentry {4}{1}{1}{22/22}{Idea}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {4}{1}{2}{23/25}{Idea}{0}}
+\headcommand {\beamer@framepages {23}{25}}
+\headcommand {\slideentry {4}{1}{3}{26/28}{Idea}{0}}
+\headcommand {\beamer@framepages {26}{28}}
+\headcommand {\beamer@sectionpages {21}{28}}
+\headcommand {\beamer@subsectionpages {22}{28}}
+\headcommand {\sectionentry {5}{Comparison and Outlook}{29}{Comparison and Outlook}{0}}
+\headcommand {\beamer@subsectionpages {29}{28}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{29}{Experiments}}
+\headcommand {\slideentry {5}{1}{1}{29/29}{Experiments}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {5}{1}{2}{30/30}{Experiments}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {5}{1}{3}{31/31}{Experiments}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {5}{1}{4}{32/32}{Experiments}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\slideentry {5}{1}{5}{33/35}{Experiments}{0}}
+\headcommand {\beamer@framepages {33}{35}}
+\headcommand {\slideentry {5}{1}{6}{36/38}{Experiments}{0}}
+\headcommand {\beamer@framepages {36}{38}}
+\headcommand {\slideentry {5}{1}{7}{39/39}{Experiments}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\slideentry {5}{1}{8}{40/40}{Experiments}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\beamer@partpages {1}{40}}
+\headcommand {\beamer@subsectionpages {29}{40}}
+\headcommand {\beamer@sectionpages {29}{40}}
+\headcommand {\beamer@documentpages {40}}
+\headcommand {\gdef \inserttotalframenumber {23}}
