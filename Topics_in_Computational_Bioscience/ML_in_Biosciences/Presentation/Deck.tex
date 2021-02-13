@@ -121,7 +121,7 @@
 %\subsection{Example}
 \begin{frame}{Bayesian Foundation}
 
-Let $\mathcal D_A, \mathcal D_B$ be two \textcolor{oxfordblue}{independent} tasks $\mathcal D_A \cup \mathcal D_B = \mathcal D$ with learned parameters $\theta_A, \theta_B$:
+Let $\mathcal D_A, \mathcal D_B$ be two \textcolor{oxfordblue}{independent} tasks $\mathcal D_A \cup \mathcal D_B = \mathcal D$% with learned parameters $\theta_A, \theta_B$:
 \\
 \begin{equation}
 \log p(\theta|\mathcal D) = \log p(\mathcal D|\theta) + \log p (\theta) - \log p(\mathcal D)
@@ -229,7 +229,7 @@ $c$ strength parameter trading off old vs. new memories
 			\begin{itemize}
 			\item Randomly permute all MNIST pixels for a task
 			\item Performance measured by correctness across all tasks
-			\item Correlations of $\omega_k^\mu$ decrease across different tasks $\mu$: "Using different weights to learn new tasks"
+			\item<2-> Correlations of $\omega_k^\mu$ decrease across different tasks $\mu$: "Using different weights to learn new tasks"
 		\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
@@ -251,7 +251,7 @@ $c$ strength parameter trading off old vs. new memories
 	\begin{column}{0.5\textwidth}
 		\begin{itemize}
 			\item First image classification on CIFAR-10, then 5 additional tasks  corresponding to 10 consecutive classes from CIFAR-100
-			\item Better validation accuracy than networks trained on single task only: Less prone to overfitting
+			\item<2-> Better validation accuracy than networks trained on single task only: Less prone to overfitting
 		\end{itemize}
 	\end{column}
 	\begin{column}{0.5\textwidth}
