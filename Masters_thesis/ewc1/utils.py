@@ -104,6 +104,17 @@ def xavier_initialize(model):
         init.xavier_normal(p)
 
 
-def gaussian_intiailize(model, std=.1):
-    for p in model.parameters():
-        init.normal(p, std=std)
+def gaussian_initialize(model, std=.1):
+    modules = [
+        m for n, m in model.named_modules() if
+        'conv' in n or 'linear' in n
+    ]
+    parameters = [
+        p for
+        m in modules for
+        p in m.parameters() if
+        p.dim() >= 2
+    ]
+
+    for p in parameters:
+        init.normal_(p, std=std)
