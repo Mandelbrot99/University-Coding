@@ -2,12 +2,11 @@ from torch import optim
 from torch import nn
 from torch.autograd import Variable
 from tqdm import tqdm
-from visdom import Visdom
 import utils
 import visual
 
 
-def train(model, train_datasets, test_datasets, epochs_per_task=10,
+def train(model, train_loader, test_loader, epochs_per_task=10,
           batch_size=64, test_size=1024, consolidate=True,
           fisher_estimation_sample_size=1024,
           lr=1e-3, weight_decay=1e-5,
@@ -15,28 +14,23 @@ def train(model, train_datasets, test_datasets, epochs_per_task=10,
           eval_log_interval=50,
           cuda=False):
     # prepare the loss criteriton and the optimizer.
-    criteriton = nn.NLLLoss()
+    criterion = nn.NLLLoss()
     optimizer = optim.SGD(model.parameters(), lr=lr,
                           weight_decay=weight_decay)
-
-    # instantiate a visdom client
-    #vis = Visdom(env=model.name)
 
     # set the model's mode to training mode.
     model.train()
     ce_l, total_l, ewc_l, acc = {}, {}, {}, {}
-    for task, train_dataset in enumerate(train_datasets, 1):
+    for task in range(1,len(train_loader)+1):
         total_l[task] = []
         ce_l[task] = []
         ewc_l[task] = []
         acc[task] =[]
         
+        data_loader = train_loader[task-1]
+        
         for epoch in range(1, epochs_per_task+1):
             # prepare the data loaders.
-            data_loader = utils.get_data_loader(
-                train_dataset, batch_size=batch_size,
-                cuda=cuda
-            )
             data_stream = tqdm(enumerate(data_loader, 1))
 
             for batch_index, (x, y) in data_stream:
@@ -44,27 +38,12 @@ def train(model, train_datasets, test_datasets, epochs_per_task=10,
                 data_size = len(x)
                 dataset_size = len(data_loader.dataset)
                 dataset_batches = len(data_loader)
-                previous_task_iteration = sum([
-                    epochs_per_task * len(d) // batch_size for d in
-                    train_datasets[:task-1]
-                ])
-                current_task_iteration = (
-                    (epoch-1)*dataset_batches + batch_index
-                )
-                iteration = (
-                    previous_task_iteration +
-                    current_task_iteration
-                )
-
-                # prepare the data.
-                x = x.view(data_size, -1)
-                x = Variable(x).cuda() if cuda else Variable(x)
-                y = Variable(y).cuda() if cuda else Variable(y)
+    
 
                 # run the model and backpropagate the errors.
                 optimizer.zero_grad()
                 scores = model(x)
-                ce_loss = criteriton(scores, y)
+                ce_loss = criterion(scores, y)
                 ewc_loss = model.ewc_loss(cuda=cuda)
                 loss = ce_loss + ewc_loss
                 loss.backward()
@@ -86,7 +65,7 @@ def train(model, train_datasets, test_datasets, epochs_per_task=10,
                     'total: {loss:.4}'
                 ).format(
                     task=task,
-                    tasks=len(train_datasets),
+                    tasks=len(train_loader),
                     epoch=epoch,
                     epochs=epochs_per_task,
                     trained=batch_index*batch_size,
@@ -98,14 +77,8 @@ def train(model, train_datasets, test_datasets, epochs_per_task=10,
                     loss=float(loss),
                 ))
 
-            # Send test precision to the visdom server.
-            #if iteration % eval_log_interval == 0:
-            '''names = [
-                'task {}'.format(i+1) for i in
-                range(len(train_datasets))
-            ]'''
             for i in range(1,task + 1):
-                acc[i].append(utils.validate(model, test_datasets[i-1], test_size=test_size,cuda=cuda, verbose=False))
+                acc[i].append(utils.validate(model, test_loader[i-1], cuda=cuda, verbose=False))
                 
             '''
             acc[i].append(utils.validate(
@@ -115,7 +88,7 @@ def train(model, train_datasets, test_datasets, epochs_per_task=10,
             range(len(train_datasets))'''
             
             
-            #print('Test Accuracy', acc)
+            print('Test Accuracy', acc)
             '''title = (
                 'precision (consolidated)' if consolidate else
                 'precision'
@@ -132,12 +105,12 @@ def train(model, train_datasets, test_datasets, epochs_per_task=10,
                 #title = 'loss (consolidated)' if consolidate else 'loss'
                 #visual.visualize_scalars(
                  #   vis,
-            #print('total loss', total_l, 'cross entropy', ce_l, 'ewc', ewc_l)#[loss, ce_loss, ewc_loss],
+            print('total loss', total_l, 'cross entropy', ce_l, 'ewc', ewc_l)#[loss, ce_loss, ewc_loss],
 #                    ['total', 'cross entropy', 'ewc'],
                     
             #    )
 
-        if consolidate and task < len(train_datasets):
+        if consolidate and task < len(train_loader)+1:
             # estimate the fisher information of the parameters and consolidate
             # them in the network.
             print(
@@ -145,7 +118,7 @@ def train(model, train_datasets, test_datasets, epochs_per_task=10,
                 flush=True, end='',
             )
             model.consolidate(model.estimate_fisher(
-                train_dataset, fisher_estimation_sample_size
+                data_loader, fisher_estimation_sample_size
             ))
             print(' Done!')
     return acc, total_l, ce_l, ewc_l

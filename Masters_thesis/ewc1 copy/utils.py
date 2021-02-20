@@ -8,14 +8,6 @@ from torch.utils.data.dataloader import default_collate
 from torch.nn import init
 
 
-def get_data_loader(dataset, batch_size, cuda=False, collate_fn=None):
-
-    return DataLoader(
-        dataset, batch_size=batch_size,
-        shuffle=True, collate_fn=(collate_fn or default_collate),
-        **({'num_workers': 2, 'pin_memory': True} if cuda else {})
-    )
-
 
 def save_checkpoint(model, model_dir, epoch, precision, best=True):
     path = os.path.join(model_dir, model.name)
@@ -60,21 +52,13 @@ def load_checkpoint(model, model_dir, best=True):
     return epoch, precision
 
 
-def validate(model, dataset, test_size=256, batch_size=32,
+def validate(model, data_loader,
              cuda=False, verbose=True):
     mode = model.training
     model.train(mode=False)
-    data_loader = get_data_loader(dataset, batch_size, cuda=cuda)
     total_tested = 0
     total_correct = 0
     for x, y in data_loader:
-        # break on test size.
-        if total_tested >= test_size:
-            break
-        # test the model.
-        x = x.view(batch_size, -1)
-        x = Variable(x).cuda() if cuda else Variable(x)
-        y = Variable(y).cuda() if cuda else Variable(y)
         scores = model(x)
         _, predicted = scores.max(1)
         # update statistics.

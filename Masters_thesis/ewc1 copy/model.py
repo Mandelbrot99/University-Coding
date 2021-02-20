@@ -9,8 +9,8 @@ import utils
 
 class MLP(nn.Module):
     def __init__(self, input_size, output_size,
-                 hidden_size=400,
-                 hidden_layer_num=2,
+                 hidden_size1 = 512,
+                 hidden_size2 = 256,
                  hidden_dropout_prob=.5,
                  input_dropout_prob=.2,
                  lamda=40):
@@ -18,23 +18,20 @@ class MLP(nn.Module):
         super().__init__()
         self.input_size = input_size
         self.input_dropout_prob = input_dropout_prob
-        self.hidden_size = hidden_size
-        self.hidden_layer_num = hidden_layer_num
+        self.hidden_size1 = hidden_size1
+        self.hidden_size2 = hidden_size2
         self.hidden_dropout_prob = hidden_dropout_prob
         self.output_size = output_size
         self.lamda = lamda
 
         # Layers.
-        self.layers = nn.ModuleList([
-            # input
-            nn.Linear(self.input_size, self.hidden_size), nn.ReLU(),
-            nn.Dropout(self.input_dropout_prob),
-            # hidden
-            *((nn.Linear(self.hidden_size, self.hidden_size), nn.ReLU(),
-               nn.Dropout(self.hidden_dropout_prob)) * self.hidden_layer_num),
-            # output
-            nn.Linear(self.hidden_size, self.output_size)
-        ])
+        self.fc1 = nn.Linear(input_size, hidden_size1)
+        self.input_dropout = nn.Dropout(input_dropout_prob)
+        self.fc2 = nn.Linear(hidden_size1, hidden_size2)
+        self.hidden_dropout = nn.Dropout(hidden_dropout_prob)
+        self.fc3 = nn.Linear(hidden_size2, output_size)
+        self.relu = nn.ReLU()
+        self.log_softmax = nn.LogSoftmax(dim=1)
 
     @property
     def name(self):
@@ -42,31 +39,38 @@ class MLP(nn.Module):
             'MLP'
             '-lambda{lamda}'
             '-in{input_size}-out{output_size}'
-            '-h{hidden_size}x{hidden_layer_num}'
+            '-h{hidden_size1}-{hidden_size2}'
             '-dropout_in{input_dropout_prob}_hidden{hidden_dropout_prob}'
         ).format(
             lamda=self.lamda,
             input_size=self.input_size,
             output_size=self.output_size,
-            hidden_size=self.hidden_size,
-            hidden_layer_num=self.hidden_layer_num,
+            hidden_size1=self.hidden_size1,
+            hidden_size2=self.hidden_size2,
             input_dropout_prob=self.input_dropout_prob,
             hidden_dropout_prob=self.hidden_dropout_prob,
         )
 
     def forward(self, x):
-        return reduce(lambda x, l: l(x), self.layers, x)
+        x = x.view(-1, 28*28)
+        x = self.relu(self.fc1(x))
+        x = self.input_dropout(x)
+        x = self.relu(self.fc2(x))
+        x = self.hidden_dropout(x)
+        x = self.fc3(x)
+        x = self.log_softmax(x)# output (log) softmax probabilities of each class
+        return x
 
-    def estimate_fisher(self, dataset, sample_size, batch_size=32):
+    def estimate_fisher(self, data_loader, sample_size, batch_size=128):
         # sample loglikelihoods from the dataset.
-        data_loader = utils.get_data_loader(dataset, batch_size)
         loglikelihoods = []
         for x, y in data_loader:
             x = x.view(batch_size, -1)
             x = Variable(x).cuda() if self._is_on_cuda() else Variable(x)
             y = Variable(y).cuda() if self._is_on_cuda() else Variable(y)
             loglikelihoods.append(
-                F.log_softmax(self(x), dim=1)[range(batch_size), y.data]
+                #F.log_softmax(self(x), dim=1)[range(batch_size), y.data]
+                self(x)[range(batch_size), y.data]
             )
             if len(loglikelihoods) >= sample_size // batch_size:
                 break

@@ -1,6 +1,36 @@
 from torchvision import datasets, transforms
 
 
+import random
+import torch
+from torchvision import datasets
+
+
+class PermutedMNIST(datasets.MNIST):
+
+    def __init__(self, root="~/.torch/data/mnist", train=True, permute_idx=None):
+        super(PermutedMNIST, self).__init__(root, train, download=True)
+        assert len(permute_idx) == 28 * 28
+
+        self.my_data = torch.stack([img.float().view(-1)[permute_idx] / 255 for img in self.data])
+        #self.my_data = torch.stack([img.float() for img in self.data])
+        
+        
+
+
+    def __getitem__(self, index):
+
+        return self.my_data[index], self.targets[index]
+
+    def get_sample(self, sample_size):
+        sample_idx = random.sample(range(len(self)), sample_size)
+        return [img for img in self.my_data[sample_idx]]
+    
+    def sample_pairs(self, sample_size):
+        sample_idx = random.sample(range(len(self)), sample_size)
+        return [img for img in self.my_data[sample_idx]], [label for label in self.targets[sample_idx]]
+
+    
 def _permutate_image_pixels(image, permutation):
     if permutation is None:
         return image
@@ -12,33 +42,3 @@ def _permutate_image_pixels(image, permutation):
     return image
 
 
-def get_dataset(name, train=True, download=True, permutation=None):
-    dataset_class = AVAILABLE_DATASETS[name]
-    dataset_transform = transforms.Compose([
-        *AVAILABLE_TRANSFORMS[name],
-        transforms.Lambda(lambda x: _permutate_image_pixels(x, permutation)),
-    ])
-
-    return dataset_class(
-        './datasets/{name}'.format(name=name), train=train,
-        download=download, transform=dataset_transform,
-    )
-
-
-AVAILABLE_DATASETS = {
-    'mnist': datasets.MNIST
-}
-
-AVAILABLE_TRANSFORMS = {
-    'mnist': [
-        transforms.ToTensor(),
-        transforms.ToPILImage(),
-        transforms.Pad(2),
-        transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,)),
-    ]
-}
-
-DATASET_CONFIGS = {
-    'mnist': {'size': 32, 'channels': 1, 'classes': 10}
-}
