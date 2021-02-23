@@ -1,0 +1,39 @@
+\documentclass[a4paper, 11pt, bibliography = totoc, listof = totoc]{scrartcl}
+\setkomafont{disposition}{Arial}
+\input{praeamble.tex}
+\input{commands.tex}
+%\graphicspath{{./Abbildungen/}}
+%test
+\begin{document}
+	
+	\include{Titelseite}
+	\pagenumbering{arabic} %Arabische Seitenzahlen im Text
+
+	
+	\include{Introduction}
+	\include{Summary}
+
+	
+	
+	%%%%%%%%%%%%%
+%	\thispagestyle{empty}
+%	\listoffigures
+%	\newpage
+	% Literatur %
+	\thispagestyle{empty}
+		
+	\bibliographystyle{alpha}
+	
+	\bibliography{literatur}
+
+	%\makeatletter %kein Überlapp der List of figures mit captions
+	%\renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+	%\makeatother
+	%\listoffigures%\begingroup
+	%\let\clearpage\relax
+	%\listoftables
+	%\endgroup
+	%%%%%%%%%%%%
+
+	
+\end{document}

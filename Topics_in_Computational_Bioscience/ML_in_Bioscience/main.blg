@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: Titelseite.aux
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: Summary.aux
+The style file: alpha.bst
+Database file #1: literatur.bib
+You've used 1 entry,
+            2543 wiz_defined-function locations,
+            568 strings with 4687 characters,
+and the built_in function-call counts, 532 in all, are:
+= -- 46
+> -- 40
+< -- 0
++ -- 15
+- -- 15
+* -- 49
+:= -- 103
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 10
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 14
+empty$ -- 27
+format.name$ -- 15
+if$ -- 98
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 1
+newline$ -- 9
+num.names$ -- 3
+pop$ -- 7
+preamble$ -- 1
+purify$ -- 11
+quote$ -- 0
+skip$ -- 11
+stack$ -- 0
+substring$ -- 19
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 0
+while$ -- 4
+width$ -- 2
+write$ -- 16

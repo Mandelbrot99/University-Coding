@@ -1,0 +1,13 @@
+\frametitle{Idea I}
+How does learning task $k$ change the total loss? Let $\bm g = \partial_{\bm \theta} \mathcal L$:
+\begin{align}
+\int_C \bm g(\bm \theta (t)) d \bm \theta& = \int_{t_0}^{t_1} \bm g(\bm \theta(t)) \cdot \bm \theta '(t) dt\\
+& = \sum_\mu \sum_k \int_{t^{\mu-1}}^{t^\mu} g_k(\theta(t)) \theta_k'(t) dt \\
+& = - \sum_\mu \omega_k^\mu
+\end{align}
+$\omega_k^\mu $ contribution of $\mu$th task and $k$th parameter to change in total loss
+
+\note{Use more complex synapses rather than scalar quantities
+	%\item Structural regulariser that can be computed online and locally
+	Penalise changes in important parameters by using importance measure $\omega_k^\mu$ of $k$th weigth for $\mu$th task
+	 How does learning new task affect the overall loss?}
