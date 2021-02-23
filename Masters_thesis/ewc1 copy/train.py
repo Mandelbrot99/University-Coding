@@ -88,7 +88,7 @@ def train(model, train_loader, test_loader, epochs_per_task=10,
             range(len(train_datasets))'''
             
             
-            print('Test Accuracy', acc)
+            #print('Test Accuracy', acc)
             '''title = (
                 'precision (consolidated)' if consolidate else
                 'precision'
@@ -105,12 +105,12 @@ def train(model, train_loader, test_loader, epochs_per_task=10,
                 #title = 'loss (consolidated)' if consolidate else 'loss'
                 #visual.visualize_scalars(
                  #   vis,
-            print('total loss', total_l, 'cross entropy', ce_l, 'ewc', ewc_l)#[loss, ce_loss, ewc_loss],
+            #print('total loss', total_l, 'cross entropy', ce_l, 'ewc', ewc_l)#[loss, ce_loss, ewc_loss],
 #                    ['total', 'cross entropy', 'ewc'],
                     
             #    )
 
-        if consolidate and task < len(train_loader)+1:
+        if consolidate and task < len(train_loader):
             # estimate the fisher information of the parameters and consolidate
             # them in the network.
             print(
