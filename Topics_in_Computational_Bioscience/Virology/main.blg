@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: Titelseite.aux
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: Summary.aux
+The style file: alpha.bst
+Database file #1: literatur.bib
+Warning--empty journal in Bayes
+You've used 1 entry,
+            2543 wiz_defined-function locations,
+            567 strings with 4593 characters,
+and the built_in function-call counts, 348 in all, are:
+= -- 31
+> -- 19
+< -- 0
++ -- 6
+- -- 6
+* -- 23
+:= -- 69
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 6
+chr.to.int$ -- 1
+cite$ -- 2
+duplicate$ -- 13
+empty$ -- 21
+format.name$ -- 7
+if$ -- 64
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 3
+pop$ -- 7
+preamble$ -- 1
+purify$ -- 7
+quote$ -- 0
+skip$ -- 14
+stack$ -- 0
+substring$ -- 7
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 1
+while$ -- 3
+width$ -- 2
+write$ -- 13
+(There was 1 warning)

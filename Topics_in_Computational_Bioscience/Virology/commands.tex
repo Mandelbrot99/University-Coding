@@ -1,0 +1,107 @@
+%---------Umgebungen---------
+\newtheorem{df}{Definition}[section]
+\newtheorem{sa}[df]{Satz}
+\newtheorem{lem}[df]{Lemma}
+\newtheorem{kor}[df]{Korollar}
+\newtheorem{fo}[df]{Folgerung}
+\newtheorem{bem}[df]{Bemerkung}
+\newtheorem{prop}[df]{Proposition}
+\newtheorem{sa+df}[df]{Satz + Definition}
+\newtheorem{fo+df}[df]{Folgerung + Definition}
+\newtheoremstyle{bsp_bem}{5pt}{3pt}{}{}{\bfseries}{:}{ }{}
+\theoremstyle{bsp_bem}
+\newtheorem{bsp}[df]{Beispiel}
+\newtheorem{alg}[df]{Algorithmus}
+\newtheorem*{anm}{Anmerkung}
+\newenvironment{Ziel}{\textbf{Ziel}}{\medskip}
+\newenvironment{Erinnerung}{\textbf{Erinnerung:}}{\medskip}
+\newenvironment{nota}{\textbf{Notation:}}{\medskip}
+
+%---------Layout---------
+\newcommand{\charp}[2][Endo]{\ensuremath{\chi_#2^\text{char}}}
+\newcommand{\QR}[2]{
+	\raisebox{0.8ex}{\ensuremath{#1}}
+	\ensuremath{\mkern-3mu}\big/\ensuremath{\mkern-1mu}
+	\raisebox{-0.8ex}{\ensuremath{#2}}}
+\newcommand{\is}{\ensuremath{\, \widehat{=} \,}}
+\newcommand{\minp}[2][Endo]{\ensuremath{\chi_#2^\text{min}}}
+
+\newcommand{\defi}{\ensuremath{\overset{\text{Def}}{\Leftrightarrow}}}
+%\newcommand{\norm}{\mathrel{\text{$\unlhd$}}\!}
+\newcommand{\iso}{\ensuremath{\overset{\sim}{\longrightarrow}}}
+\newcommand{\define}[1]{\emph{#1}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%------griechische Buchstaben-----
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\ZZ}{\mathcal{Z}}
+\newcommand{\BB}{\mathcal{B}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\Ext}{\text{Ext}}
+\newcommand{\m}{\mathfrak{m}}
+\renewcommand{\a}{\mathfrak{a}}
+\renewcommand{\O}{\mathcal{O}}
+\newcommand{\NN}{\mathfrak{N}}
+\newcommand{\p}{\mathfrak{p}}
+\renewcommand{\b}{\mathfrak{b}}
+\renewcommand{\c}{\mathfrak{c}}
+\newcommand{\q}{\mathfrak{q}}
+\renewcommand{\b}{\mathfrak{b}}
+\newcommand{\ann}{\text{ann}}
+\newcommand{\Tor}{\text{Tor}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\g}{\mathfrak{g}}
+
+%----------Operatoren-------
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\cha}{char}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\M}{M}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Ndim}{Ndim}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\Rang}{Rang}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Ra}{Ra}
+%\DeclareMathOperator{\Pr}{Pr}
+%------wichtige Befehle----
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathbb{A}}
+\def\bign#1{\mathclose{\hbox{$\left#1\vbox to8.5\p@{}\right.\n@space$}}\mathopen{}}
+\newcommand{\ObC}{\ensuremath{\text{Ob}\,\mathcal{C}}}
+\newcommand{\ObA}{\ensuremath{\text{Ob}\,\mathcal{A}}}
+\newcommand{\Mor}{\ensuremath{\text{Mor}}}
+\newcommand{\jump}[1]{\ensuremath{[\![ #1 ]\!]}}
+\newcommand{\avg}[1]{\ensuremath{\{\mspace{-6mu}\{#1\}\mspace{-6mu}\}}}
+
+
+%---------Pfeile-------
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+
+\newcommand{\La}{\Leftarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+
+%--------Ableitungen----------
+\renewcommand{\bar}{\overline}
+
+%--------Ableitungen----------
+\newcommand{\dx}[2][funk]{\ensuremath{\frac{\mathrm{d}}{\mathrm{d}#2}}}
