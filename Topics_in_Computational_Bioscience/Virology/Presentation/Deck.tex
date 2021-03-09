@@ -37,19 +37,21 @@
 
 \begin{frame}{Problem Description}
 \begin{itemize}
-	\item<1-> Breast cancer second leading form of cancer among U.S women
-	
-	\item<2-> Advent of AI in bio-sciences better predictions of screening mammograms using deep learning 
-	\item<3-> Two obstacles hindering further progress
+	\item<1-> Limited data at the beginning of the pandemic made it difficult to grasp the dynamic of the spread
 	\begin{itemize}
-		\item<3-> Heterogeneous databases
-		\item<3-> Tumors only occupy small region of mammograms
+		\item<1-> How to account for the high uncertainty in model parameters?
 	\end{itemize}
-	 
+	\item<2-> How to analyse the efficacy of non-pharmaceutical interventions to minimise the spread of COVID-19?	
 \end{itemize}
+	
+	\begin{center}
+		\visible<3->{Bayesian inference for the rescue!}
+	\end{center}
+	 
+
 
 \end{frame}
-\section{Model and Training}
+\section{Model}
 \begin{frame}[plain]
 \vfill
 \centering
@@ -60,58 +62,102 @@
 \end{beamercolorbox}
 \vfill
 \end{frame}
-\begin{frame}{Model Structure}
+\begin{frame}{S(E)IR}
 	\begin{figure}
 	
 	\centering
-	\includegraphics[width=0.8\textwidth]{ML1}
-	\caption{Illustration of the pipeline structure \cite{article}}
+	\includegraphics[width=0.8\textwidth]{V1}
+	\caption{SEIR model \cite{Bayes}}
 \end{figure}
-\end{frame}
-
-
-\begin{frame}{Training and Results I}
-
 \begin{columns}
 	\begin{column}{0.5\textwidth}
-		\begin{itemize}
-			\item SBIS-DDSM containing annotated ROIs
-			\item Pre-train patch classifier on sample patches
-			\item<2-> Test on entire images after fine-tuning second segment
-		\end{itemize}
+		\begin{align*}
+		\visible<2->{
+			\frac{dS}{dt} & = - \frac{\lambda S I }{N} \\
+			\frac{dE}{dt} & = \frac{\lambda SI }{N} - \sigma E \\
+			\frac{dI}{dt} & = \sigma E - \mu I \\
+			\frac{dR}{dt} & = \mu I}
+		\end{align*}
 	\end{column}
 	\begin{column}{0.5\textwidth}
-		\begin{figure}
-			
-			\centering
-			\visible<3>{\includegraphics[width=\textwidth]{ML2}}
-			%\caption{Illustration of Catastrophic Forgetting \cite{zenke2017continual}}
-		\end{figure}
+		\begin{itemize}
+			\small
+			\item<3-> Basic reproductive number $R_0 = \frac{\lambda}{\mu}$  
+			\item<3-> Delay $D$ in becoming infected ($I^\text{new}$) and being reported 
+			\item<3-> $\lambda$ time-varying with change points corresponding to NIPs 
+		\end{itemize}
 	\end{column}
 \end{columns}
 
+\end{frame}
+
+
+\begin{frame}{Bayesian model}
+
+\begin{figure}
+	\centering
+	\visible<1->{\includegraphics[width=0.8\textwidth]{V2}}
+	%\caption{Illustration of Catastrophic Forgetting \cite{zenke2017continual}}
+\end{figure}
+\begin{itemize}
+	\footnotesize
+	\item<2-> Likelihood function Student-T distribution
+	\item<3-> Initial $R_0 =3.278$ (CI[2.715, 3.73])
+	\item<4-> Hamiltonian Monte Carlo (HMC) method to sample from posterior distribution
+	
+	\begin{itemize} 	
+		\item<4 -> No-U-Turn Sampling (NUTS)
+		\item<4-> 5000 samples with 1000 burn-in
+	\end{itemize}
+\end{itemize}
+	\note{LogNormal for lambda, sigma s.t. R0 - 3.2 literature value, sigma mean incubation time 5 days, spreading rates increased varaince to keep weaklz informative, weakly infromative half-cauchy distributions for i}
 
 \end{frame}
-\begin{frame}{Training and Results II}
+\section{Results}
+\begin{frame}{Results I}
+	\begin{figure}
+		
+		\centering
+		\visible<1->{\includegraphics[width=\textwidth]{V3}}
+		%\caption{Illustration of Catastrophic Forgetting \cite{zenke2017continual}}
+	\end{figure}
+	\begin{itemize}
+		\item<2-> SIR model with two change points yields lowest LOO cross entropy loss
+		
+	\end{itemize}
+		
+\end{frame}
+\begin{frame}
+	\begin{figure}
+		\centering
+		\visible<1->{\includegraphics[width=0.8\textwidth]{V4}}
+		%\caption{Illustration of Catastrophic Forgetting \cite{zenke2017continual}}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Results II}
+	
 	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}
-				\item Test transferability on INbreast dataset
-				\item<2-> Use pre-trained patch classifier from previous training set
-				\item<3-> Good results after few images already: Intensive part lies in fine-tuning patch classifier
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.65\textwidth}
 			\begin{figure}
-				
-				\centering
-				\visible<3>{\includegraphics[width=\textwidth]{ML3}}
-				%\caption{Illustration of Catastrophic Forgetting \cite{zenke2017continual}}
+			
+			\centering
+			\visible<1->{\includegraphics[width=0.8\textwidth]{V5}}
+			%\caption{Illustration of Catastrophic Forgetting \cite{zenke2017continual}}
 			\end{figure}
 		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\footnotesize
+				\item<2-> Change points peak on 18/03 (travel ban, social distancing) and 28/03 (mass testing) 
+				\item<3-> Drop of spreading rate by 80\% ($R_0=0.655$ (CI[0.430, 0.960])) and 60\% ($R_0=1.304$ (CI[0.887, 1.7748])) respectively 
+				\item<4-> Delay $D\approx 6.848$ including incubation period of 4.537 days, laboratory delay of 2.311 days
+				\item<5-> Recovery rate $\mu \approx 0.151$ implies mean infectious period of 6.62 days 
+			\end{itemize}
+		\end{column}
 	\end{columns}
+	
 \end{frame}
-
 
 
 
@@ -129,9 +175,10 @@
   \end{frame}
 \begin{frame}{Discussion}
   \begin{itemize}
-  	\item End-to-end learnable deep learning approach
-  	\item<2-> Great versatility due to pipeline structure
-  	\item<3-> Still doesn't overcome reliance on labelled ROIs to further increase performance 
+  	\item Results confirm the impact of governmental measures to reduce the spread of COVID-19 in South Africa
+  	\item<2-> Parameter estimates help quantify the dynamic of the pandemic and account for uncertainty 
+  	\item<3-> Assumptions on prior distributions?
+  	\item<4-> Take into account local, provincial developments
   \end{itemize}
 \end{frame}
 

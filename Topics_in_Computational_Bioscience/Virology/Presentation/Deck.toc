@@ -1,3 +1,4 @@
 \beamer@sectionintoc {2}{Problem Description}{3}{0}{1}
-\beamer@sectionintoc {3}{Model and Training}{7}{0}{2}
-\beamer@sectionintoc {4}{Discussion}{15}{0}{3}
+\beamer@sectionintoc {3}{Model}{7}{0}{2}
+\beamer@sectionintoc {4}{Results}{15}{0}{3}
+\beamer@sectionintoc {5}{Discussion}{23}{0}{4}
