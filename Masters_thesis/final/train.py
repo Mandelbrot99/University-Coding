@@ -15,6 +15,8 @@ def train(model, train_loader, test_loader, epochs_per_task=10,
           do_early_stopping = True,
           cuda=False):
     # prepare the loss criteriton and the optimizer.
+    
+        
     criterion = nn.NLLLoss()
     optimizer = optim.SGD(model.parameters(), lr=lr,
                           weight_decay=weight_decay)
@@ -43,6 +45,8 @@ def train(model, train_loader, test_loader, epochs_per_task=10,
                 dataset_size = len(data_loader.dataset)
                 dataset_batches = len(data_loader)
     
+                x = Variable(x).cuda() if cuda else Variable(x)
+                y = Variable(y).cuda() if cuda else Variable(y)
 
                 # run the model and backpropagate the errors.
                 optimizer.zero_grad()

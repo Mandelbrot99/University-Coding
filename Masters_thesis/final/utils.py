@@ -65,6 +65,8 @@ def validate_precision(model, data_loader,
     total_tested = 0
     total_correct = 0
     for x, y in data_loader:
+        x = Variable(x).cuda() if cuda else Variable(x)
+        y = Variable(y).cuda() if cuda else Variable(y)
         scores = model(x)
         _, predicted = scores.max(1)
         # update statistics.
@@ -80,6 +82,8 @@ def validate_error(model, data_loader, criterion, cuda = False, verbose = True):
     model.eval()
     losses = []
     for x, y in data_loader:
+        x = Variable(x).cuda() if cuda else Variable(x)
+        y = Variable(y).cuda() if cuda else Variable(y)
         scores = model(x)
         loss = criterion(scores, y) + model.ewc_loss(cuda = cuda)
         losses.append(loss.item())
