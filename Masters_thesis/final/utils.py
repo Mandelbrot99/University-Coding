@@ -85,7 +85,7 @@ def validate_error(model, data_loader, criterion, cuda = False, verbose = True):
         x = Variable(x).cuda() if cuda else Variable(x)
         y = Variable(y).cuda() if cuda else Variable(y)
         scores = model(x)
-        loss = criterion(scores, y) + model.ewc_loss(cuda = cuda)
+        loss = criterion(scores, y) #+ model.ewc_loss(cuda = cuda)
         losses.append(loss.item())
 
     avg_loss = np.average(losses)
