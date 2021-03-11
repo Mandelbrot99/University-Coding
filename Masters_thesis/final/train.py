@@ -8,17 +8,16 @@ import visual
 from utils import EarlyStopping
 
 
-def train(model, train_loader, test_loader, epochs_per_task=10,
+def train(model, train_loader,  test_loader, valid_loader = None, epochs_per_task=10,
           batch_size=64, consolidate=True,
           fisher_estimation_sample_size=1024,
           lr=1e-3, weight_decay=1e-5,
-          do_early_stopping = True,
           cuda=False):
     # prepare the loss criteriton and the optimizer.
     criterion = nn.NLLLoss()
     optimizer = optim.SGD(model.parameters(), lr=lr,
                           weight_decay=weight_decay)
-
+    do_early_stopping = (valid_loader!=None)
     # set the model's mode to training mode.
     model.train()
     ce_l, total_l, ewc_l, acc = {}, {}, {}, {}
@@ -91,7 +90,10 @@ def train(model, train_loader, test_loader, epochs_per_task=10,
             
             #validate for current task:
             if do_early_stopping:
-                validation_loss = utils.validate_error(model, test_loader[task-1], criterion, cuda = cuda, verbose = False)
+                validation_loss = 0
+                for i in range(1, task +1):
+                    validation_loss += utils.validate_error(model, valid_loader[i-1], criterion, cuda = cuda, verbose = False)
+                validation_loss/=task # average validation error on all sets seen to date
 
                 early_stopping(validation_loss, model)
                 if early_stopping.early_stop:
