@@ -1,0 +1,96 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{molecules}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{howpublished}{\url https://chem.libretexts.org/@go/page/21702}
+    \field{note}{Retrieved: April 1, 2021}
+    \field{title}{Molecules and Molecular Compounds}
+    \field{year}{2021}
+  \endentry
+
+  \entry{wu2018moleculenet}{misc}{}
+    \name{author}{8}{}{%
+      {{hash=WZ}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Zhenqin},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=RB}{%
+         family={Ramsundar},
+         familyi={R\bibinitperiod},
+         given={Bharath},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=FEN}{%
+         family={Feinberg},
+         familyi={F\bibinitperiod},
+         given={Evan\bibnamedelima N.},
+         giveni={E\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gomes},
+         familyi={G\bibinitperiod},
+         given={Joseph},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Geniesse},
+         familyi={G\bibinitperiod},
+         given={Caleb},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PAS}{%
+         family={Pappu},
+         familyi={P\bibinitperiod},
+         given={Aneesh\bibnamedelima S.},
+         giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=LK}{%
+         family={Leswing},
+         familyi={L\bibinitperiod},
+         given={Karl},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=PV}{%
+         family={Pande},
+         familyi={P\bibinitperiod},
+         given={Vijay},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WZRBFENGJGCPASLKPV1}
+    \strng{fullhash}{WZRBFENGJGCPASLKPV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{eprint}
+    \verb 1703.00564
+    \endverb
+    \field{title}{MoleculeNet: A Benchmark for Molecular Machine Learning}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{year}{2018}
+  \endentry
+\enddatalist
+\endinput
