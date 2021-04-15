@@ -1,0 +1,132 @@
+% Dokumentklasse und Spracheinstellung
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% Schriftart
+%LModern
+%\usepackage{lmodern}
+%Libertine
+\usepackage{rawfonts}
+\usepackage{oldlfont}
+%\addtokomafont{disposition}{\rmfamily}
+%\usepackage{libertinust1math}
+
+% Kopf- und Fusszeilen mit scrlayer-scrpage steuern
+% Trennungslinie oben und unten
+%Section and subsection headings
+\usepackage{titlesec}
+%\titleformat{\section}{\centering \sc}{\thesection.}{0.5em}{}
+%\titleformat{\subsection}[runin]{\bfseries}{\normalfont\thesubsection.}{0.5em}{}
+%\titleformat{\subsubsection}[runin]{\it}{\thesubsubsection.}{0.5em}{}
+%\titlespacing{\section}{0pt}{2.0ex plus .5ex
+%	minus .2ex}{1.0ex plus .2ex}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+\usepackage{chemfig}
+\usepackage{blkarray}
+%Counter formatting
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\theparagraph}{\thesubsubsection.\alph{paragraph}}
+
+\renewenvironment{abstract}{
+	\section*{Abstract}
+	\small
+}
+
+
+%custom titlepage
+\usepackage{titling}
+\usepackage{setspace}
+
+%tabel of contents formatting
+\usepackage{titletoc}
+\titlecontents{section}[1.5em]{}{\contentslabel{1.5em}}{\hspace*{-1.5em}}{\titlerule*[8pt]{.}\contentspage}
+\usepackage[T1]{fontenc}
+\usepackage{caption}
+\captionsetup{font=footnotesize}
+
+
+
+% Mathe, Symbole, EInheitendarstellung, Chemie
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{eurosym}
+% Typographie
+\usepackage[auto]{microtype}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+% Einbindung von Bildern, Tabellen, pdf-Seiten, Quellcode
+\usepackage{graphicx}
+\usepackage{multirow, multicol, booktabs}
+\usepackage{threeparttable}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{ltablex}
+\usepackage{subfig}
+\captionsetup[subtable]{position=top}
+\usepackage{pdfpages}
+\usepackage{listings}
+
+% Darstellung von URL
+\usepackage{url}
+\urlstyle{same}
+
+% Fussnoten, auch für Tabellen
+\usepackage{footnote}
+\makesavenoteenv{tabular} 
+
+% Pakete für Kontrolle und Review
+\usepackage{todonotes}
+\usepackage{blindtext}
+
+
+
+
+
+
+% Fussnoten
+% Markierung in der Fußnote selbst weder hochgestellt noch kleiner gesetzt
+% \deffootnote{1em}{1em}{\thefootnotemark\ }
+% linksbündige Fußnotenmarkierungen
+
+% Fussnoten nicht umbrechen
+\interfootnotelinepenalty=10000
+
+
+
+
+
+%\renewcaptionname{ngerman}{\figurename}{Abb.}
+%\renewcaptionname{ngerman}{\tablename}{Tab.} 
+
+% Tabellenumgebungen mit Schriftgröße 10 und 7
+\newenvironment{tabular10}{%
+	\fontsize{10}{12}\selectfont\tabular
+}{%
+	\endtabular
+}
+
+\newenvironment{tabular7}{%
+	\fontsize{7}{12}\selectfont\tabular
+}{%
+	\endtabular
+}
+
+% Verweise und Refernezen, pdf-Eisntellungen
+% Angaben ggf. aktualisieren!
+%\usepackage[
+%pdftitle={Abschlussbericht},
+%pdfsubject={},
+%pdfauthor={},
+%pdfkeywords={},  
+% Links nicht einrahmen
+%hidelinks
+%]{hyperref}
+%\usepackage[english]{cleveref}
+
+%\setlength{\footskip}{50pt}

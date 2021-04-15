@@ -1,2 +1,83 @@
-\section{Introduction}\label{sec:inttroduction}
-\noindent Molecules form the smallest identifiable parts of covalent compounds that still retain their chemical properties \cite{molecules}. These covalent compounds can be found in all organisms, since together they form integral parts like proteins or the DNA making an understanding of molecules and their properties key to deciphering the foundations of life. Since molecules are complex physical entities in 3D space consisting of covalent bonds between atoms, identifying their chemical, physical or biological properties is by no means a simple task. \emph{Molecular property prediction} aims to classify molecules according to their properties. In abstract terms this amounts to finding a nonlinear function from a class of molecules to a set of predefined properties. TODO: Other methods? \emph{In silico} methods to this by finding a mathematical representation of molecules serving as an input input for statistical or machine learning methods that try to learn the molecule's property. Classes of properties that have been of interest in the past are vast and comprise for example quantum-mechanic, physio-chemical, bio-physical or physiological properties \cite{wu2018moleculenet}. A biological application of MPP is falls in the area of drug discovery like antibiotics. Recently, there has been a huge breakthrough when et al discovered the new antibiotics halicin after decades of stagnation. They employed a Graph Neural Network that learned a mathematical representation 
+\section{Introduction}\label{sec:introduction}
+\subsection{Brief overview of molecular property prediction}
+Molecules form the smallest identifiable parts of covalent compounds that still retain their chemical properties \cite{molecules}. These covalent compounds can be found in all organisms, since together they form integral parts like proteins or the DNA making an understanding of molecules and their properties key to deciphering the foundations of life. Since molecules are complex physical entities in 3D space consisting of covalent bonds between atoms, identifying their chemical, physical or biological properties is by no means a simple task. \emph{Molecular property prediction} aims to characterise molecules according to their properties. In abstract terms this amounts to finding a nonlinear function from a class of molecules to a set of predefined properties.  Classically, \emph{in vitro} screeening and \emph{in vivo} testing were widely used in early stages of drug discovery in order to identify 'druggable' targets that display a desired biological response. However, this process is extremely time and resource inefficient, because ... . More recently, \emph{in silico} methods attempt to embed the molecule into a mathematical representation which can then be used to learn this nonlinear relationship between the embedded molecules and their corresponding properties using statistical and machine learning methods. For instance, J. Stokes et al. achieved a huge breakthrough when the discovered the new antibiotics halicin \cite{STOKES2020688} after decades of stagnation in that field. Contrary to previous methods that translate molecules into a fixed predefined mathematical representation, they employed a Graph Neural Network that was able to learn a representation that then served as an input to an Artificial Neural Network to predict the target inhibitory effect against E. coli. %TODO: double check
+Other classes of properties that have been of interest in the past are vast and comprise for example quantum-mechanic, physio-chemical, bio-physical or physiological properties \cite{wu2018moleculenet}. 
+
+
+
+Before the advent of computational methods in the process of drug discovery, lead compounds were found by isolating natural products from microbiological fermentation, plant extracts and animal sources \cite{Gallop1994ApplicationsOC}. This involved TODO
+
+On October 5, 1981 a new version of the 'Fortune' magazine was release. Its cover page featured an article titled 'The   Next Industrial  Revolution:  designing  drugs  by  computer  at Merck' \cite{article}. This marked the begin of stage of naive euphoria in computational drug design with investments of millions of dollars in hardware and software. 
+\subsection{Outline of the thesis}
+The goal of this thesis is to investigate the role of Graph Neural Networks in the field of Molecular Property Prediction and its application to Drug Discovery being one of its best known representations in biology. In the rest of this section we will give a brief outline of the history of the dominant methods in MPP and elaborate on its role in Drug Discovery. Following that, we will introduce Graph Neural Networks and present the necessary theory behind them in order to understand their advantages and disadvantages. Then, we will compare the performance of GNNs to that of other methods in MPP and assess the benefit of Deep Learning in MPP in general. Finally, a summary of this thesis is given outlining its most important findings. 
+\subsection{History of MPP methods}
+
+\section{Molecules and their Representation}
+
+
+
+\subsection{Molecules}
+Atoms are the smallest identifiable units of chemical elements which make up all matter in the universe. A fundamental principle of chemistry is that the atoms of different elements can combine to form chemical compounds and a lot of the study in chemistry is centered around understanding what happens when these compounds are formed. A chemical compound can be defined as a distinct group of atoms that are held together by chemical bonds (cite? Khan modelcules). Similar to the attraction between the positively charged nucleus and the negatively charged electrons that constitutes the structure of atoms, chemical bonds are caused by electrostatic attractions. While there is no clear separation between types of bonding from a physical perspective, it is still convenient to distinguish between different bonding types from a chemical perspective. The behaviour of the valence electron is the determining factor and this can be responsible for different properties of the resulting substance.
+
+We are primarily concerned with two major types of bonds: Ionic bonds and covalent bonds.
+In a simplified view, ionic bonding can be classified  as the transfer of a valence electron from one atom to the other resulting in the formation of two oppositely charged ions that hence attract each other and are bond together. Covalent bonding on the other hand is the result of electrostatic attraction between one or more electrons to the atomic nuclei of both atoms. This can be regarded as a sharing of the electrons across the two atoms. The structure resulting from covalent bonding is called a \emph{molecule}. These are of particular importance in biology making up the smallest identifiable parts of \emph{covalent compounds} that still retain their chemical properties \cite{molecules}. These covalent compounds can be found in all organisms, since together they form integral parts like proteins or the DNA making an understanding of molecules and their properties key to deciphering the foundations of life.
+
+
+\subsection{Representation of Molecules}
+\subsubsection{Brief history of molecular representations}
+In 1860 when the first International Chemical Congress was held in Karlsruhe, Germany, Alexander Butlerov predicted that determining the atomic arrangements of molecules would be the future of chemistry \citep{butlerov1861einiges}. He was the first person to use the word `structure' in its modern chemical meaning. This marked the birth of structural chemistry.\citep{wiswesser1968107}. Since then it took only seven year to develop the main ideas about line-formula conventions in familiar form like $$\chem{C_3H_7OH}.$$
+No new practices appeared within 79 years until between 1947 and 1954 structure-delineating notations were introduced such as the Wiswesser line notation (WLN) which became very popular as it was easily interpretable by humans as well as computers. Compared to today's line formulae the WLN was very compact since memory efficiency was a critical factor in computers at that time.
+
+When the advent of technology in the science accelerated in the 1980s, the role of chemical notations began do decline. \citep{Lawlor} attributes this to two main reasons. On the one hand, computer-manageable connection tables opened up new possibilities to experiment with structures. This meant that rather than working with the chemical formula itself, it was translated in a connection table where algorithms like similarity searches could be run to calculate compute properties, map reactions etc. 
+The second reason is the increasing availability of graphics terminals. Multiple companies like Molecular Design Ltd. or CAS \citep{cas} introduced interactive services that enabled a translation between a graphical representation of compounds and their connections tables. Furthermore, this involved functionalities like searching by structure or substructure diagrams, which allowed chemists to perform the searching by themselves rather than being dependent on their information scientist intermediaries. Thus, a lot of popular representations that are still used today have shifted from prioritising their compactness to being specifically designed for computer applications \citep{smiles, heller2015inchi, cereto2015molecular}. 
+
+Nowadays, the reigning paradigm in molecular representations is given by fingerprint vectors, first introduced in , and descriptors. These methods have been experiencing particular popularity, because these representation can easily be used as the input for machine learning techniques for property prediction. However, this paradigm slowly begins to be challenged by newly emerging deep learning techniques such as Graph Neural Networks.
+Rather than assigning molecules a fixed representation, these techniques aim to learn a flexible representation depending on the properties of interests of the molecules. This new approach seems equally innovative as crazy (TODO different word) and we will discuss the prospects of this in the following. 
+\subsubsection{Molecular Graphs}
+Molecular graphs are the entities that underlie most molecular notations. In this part we will introduce the abstract mathematical objects underlying these entities and...
+A molecular graph is a two dimensional object that can be used to represent information about molecules. Since a graph does not contain any spatial information these need to be encoded by features of nodes and edges. 
+
+Formally a graph is defined as a tuple of sets $G = (V,E)$, where $V$ are the vertices of the graph and $E$ are the edges. Any edge $e \in E$ is uniquely identified by a pair of vertices $(v_1, v_2), \, v_1, v_2 \in V$ that it connects. In a molecular graph the vertices are given by the atoms and edges represent bonds between atoms. Compared to data structures like vectors, graphs are very high dimensional and irregular, simultaneously enabling the representation of more complex information and being harder to process.
+
+In a computer, graphs are represented by a matrix - most commonly by their adjacency matrix $A$. The entries of this matrix are given by 
+\begin{equation}
+	A_{ij} = 
+	\begin{cases}
+		1 & \text{if there is an edge from } v_i \text{ to } v_j \\
+		0 & \text{otherwise.}
+	\end{cases}
+\end{equation}
+Note that for an undirected graph, like a molecular graph, the adjacency matrix is always symmetric. In order to represent a graph by its adjacency matrix, we need to make a non canonical choice of ordering the nodes. This is inconvenient for molecular graphs since these do not possess any kind of ordering and hence our representation is not well-defined. 
+
+\begin{minipage}{0.5\textwidth}
+	\centering
+		\chemfig{HO\textsuperscript{1}-S\textsuperscript{2}(=[2]O\textsuperscript{3})(=[6]O\textsuperscript{4})-OH\textsuperscript{5}}
+		\captionof{figure}{Molecular graph of sulfuric acid.}
+	
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\centering
+	$
+	\begin{blockarray}{cccccc}
+	1 & 2 & 3 & 4 & 5 \\
+	\begin{block}{(ccccc)c}
+	0 & 1 & 0 & 0 & 0 & 1 \\
+	1 & 0 & 1 & 1 & 1 & 2 \\
+	0 & 1 & 0 & 0 & 0 & 3 \\
+	0 & 1 & 0 & 0 & 0 & 4 \\
+	0 & 1 & 0 & 0 & 0 & 5 \\
+	\end{block}
+	\end{blockarray}
+	$
+	\captionof{figure}{Adjacency matrix of the molecular graph representing sulfuric acid given the node ordering}
+\end{minipage}
+\subsubsection{Fingerprint Vectors}
+\subsubsection{Descriptors}
+
+
+\subsection{QSAR and QSPR models}
+\subsection{Descriptor based models}
+\subsubsection{Fingerprint}
+\subsubsection{Descriptors}
+
+\subsection{Application in Drug Design}

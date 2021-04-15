@@ -1,0 +1,102 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[mol(2021)]{molecules}
+Molecules and molecular compounds.
+\newblock \url https://chem.libretexts.org/@go/page/21702, 2021.
+\newblock Retrieved: April 1, 2021.
+
+\bibitem[Butlerov(1861)]{butlerov1861einiges}
+Alexandr~Mikhaylovich Butlerov.
+\newblock Einiges {\"u}ber die chemische structur der k{\"o}rper.
+\newblock \emph{Zeitschrift f{\"u}r Chemie}, 4:\penalty0 549--560, 1861.
+
+\bibitem[Cereto-Massagu{\'e} et~al.(2015)Cereto-Massagu{\'e}, Ojeda, Valls,
+  Mulero, Garcia-Vallv{\'e}, and Pujadas]{cereto2015molecular}
+Adri{\`a} Cereto-Massagu{\'e}, Mar{\'\i}a~Jos{\'e} Ojeda, Cristina Valls,
+  Miquel Mulero, Santiago Garcia-Vallv{\'e}, and Gerard Pujadas.
+\newblock Molecular fingerprint similarity search in virtual screening.
+\newblock \emph{Methods}, 71:\penalty0 58--63, 2015.
+
+\bibitem[Dittmar et~al.(1983)Dittmar, Farmer, Fisanick, Haines, and
+  Mockus]{cas}
+P.~G. Dittmar, N.~A. Farmer, W.~Fisanick, R.~C. Haines, and J.~Mockus.
+\newblock The cas online search system. 1. general system design and selection,
+  generation, and use of search screens.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  23\penalty0 (3):\penalty0 93--102, 1983.
+\newblock \doi{10.1021/ci00039a002}.
+\newblock URL \url{https://doi.org/10.1021/ci00039a002}.
+
+\bibitem[Gallop et~al.(1994)Gallop, Barrett, Dower, Fodor, and
+  Gordon]{Gallop1994ApplicationsOC}
+M.~Gallop, R.~W. Barrett, W.~Dower, S.~Fodor, and E.~Gordon.
+\newblock Applications of combinatorial technologies to drug discovery. 1.
+  background and peptide combinatorial libraries.
+\newblock \emph{Journal of medicinal chemistry}, 37 9:\penalty0 1233--51, 1994.
+
+\bibitem[Heller et~al.(2015)Heller, McNaught, Pletnev, Stein, and
+  Tchekhovskoi]{heller2015inchi}
+Stephen~R Heller, Alan McNaught, Igor Pletnev, Stephen Stein, and Dmitrii
+  Tchekhovskoi.
+\newblock Inchi, the iupac international chemical identifier.
+\newblock \emph{Journal of cheminformatics}, 7\penalty0 (1):\penalty0 1--34,
+  2015.
+
+\bibitem[Lawlor(2016)]{Lawlor}
+Bonnie Lawlor.
+\newblock The chemical structure association trust.
+\newblock \emph{Chemistry International}, 38\penalty0 (2):\penalty0 12--15,
+  2016.
+\newblock \doi{doi:10.1515/ci-2016-0206}.
+\newblock URL \url{https://doi.org/10.1515/ci-2016-0206}.
+
+\bibitem[Stokes et~al.(2020)Stokes, Yang, Swanson, Jin, Cubillos-Ruiz, Donghia,
+  MacNair, French, Carfrae, Bloom-Ackermann, Tran, Chiappino-Pepe, Badran,
+  Andrews, Chory, Church, Brown, Jaakkola, Barzilay, and
+  Collins]{STOKES2020688}
+Jonathan~M. Stokes, Kevin Yang, Kyle Swanson, Wengong Jin, Andres
+  Cubillos-Ruiz, Nina~M. Donghia, Craig~R. MacNair, Shawn French, Lindsey~A.
+  Carfrae, Zohar Bloom-Ackermann, Victoria~M. Tran, Anush Chiappino-Pepe,
+  Ahmed~H. Badran, Ian~W. Andrews, Emma~J. Chory, George~M. Church, Eric~D.
+  Brown, Tommi~S. Jaakkola, Regina Barzilay, and James~J. Collins.
+\newblock A deep learning approach to antibiotic discovery.
+\newblock \emph{Cell}, 180\penalty0 (4):\penalty0 688--702.e13, 2020.
+\newblock ISSN 0092-8674.
+\newblock \doi{https://doi.org/10.1016/j.cell.2020.01.021}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0092867420301021}.
+
+\bibitem[Van~Drie(2007)]{article}
+John Van~Drie.
+\newblock Computer-aided drug design: The next 20 years.
+\newblock \emph{Journal of computer-aided molecular design}, 21:\penalty0
+  591--601, 10 2007.
+\newblock \doi{10.1007/s10822-007-9142-y}.
+
+\bibitem[Weininger(1988)]{smiles}
+David Weininger.
+\newblock Smiles, a chemical language and information system. 1. introduction
+  to methodology and encoding rules.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  28\penalty0 (1):\penalty0 31--36, 1988.
+\newblock \doi{10.1021/ci00057a005}.
+\newblock URL \url{https://pubs.acs.org/doi/abs/10.1021/ci00057a005}.
+
+\bibitem[Wiswesser(1968)]{wiswesser1968107}
+William~J Wiswesser.
+\newblock 107 years of line-formula notations (1861-1968).
+\newblock \emph{Journal of Chemical Documentation}, 8\penalty0 (3):\penalty0
+  146--150, 1968.
+
+\bibitem[Wu et~al.(2018)Wu, Ramsundar, Feinberg, Gomes, Geniesse, Pappu,
+  Leswing, and Pande]{wu2018moleculenet}
+Zhenqin Wu, Bharath Ramsundar, Evan~N. Feinberg, Joseph Gomes, Caleb Geniesse,
+  Aneesh~S. Pappu, Karl Leswing, and Vijay Pande.
+\newblock Moleculenet: A benchmark for molecular machine learning, 2018.
+
+\end{thebibliography}

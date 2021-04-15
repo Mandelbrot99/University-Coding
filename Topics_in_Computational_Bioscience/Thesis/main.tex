@@ -1,0 +1,63 @@
+
+\documentclass{article} % For LaTeX2e
+\usepackage{iclr2021_conference,times}
+
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+\input{preamble.tex}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{rawfonts}
+\usepackage{oldlfont}
+%\usepackage[headsepline, automark]{scrlayer-scrpage}
+
+\usepackage{booktabs,
+            makecell, % for second example
+            tabularx}
+
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
+\renewcommand\theadfont{\itshape\normalsize}% for two lines column headers 
+
+
+
+\usepackage{verbatim}
+
+\usepackage{titlesec}
+%\usepackage{physics}
+
+\usepackage{titletoc}
+\titlecontents{section}[1.5em]{}{\contentslabel{1.5em}}{\hspace*{-1.5em}}{\titlerule*[8pt]{.}\contentspage}
+\usepackage{setspace}
+\title{Reproducibility Challenge for Advanced Topics in Machine Learning Report (Group 9)}
+
+\date{April 2021}
+
+\begin{document}
+
+\setlength{\headsep}{5ex}
+\input{00_titelei.tex}
+\input{01_introduction.tex}
+
+\newpage
+% Speicherort der Literaturangaben (*.bib Datei)
+\bibliography{literature/references}
+
+\bibliographystyle{iclr2021_conference}
+%Abbildungsverzeichnis
+\clearpage
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+
+%Tabellenverzeichnis
+\clearpage
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\input{99_appendix.tex}
+
+\end{document}
