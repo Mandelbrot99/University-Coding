@@ -16,12 +16,6 @@
 \usepackage{oldlfont}
 %\usepackage[headsepline, automark]{scrlayer-scrpage}
 
-\usepackage{booktabs,
-            makecell, % for second example
-            tabularx}
-
-\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
-\renewcommand\theadfont{\itshape\normalsize}% for two lines column headers 
 
 
 
@@ -36,7 +30,7 @@
 \title{Reproducibility Challenge for Advanced Topics in Machine Learning Report (Group 9)}
 
 \date{April 2021}
-
+\usepackage{caption}
 \begin{document}
 
 \setlength{\headsep}{5ex}
@@ -58,6 +52,7 @@
 \addcontentsline{toc}{section}{\listtablename}
 \listoftables
 \renewcommand{\thesubsection}{\Alph{subsection}}
+
 \input{99_appendix.tex}
 
 \end{document}

@@ -46,9 +46,6 @@
 \usepackage{titletoc}
 \titlecontents{section}[1.5em]{}{\contentslabel{1.5em}}{\hspace*{-1.5em}}{\titlerule*[8pt]{.}\contentspage}
 \usepackage[T1]{fontenc}
-\usepackage{caption}
-\captionsetup{font=footnotesize}
-
 
 
 % Mathe, Symbole, EInheitendarstellung, Chemie
@@ -63,15 +60,11 @@
 
 % Einbindung von Bildern, Tabellen, pdf-Seiten, Quellcode
 \usepackage{graphicx}
-\usepackage{multirow, multicol, booktabs}
-\usepackage{threeparttable}
-\usepackage{longtable}
-\usepackage{rotating}
-\usepackage{ltablex}
-\usepackage{subfig}
-\captionsetup[subtable]{position=top}
-\usepackage{pdfpages}
-\usepackage{listings}
+\usepackage{booktabs,
+	makecell, % for second example
+	tabularx}
+
+
 
 % Darstellung von URL
 \usepackage{url}
@@ -79,8 +72,7 @@
 
 % Fussnoten, auch für Tabellen
 \usepackage{footnote}
-\makesavenoteenv{tabular} 
-
+\usepackage{tabularx}
 % Pakete für Kontrolle und Review
 \usepackage{todonotes}
 \usepackage{blindtext}
@@ -106,17 +98,7 @@
 %\renewcaptionname{ngerman}{\tablename}{Tab.} 
 
 % Tabellenumgebungen mit Schriftgröße 10 und 7
-\newenvironment{tabular10}{%
-	\fontsize{10}{12}\selectfont\tabular
-}{%
-	\endtabular
-}
 
-\newenvironment{tabular7}{%
-	\fontsize{7}{12}\selectfont\tabular
-}{%
-	\endtabular
-}
 
 % Verweise und Refernezen, pdf-Eisntellungen
 % Angaben ggf. aktualisieren!

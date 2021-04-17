@@ -130,7 +130,9 @@ The expectations for the usefulness of a descriptor vary a lot depending on the 
 \end{enumerate}
 These desiderata are supposed to guarantee that the descriptor always gives the same representations for molecules that are considered the same and is generally applicable to all molecules. Beyond that common extra requirements concern the inclusidon of structural information (according to the fundamental principle of chemistry that different structures possess differen properties), certain discriminative abilities and degeneracy/continuity, i.e. small structural differences result in small but existing differences in the value of the descriptor. 
 
+Two classes of descriptors: Numerical descriptors represent the molecule holistically by encoding physical properties. Fingerprints have local approach encoding structural local information among subgroups of atoms.
 \subsubsection{Numerical Descriptors}
+
 Any attempt to group descriptors into different categories would be quite aribtrary given the sheer amount of different application domains and descriptors. However, \cite{descript} propose an grouping based on the nature of the structural information that they require: Constitutional, topological, geometric and quantum mechanical descriptors. 
 
 Constitutional descriptors are the most rudimentary form of descriptors as they do not take into account any spatial information about the molecule but just its basic structural properties. Examples include basic attributes like the molecular weight the number of atoms but also more complex ones such as the sum of atomic van der Waals volumes. 
@@ -144,11 +146,13 @@ Finally, quantum mechanical descriptors are based on quantum mechanical calculat
 Note that these categories are a non-exhaustive classification of descriptors and many others exist such as auto-correlation descriptors \citep{broto1984molecular} (TODO one more?). We conclude that descriptors are a popular method to represent molecules as they are a flexible means to encode the properties that are relevant to the particular application domain. However, this comes also with a downside as the performance of the application may heavily depend on the choice of descriptors and this selection is by no means a trivial task.
 
 \subsubsection{Fingerprint Vectors}
-All descriptors considered so far are derived from performing mathematical computations on the underlying structure and give a holistic representation of the substances considered. Fingerprint Vectors on the other hand are characterised by a more local nature. Specifically, they iteratively aggregate information about substructures of the molecule. Originally, fingerprints were used for substructure and similarity searching but their simplicity has recently made them a popular means to represent molecules for QSAR machine learning models. 
+TODO: other fingerprints? one popular class? 
 
-Extended Connectivity Fingerprints (ECFPs) were first introduced by the software Pipeline Pilot in 2000 and then described in detail by \cite{ECFP}. The origin of this representation goes back to \cite{morgan} who introduced the Morgan algorithm on which ECFPs are based. This is why they are also often called Morgan fingerprints. This algorithm assigns numerical values to each atom by an iterative process that does not depend on a specific numbering of the atoms. It is depicted in algorithm \ref{algo:morgan}.
+All descriptors considered so far are derived from performing mathematical computations on the underlying structure and give a holistic representation of the substances considered. Fingerprint Vectors on the other hand are characterised by a more local nature. Specifically, they iteratively aggregate information about substructures of the molecule. Originally, fingerprints were developed for substructure and similarity searching. They depict an way to encode the structure of molecules numerically such that structural similarity reduces to the distance in a high dimensional space. Their simplicity has recently made them a popular means to represent molecules for QSAR machine learning models. 
 
-\begin{algorithm}[H]
+Extended Connectivity Fingerprints (ECFPs) were first introduced by the software Pipeline Pilot in 2000 and then described in detail by \cite{ECFP}. The origin of this representation goes back to \cite{morgan} who introduced the Morgan algorithm on which ECFPs are based. This is why they are also often called Morgan fingerprints (true?). This algorithm assigns numerical values to each atom by an iterative process that does not depend on a specific numbering of the atoms. It is depicted in algorithm \ref{algo:morgan}.
+
+\begin{algorithm}[t]
 	\SetAlgoLined
 	\KwData{Molecular graph}
 	\KwResult{unique node ordering}
@@ -162,23 +166,76 @@ Extended Connectivity Fingerprints (ECFPs) were first introduced by the software
 			break\;
 		}
 	}
-	\caption{Morgan Algorithm}
+	\caption{Morgan Algorithm TODO check with paper}
 	\label{algo:morgan}
 \end{algorithm}
 ECFPs adapts this algorithm by stopping the while-loop after a predefined number of steps rather than until completion and storing the intermediate values. We oultine each part of the full algorithm in detail in the following paragraphs.
 
-In the first step every atom is assigned an integer identifier that can be chosen arbitrarily as long as it is independent of the node ordering, e.g. the atom's mass or atomic number. The ECFP rule explained in \cite{ECFP} is based on the properties used in the Daylight atomic invariants rule \citep{smiles2} that together are hashed in a 32 bit integer value.  A set $A$ is created containing the initial identifiers of all of the atoms. Then, for each atom we add the atom's own identifier and that of its immediate neighbouring atoms to an array (ordered by the atoms' identifiers and the order of the attaching bonds). These values are then hashed to get a single-integer identifier which overrides the initial identifier that each atom was assigned. The updated identifiers are added to the set $A$.
+In the first step every atom is assigned an integer identifier that can be chosen arbitrarily as long as it is independent of the node ordering, e.g. the atom's mass or atomic number. Hydrogen atoms are ignored in this. The ECFP rule explained in \cite{ECFP} is based on the properties used in the Daylight atomic invariants rule \citep{smiles2} that together are hashed in a 32 bit integer value.  A set $A$ is created containing the initial identifiers of all the atoms. Then, for each atom we add the atom's own identifier and that of its immediate neighbouring atoms together with their bond order to an array (ordered by the atoms' identifiers and the order of the attaching bonds). These values are then hashed to get a single-integer identifier which overrides the initial identifier that the atom was assigned. The updated identifiers are added to the set $A$ if they are structurally unique as outlined below.
 
-Then, the first step is repeated $n$ times using the updated identifiers of each atom as the the initial identifiers for the next step. After $n$ steps have been completed, duplicate identifiers are removed from the set $A$ and the remaining elements define the ECFP.
+Then, the first step is repeated $n$ times using the updated identifiers of each atom as the the initial identifiers for the next step. After the completion of the $n$ steps, numerically equal values are removed from the set $A$ to arrive at the final ECFP.
 \begin{figure}[h]
 	\centering 
 	\includegraphics[width=0.5\textwidth]{iterative_updating.png}
 	\caption{Illustration of the iterative updating in the computation of the ECFPs. In this example the atom type is used as an identifier. In iteration 0 the middle atom' identifier only represents the information about its own type. After the first iteration it has aggregated the information from its immediate neighbors and after the second iteration the represented substructure has grown even further. Reprinted from \cite{ECFP}. }
+	\label{fig:iteration_ECFP}
 \end{figure}
 We clearly see ECFP's local nature. It manages to generate a global representation by using only local operations thereby implicitly encoding the molecule's structure. This is opposed to numerical descriptors discussed before which are based on global properties. 
 
+Besides numerical equality there is also the notion of structural equality that needs to be taken care of. Consider for example the nitrogen and oxygen atoms at the top and right of the structure shown in Figure \ref{fig:iteration_ECFP}. Then, after one iteration starting from either of these atoms as the center the exact same substructure is encoded. To avoid this information redundancy, after each iteration it is checked if there are fingerprint features that represent the same bonds generated from the same number of iterations. In this case, these structurally identical values are removed from the set $A$ that contains the final fingerprints. This also results in fewer feature being generated than in the previous iterations after a couple of steps (maybe delete).
+
+
+There are two main parameter choices to be made to calculate the fingerprints. On the one hand, the number of iterations $n$ needs to be specified beforehand which depends on the application domain. Usually $n=2$ is used for most applications like similarity or clustering whereas there is a feasible benefit of using a higher $n$ for activity learning methods \cite{ECFP}.
+On the other hand, the identifier needs to be chosen which is responsible for the discriminative  ability of the fingerprint method. In their paper \cite{ECFP} describe another fingerpint method FCFP (Functional Class Fingerprints) that is based on the pharmacophore role of the atoms in a molecule. Other types can be used based on different levels of abstraction, e.g. SCFPs \citep{SCFP} or LCFPs \citep{LCFP}.
+
+There are also other fingerprints that results form small deviations of the algorithm used to compute ECFPs. One example are atom environment fingerprints described extensively in \cite{glen2006circular} that use strings in the form of Sybyl atom types as identifiers \citep{SCFP} that are iteratively concatenated based on a similar aggregation method as for ECFPs and the final representation is also a circular substructure around each atom. 
 Hashed fingerprints vs keyed fingerprints
 
+As with numerical descriptors fingerprints are also a powerful mean to represent molecules in form of a fixed-size array. But a similar drawback as to numerical descriptors is that the best fingerprints depend strongly on the considered dataset which again is  non-trivial to find.
+
+In the literature ECFP fingerprints are usually used with $n=2$ which is referred to as ECFP4 (4 being the maximum diameter of substructures considered) is considered one of the best performing fingerprints for target prediction \cite{awaleecfp4} and therefore a common baseline for the development of further methods. Another commonly used fingerprint is based on atom pairs \citep{atompairs} which are more suitable for describing large molecules as they are not local as ECFP4 but consider pairs of (non-hydrogen) atoms of arbitrary distance rather than being restricted to radii around atoms. 
+
+To investigate potential drawbacks We compare the different Sørensen-Dice similarity values \cite{sorensen1948method, dice1945measures} obtained by using different fingerprints for the molecules illustrated in Figure \ref{fig:molsa} and \ref{fig:molsb} respectively. The source code and details about the implementation can be seen in Appendix \ref{ch:a_sim}.   As expected the similarity values decrease when increasing $n$ and thereby considering larger radii of molecules. Compared to the Atom Pairs scores ECFP2 yields larger similarity scores, especially for molecules c \& d, since they are much more complex than a \& b. We see that even ECFP6 potentially overestimates the similarity of the two molecules and APFP is presumably more capable of encoding larger molecules. 
+\begin{figure}[h]
+	\centering 
+	\includegraphics[width=0.5\textwidth]{test1.png}
+	\caption{Molecular graphs corresponding to the SMILES strings `c1nccc2n1ccc2' and 1CNC(=O)c1nccc2cccn12'.}
+	\label{fig:molsa}
+\end{figure}
+\begin{figure}[h]
+	\centering 
+	\includegraphics[width=0.5\textwidth]{test2.png}
+	\caption{Molecular graphs corresponging to the SMILES strings `CCC(CO)Nc1nc(NCc2ccccc2)c2ncn(C(C)C)c2n1' and `CC(C)C(CO)Nc1nc(Nc2ccc(C(=O)[O-])c(Cl)c2)c2ncn(C(C)C)c2n1" }
+	\label{fig:molsb}
+\end{figure}
+
+ewyerghiehgi
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{0.57\textwidth}{l
+			r
+			r 
+			r
+			r
+		}
+		\toprule
+		& \multicolumn{3}{c}{Morgan Fingerprints} &   \\
+		\cmidrule(r){2-4} 
+		\bf{Molecules}  &  \multicolumn{1}{c}{\bf{ECFP2}}   & \multicolumn{1}{c}{\bf{ECFP4}}&  \multicolumn{1}{c}{\bf{ECFP6}} & \multicolumn{1}{c}{\bf{APFP}} \\
+		\midrule
+		a \& b   & 56.25\%   &  46.15\%  & 34.29\%    & 50.88\%   \\
+		
+		c \& d   & 68.66\%  &  58.71\% &  52.86\%  & 54.47\% \\
+		
+		
+		\bottomrule
+	\end{tabularx}
+	
+	
+	\caption{Dice Similarity values using different fingerprints for molecules in Figure \ref{fig:molsa} and Figure \ref{fig:molsb} respectively}
+	\label{tab:dis_metric_2Dshapes}
+\end{table}
+eojwojtgowj
 \subsection{QSAR and QSPR models}
 1962 Hansch
 \subsection{Descriptor based models}

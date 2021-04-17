@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -9,6 +9,15 @@
 Molecules and molecular compounds.
 \newblock \url https://chem.libretexts.org/@go/page/21702, 2021.
 \newblock Retrieved: April 1, 2021.
+
+\bibitem[Awale \& Reymond(2019)Awale and Reymond]{awaleecfp4}
+Mahendra Awale and Jean-Louis Reymond.
+\newblock Polypharmacology browser ppb2: Target prediction combining nearest
+  neighbors with machine learning.
+\newblock \emph{Journal of Chemical Information and Modeling}, 59\penalty0
+  (1):\penalty0 10--17, 2019.
+\newblock \doi{10.1021/acs.jcim.8b00524}.
+\newblock URL \url{https://doi.org/10.1021/acs.jcim.8b00524}.
 
 \bibitem[Broto et~al.(1984)Broto, Moreau, and Vandycke]{broto1984molecular}
 P~Broto, G~Moreau, and C~Vandycke.
@@ -23,6 +32,15 @@ Alexandr~Mikhaylovich Butlerov.
 \newblock Einiges {\"u}ber die chemische structur der k{\"o}rper.
 \newblock \emph{Zeitschrift f{\"u}r Chemie}, 4:\penalty0 549--560, 1861.
 
+\bibitem[Carhart et~al.(1985)Carhart, Smith, and Venkataraghavan]{atompairs}
+Raymond~E. Carhart, Dennis~H. Smith, and R.~Venkataraghavan.
+\newblock Atom pairs as molecular features in structure-activity studies:
+  definition and applications.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  25\penalty0 (2):\penalty0 64--73, 1985.
+\newblock \doi{10.1021/ci00046a002}.
+\newblock URL \url{https://doi.org/10.1021/ci00046a002}.
+
 \bibitem[Cereto-Massagu{\'e} et~al.(2015)Cereto-Massagu{\'e}, Ojeda, Valls,
   Mulero, Garcia-Vallv{\'e}, and Pujadas]{cereto2015molecular}
 Adri{\`a} Cereto-Massagu{\'e}, Mar{\'\i}a~Jos{\'e} Ojeda, Cristina Valls,
@@ -30,12 +48,26 @@ Adri{\`a} Cereto-Massagu{\'e}, Mar{\'\i}a~Jos{\'e} Ojeda, Cristina Valls,
 \newblock Molecular fingerprint similarity search in virtual screening.
 \newblock \emph{Methods}, 71:\penalty0 58--63, 2015.
 
+\bibitem[Clark et~al.(1989)Clark, Cramer~III, and Van~Opdenbosch]{SCFP}
+Matthew Clark, Richard~D. Cramer~III, and Nicole Van~Opdenbosch.
+\newblock Validation of the general purpose tripos 5.2 force field.
+\newblock \emph{Journal of Computational Chemistry}, 10\penalty0 (8):\penalty0
+  982--1012, 1989.
+\newblock \doi{https://doi.org/10.1002/jcc.540100804}.
+\newblock URL
+  \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/jcc.540100804}.
+
 \bibitem[David et~al.(2020)David, Thakkar, Mercado, and Engkvist]{molrep}
 Laurianne David, Amol Thakkar, Rocío Mercado, and Ola Engkvist.
 \newblock Molecular representations in ai-driven drug discovery: a review and
   practical guide.
 \newblock \emph{Journal of Cheminformatics}, 12, 09 2020.
 \newblock \doi{10.1186/s13321-020-00460-5}.
+
+\bibitem[Dice(1945)]{dice1945measures}
+Lee~R Dice.
+\newblock Measures of the amount of ecologic association between species.
+\newblock \emph{Ecology}, 26\penalty0 (3):\penalty0 297--302, 1945.
 
 \bibitem[Dittmar et~al.(1983)Dittmar, Farmer, Fisanick, Haines, and
   Mockus]{cas}
@@ -60,6 +92,21 @@ M.~Gallop, R.~W. Barrett, W.~Dower, S.~Fodor, and E.~Gordon.
 \newblock Applications of combinatorial technologies to drug discovery. 1.
   background and peptide combinatorial libraries.
 \newblock \emph{Journal of medicinal chemistry}, 37 9:\penalty0 1233--51, 1994.
+
+\bibitem[Ghose et~al.(1998)Ghose, Viswanadhan, and Wendoloski]{LCFP}
+Arup~K Ghose, Vellarkad~N Viswanadhan, and John~J Wendoloski.
+\newblock Prediction of hydrophobic (lipophilic) properties of small organic
+  molecules using fragmental methods: an analysis of alogp and clogp methods.
+\newblock \emph{The Journal of Physical Chemistry A}, 102\penalty0
+  (21):\penalty0 3762--3772, 1998.
+
+\bibitem[Glen et~al.(2006)Glen, Bender, Arnby, Carlsson, Boyer, and
+  Smith]{glen2006circular}
+Robert~C Glen, Andreas Bender, Catrin~H Arnby, Lars Carlsson, Scott Boyer, and
+  James Smith.
+\newblock Circular fingerprints: flexible molecular descriptors with
+  applications from physical chemistry to adme.
+\newblock \emph{IDrugs}, 9\penalty0 (3):\penalty0 199, 2006.
 
 \bibitem[Guha \& Willighagen(2013)Guha and Willighagen]{descript}
 Rajarshi Guha and Egon Willighagen.
@@ -157,6 +204,13 @@ Samir~A Senior, Magdy~D Madbouly, et~al.
 \newblock Qstr of the toxicity of some organophosphorus compounds by using the
   quantum chemical and topological descriptors.
 \newblock \emph{Chemosphere}, 85\penalty0 (1):\penalty0 7--12, 2011.
+
+\bibitem[Sorensen(1948)]{sorensen1948method}
+Th~A Sorensen.
+\newblock A method of establishing groups of equal amplitude in plant sociology
+  based on similarity of species content and its application to analyses of the
+  vegetation on danish commons.
+\newblock \emph{Biol. Skar.}, 5:\penalty0 1--34, 1948.
 
 \bibitem[Stokes et~al.(2020)Stokes, Yang, Swanson, Jin, Cubillos-Ruiz, Donghia,
   MacNair, French, Carfrae, Bloom-Ackermann, Tran, Chiappino-Pepe, Badran,

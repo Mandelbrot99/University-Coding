@@ -11,15 +11,15 @@
 \contentsline {subsection}{\numberline {2.3}Molecular Descriptors}{4}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Numerical Descriptors}{5}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Fingerprint Vectors}{5}{subsubsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.4}QSAR and QSPR models}{7}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Descriptor based models}{7}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Fingerprint}{7}{subsubsection.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Descriptors}{7}{subsubsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.6}Application in Drug Design}{7}{subsection.2.6}%
-\contentsline {section}{List of Figures}{10}{subsection.2.6}%
-\contentsline {section}{List of Tables}{11}{subsection.2.6}%
-\contentsline {section}{Appendix}{11}{subsection.2.6}%
-\contentsline {subsection}{\numberline {A}Simulationen -- Fließbilder und Vorgaben}{11}{subsection.Alph0.1}%
-\contentsline {subsection}{\numberline {B}Kostenrechnung}{11}{subsection.Alph0.2}%
-\contentsline {subsection}{\numberline {C}Ergebnisse}{11}{subsection.Alph0.3}%
+\contentsline {subsection}{\numberline {2.4}QSAR and QSPR models}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Descriptor based models}{8}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Fingerprint}{8}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Descriptors}{8}{subsubsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.6}Application in Drug Design}{8}{subsection.2.6}%
+\contentsline {section}{List of Figures}{12}{subsection.2.6}%
+\contentsline {section}{List of Tables}{13}{subsection.2.6}%
+\contentsline {section}{Appendix}{13}{subsection.2.6}%
+\contentsline {subsection}{\numberline {A}Similarity values for fingerprints}{13}{subsection.Alph0.1}%
+\contentsline {subsection}{\numberline {B}Kostenrechnung}{13}{subsection.Alph0.2}%
+\contentsline {subsection}{\numberline {C}Ergebnisse}{13}{subsection.Alph0.3}%
 \contentsfinish 

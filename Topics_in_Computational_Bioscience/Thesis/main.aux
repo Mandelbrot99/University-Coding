@@ -44,19 +44,19 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Brief history of molecular representations}{2}{subsubsection.2.2.1}\protected@file@percent }
 \citation{molrep}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Molecular Graphs}{3}{subsubsection.2.2.2}\protected@file@percent }
-\pgfsyspdfmark {pgfid1}{10958064}{19120220}
+\pgfsyspdfmark {pgfid1}{10958064}{19218524}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Molecular graph of sulfuric acid.\relax }}{3}{figure.1}\protected@file@percent }
 \newlabel{fig:mol_graph}{{1}{3}{Molecular graph of sulfuric acid.\relax }{figure.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Adjacency matrix of the molecular graph representing sulfuric acid given the node ordering.\relax }}{3}{figure.2}\protected@file@percent }
 \newlabel{fig:mol_adj_matrix}{{2}{3}{Adjacency matrix of the molecular graph representing sulfuric acid given the node ordering.\relax }{figure.2}{}}
 \citation{todeschini2008handbook}
 \citation{Mauri2016}
-\citation{descript}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Example feature matrix of the graph in Figrue \ref  {fig:mol_graph}. The first two columns encode the atom type and the last two columns are a one-hot encoding of the number of implicit hydrogen atoms.\relax }}{4}{figure.3}\protected@file@percent }
 \newlabel{fig:mol_node_feature_matrix}{{3}{4}{Example feature matrix of the graph in Figrue \ref {fig:mol_graph}. The first two columns encode the atom type and the last two columns are a one-hot encoding of the number of implicit hydrogen atoms.\relax }{figure.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Example edge feature matrix of the graph in Figure \ref  {fig:mol_graph}. The choses features represent a one-hot encoding of the bond type.\relax }}{4}{figure.4}\protected@file@percent }
 \newlabel{fig:mol_edge_feature_matrix}{{4}{4}{Example edge feature matrix of the graph in Figure \ref {fig:mol_graph}. The choses features represent a one-hot encoding of the bond type.\relax }{figure.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Molecular Descriptors}{4}{subsection.2.3}\protected@file@percent }
+\citation{descript}
 \citation{wiener1947structural,nikolic2001wiener}
 \citation{Mauri2016}
 \citation{katritzky1996correlation}
@@ -70,52 +70,77 @@
 \citation{smiles2}
 \citation{ECFP}
 \citation{ECFP}
-\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Morgan Algorithm\relax }}{6}{algocf.1}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Morgan Algorithm TODO check with paper\relax }}{6}{algocf.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{algo:morgan}{{1}{6}{Fingerprint Vectors}{algocf.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Illustration of the iterative updating in the computation of the ECFPs. In this example the atom type is used as an identifier. In iteration 0 the middle atom' identifier only represents the information about its own type. After the first iteration it has aggregated the information from its immediate neighbors and after the second iteration the represented substructure has grown even further. Reprinted from \cite  {ECFP}. \relax }}{6}{figure.caption.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}QSAR and QSPR models}{7}{subsection.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Descriptor based models}{7}{subsection.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1}Fingerprint}{7}{subsubsection.2.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.2}Descriptors}{7}{subsubsection.2.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Application in Drug Design}{7}{subsection.2.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Illustration of the iterative updating in the computation of the ECFPs. In this example the atom type is used as an identifier. In iteration 0 the middle atom' identifier only represents the information about its own type. After the first iteration it has aggregated the information from its immediate neighbors and after the second iteration the represented substructure has grown even further. Reprinted from \cite  {ECFP}. \relax }}{6}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:iteration_ECFP}{{5}{6}{Illustration of the iterative updating in the computation of the ECFPs. In this example the atom type is used as an identifier. In iteration 0 the middle atom' identifier only represents the information about its own type. After the first iteration it has aggregated the information from its immediate neighbors and after the second iteration the represented substructure has grown even further. Reprinted from \cite {ECFP}. \relax }{figure.caption.2}{}}
+\citation{ECFP}
+\citation{ECFP}
+\citation{SCFP}
+\citation{LCFP}
+\citation{glen2006circular}
+\citation{SCFP}
+\citation{awaleecfp4}
+\citation{atompairs}
+\citation{sorensen1948method,dice1945measures}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Molecular graphs corresponding to the SMILES strings `c1nccc2n1ccc2' and 1CNC(=O)c1nccc2cccn12'.\relax }}{7}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:molsa}{{6}{7}{Molecular graphs corresponding to the SMILES strings `c1nccc2n1ccc2' and 1CNC(=O)c1nccc2cccn12'.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Molecular graphs corresponging to the SMILES strings `CCC(CO)Nc1nc(NCc2ccccc2)c2ncn(C(C)C)c2n1' and `CC(C)C(CO)Nc1nc(Nc2ccc(C(=O)[O-])c(Cl)c2)c2ncn(C(C)C)c2n1" \relax }}{8}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:molsb}{{7}{8}{Molecular graphs corresponging to the SMILES strings `CCC(CO)Nc1nc(NCc2ccccc2)c2ncn(C(C)C)c2n1' and `CC(C)C(CO)Nc1nc(Nc2ccc(C(=O)[O-])c(Cl)c2)c2ncn(C(C)C)c2n1" \relax }{figure.caption.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Dice Similarity values using different fingerprints for molecules in Figure \ref  {fig:molsa} and Figure \ref  {fig:molsb} respectively\relax }}{8}{table.caption.5}\protected@file@percent }
+\newlabel{tab:dis_metric_2Dshapes}{{1}{8}{Dice Similarity values using different fingerprints for molecules in Figure \ref {fig:molsa} and Figure \ref {fig:molsb} respectively\relax }{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}QSAR and QSPR models}{8}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Descriptor based models}{8}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1}Fingerprint}{8}{subsubsection.2.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.2}Descriptors}{8}{subsubsection.2.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Application in Drug Design}{8}{subsection.2.6}\protected@file@percent }
 \bibdata{literature/references}
 \bibcite{molecules}{{1}{2021}{{mol}}{{}}}
-\bibcite{broto1984molecular}{{2}{1984}{{Broto et~al.}}{{Broto, Moreau, and Vandycke}}}
-\bibcite{butlerov1861einiges}{{3}{1861}{{Butlerov}}{{}}}
-\bibcite{cereto2015molecular}{{4}{2015}{{Cereto-Massagu{\'e} et~al.}}{{Cereto-Massagu{\'e}, Ojeda, Valls, Mulero, Garcia-Vallv{\'e}, and Pujadas}}}
-\bibcite{molrep}{{5}{2020}{{David et~al.}}{{David, Thakkar, Mercado, and Engkvist}}}
-\bibcite{cas}{{6}{1983}{{Dittmar et~al.}}{{Dittmar, Farmer, Fisanick, Haines, and Mockus}}}
-\bibcite{eroglu2007dft}{{7}{2007}{{Eroglu \& T{\"u}rkmen}}{{Eroglu and T{\"u}rkmen}}}
-\bibcite{Gallop1994ApplicationsOC}{{8}{1994}{{Gallop et~al.}}{{Gallop, Barrett, Dower, Fodor, and Gordon}}}
-\bibcite{descript}{{9}{2013}{{Guha \& Willighagen}}{{Guha and Willighagen}}}
-\bibcite{heller2015inchi}{{10}{2015}{{Heller et~al.}}{{Heller, McNaught, Pletnev, Stein, and Tchekhovskoi}}}
-\bibcite{katritzky1996correlation}{{11}{1996}{{Katritzky et~al.}}{{Katritzky, Mu, Lobanov, and Karelson}}}
-\bibcite{KerberAdalbert2014Mcac}{{12}{2014}{{Kerber}}{{}}}
-\bibcite{Lawlor}{{13}{2016}{{Lawlor}}{{}}}
-\bibcite{Mauri2016}{{14}{2016}{{Mauri et~al.}}{{Mauri, Consonni, and Todeschini}}}
-\bibcite{morgan}{{15}{1965}{{Morgan}}{{}}}
-\bibcite{nikolic2001wiener}{{16}{2001}{{Nikoli{\'c} et~al.}}{{Nikoli{\'c}, Trinajsti{\'c}, and Randi{\'c}}}}
-\bibcite{pauling}{{17}{1947}{{Pauling}}{{}}}
-\bibcite{REENU201589}{{18}{2015}{{Reenu \& Vikas}}{{Reenu and Vikas}}}
-\bibcite{ECFP}{{19}{2010}{{Rogers \& Hahn}}{{Rogers and Hahn}}}
-\bibcite{senior2011qstr}{{20}{2011}{{Senior et~al.}}{{Senior, Madbouly, et~al.}}}
-\bibcite{STOKES2020688}{{21}{2020}{{Stokes et~al.}}{{Stokes, Yang, Swanson, Jin, Cubillos-Ruiz, Donghia, MacNair, French, Carfrae, Bloom-Ackermann, Tran, Chiappino-Pepe, Badran, Andrews, Chory, Church, Brown, Jaakkola, Barzilay, and Collins}}}
-\bibcite{todeschini2008handbook}{{22}{2008}{{Todeschini \& Consonni}}{{Todeschini and Consonni}}}
-\bibcite{article}{{23}{2007}{{Van~Drie}}{{}}}
-\bibcite{smiles}{{24}{1988}{{Weininger}}{{}}}
-\bibcite{smiles2}{{25}{1989}{{Weininger et~al.}}{{Weininger, Weininger, and Weininger}}}
-\bibcite{wiener1947structural}{{26}{1947}{{Wiener}}{{}}}
-\bibcite{wiswesser1968107}{{27}{1968}{{Wiswesser}}{{}}}
-\bibcite{wu2018moleculenet}{{28}{2018}{{Wu et~al.}}{{Wu, Ramsundar, Feinberg, Gomes, Geniesse, Pappu, Leswing, and Pande}}}
+\bibcite{awaleecfp4}{{2}{2019}{{Awale \& Reymond}}{{Awale and Reymond}}}
+\bibcite{broto1984molecular}{{3}{1984}{{Broto et~al.}}{{Broto, Moreau, and Vandycke}}}
+\bibcite{butlerov1861einiges}{{4}{1861}{{Butlerov}}{{}}}
+\bibcite{atompairs}{{5}{1985}{{Carhart et~al.}}{{Carhart, Smith, and Venkataraghavan}}}
+\bibcite{cereto2015molecular}{{6}{2015}{{Cereto-Massagu{\'e} et~al.}}{{Cereto-Massagu{\'e}, Ojeda, Valls, Mulero, Garcia-Vallv{\'e}, and Pujadas}}}
+\bibcite{SCFP}{{7}{1989}{{Clark et~al.}}{{Clark, Cramer~III, and Van~Opdenbosch}}}
+\bibcite{molrep}{{8}{2020}{{David et~al.}}{{David, Thakkar, Mercado, and Engkvist}}}
+\bibcite{dice1945measures}{{9}{1945}{{Dice}}{{}}}
+\bibcite{cas}{{10}{1983}{{Dittmar et~al.}}{{Dittmar, Farmer, Fisanick, Haines, and Mockus}}}
+\bibcite{eroglu2007dft}{{11}{2007}{{Eroglu \& T{\"u}rkmen}}{{Eroglu and T{\"u}rkmen}}}
+\bibcite{Gallop1994ApplicationsOC}{{12}{1994}{{Gallop et~al.}}{{Gallop, Barrett, Dower, Fodor, and Gordon}}}
+\bibcite{LCFP}{{13}{1998}{{Ghose et~al.}}{{Ghose, Viswanadhan, and Wendoloski}}}
+\bibcite{glen2006circular}{{14}{2006}{{Glen et~al.}}{{Glen, Bender, Arnby, Carlsson, Boyer, and Smith}}}
+\bibcite{descript}{{15}{2013}{{Guha \& Willighagen}}{{Guha and Willighagen}}}
+\bibcite{heller2015inchi}{{16}{2015}{{Heller et~al.}}{{Heller, McNaught, Pletnev, Stein, and Tchekhovskoi}}}
+\bibcite{katritzky1996correlation}{{17}{1996}{{Katritzky et~al.}}{{Katritzky, Mu, Lobanov, and Karelson}}}
+\bibcite{KerberAdalbert2014Mcac}{{18}{2014}{{Kerber}}{{}}}
+\bibcite{Lawlor}{{19}{2016}{{Lawlor}}{{}}}
+\bibcite{Mauri2016}{{20}{2016}{{Mauri et~al.}}{{Mauri, Consonni, and Todeschini}}}
+\bibcite{morgan}{{21}{1965}{{Morgan}}{{}}}
+\bibcite{nikolic2001wiener}{{22}{2001}{{Nikoli{\'c} et~al.}}{{Nikoli{\'c}, Trinajsti{\'c}, and Randi{\'c}}}}
+\bibcite{pauling}{{23}{1947}{{Pauling}}{{}}}
+\bibcite{REENU201589}{{24}{2015}{{Reenu \& Vikas}}{{Reenu and Vikas}}}
+\bibcite{ECFP}{{25}{2010}{{Rogers \& Hahn}}{{Rogers and Hahn}}}
+\bibcite{senior2011qstr}{{26}{2011}{{Senior et~al.}}{{Senior, Madbouly, et~al.}}}
+\bibcite{sorensen1948method}{{27}{1948}{{Sorensen}}{{}}}
+\bibcite{STOKES2020688}{{28}{2020}{{Stokes et~al.}}{{Stokes, Yang, Swanson, Jin, Cubillos-Ruiz, Donghia, MacNair, French, Carfrae, Bloom-Ackermann, Tran, Chiappino-Pepe, Badran, Andrews, Chory, Church, Brown, Jaakkola, Barzilay, and Collins}}}
+\bibcite{todeschini2008handbook}{{29}{2008}{{Todeschini \& Consonni}}{{Todeschini and Consonni}}}
+\bibcite{article}{{30}{2007}{{Van~Drie}}{{}}}
+\bibcite{smiles}{{31}{1988}{{Weininger}}{{}}}
+\bibcite{smiles2}{{32}{1989}{{Weininger et~al.}}{{Weininger, Weininger, and Weininger}}}
+\bibcite{wiener1947structural}{{33}{1947}{{Wiener}}{{}}}
+\bibcite{wiswesser1968107}{{34}{1968}{{Wiswesser}}{{}}}
+\bibcite{wu2018moleculenet}{{35}{2018}{{Wu et~al.}}{{Wu, Ramsundar, Feinberg, Gomes, Geniesse, Pappu, Leswing, and Pande}}}
 \bibstyle{iclr2021_conference}
 \citation{ECFP}
-\@writefile{toc}{\contentsline {section}{List of Figures}{10}{subsection.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{List of Tables}{11}{subsection.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Appendix}{11}{subsection.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}Simulationen -- Fließbilder und Vorgaben}{11}{subsection.Alph0.1}\protected@file@percent }
-\newlabel{ch:a_sim}{{A}{11}{Simulationen -- Fließbilder und Vorgaben}{subsection.Alph0.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Kostenrechnung}{11}{subsection.Alph0.2}\protected@file@percent }
-\newlabel{ch:a_kosten}{{B}{11}{Kostenrechnung}{subsection.Alph0.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C}Ergebnisse}{11}{subsection.Alph0.3}\protected@file@percent }
-\newlabel{ch:a_erg}{{C}{11}{Ergebnisse}{subsection.Alph0.3}{}}
+\@writefile{toc}{\contentsline {section}{List of Figures}{12}{subsection.2.6}\protected@file@percent }
+\citation{ECFP}
+\@writefile{toc}{\contentsline {section}{List of Tables}{13}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Appendix}{13}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Similarity values for fingerprints}{13}{subsection.Alph0.1}\protected@file@percent }
+\newlabel{ch:a_sim}{{A}{13}{Similarity values for fingerprints}{subsection.Alph0.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Kostenrechnung}{13}{subsection.Alph0.2}\protected@file@percent }
+\newlabel{ch:a_kosten}{{B}{13}{Kostenrechnung}{subsection.Alph0.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C}Ergebnisse}{13}{subsection.Alph0.3}\protected@file@percent }
+\newlabel{ch:a_erg}{{C}{13}{Ergebnisse}{subsection.Alph0.3}{}}
 \ttl@finishall
