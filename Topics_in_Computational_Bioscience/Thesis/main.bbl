@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -9,6 +9,14 @@
 Molecules and molecular compounds.
 \newblock \url https://chem.libretexts.org/@go/page/21702, 2021.
 \newblock Retrieved: April 1, 2021.
+
+\bibitem[Broto et~al.(1984)Broto, Moreau, and Vandycke]{broto1984molecular}
+P~Broto, G~Moreau, and C~Vandycke.
+\newblock Molecular structures: perception, autocorrelation descriptor and sar
+  studies: system of atomic contributions for the calculation of the
+  n-octanol/water partition coefficients.
+\newblock \emph{European journal of medicinal chemistry}, 19\penalty0
+  (1):\penalty0 71--78, 1984.
 
 \bibitem[Butlerov(1861)]{butlerov1861einiges}
 Alexandr~Mikhaylovich Butlerov.
@@ -22,6 +30,13 @@ Adri{\`a} Cereto-Massagu{\'e}, Mar{\'\i}a~Jos{\'e} Ojeda, Cristina Valls,
 \newblock Molecular fingerprint similarity search in virtual screening.
 \newblock \emph{Methods}, 71:\penalty0 58--63, 2015.
 
+\bibitem[David et~al.(2020)David, Thakkar, Mercado, and Engkvist]{molrep}
+Laurianne David, Amol Thakkar, Rocío Mercado, and Ola Engkvist.
+\newblock Molecular representations in ai-driven drug discovery: a review and
+  practical guide.
+\newblock \emph{Journal of Cheminformatics}, 12, 09 2020.
+\newblock \doi{10.1186/s13321-020-00460-5}.
+
 \bibitem[Dittmar et~al.(1983)Dittmar, Farmer, Fisanick, Haines, and
   Mockus]{cas}
 P.~G. Dittmar, N.~A. Farmer, W.~Fisanick, R.~C. Haines, and J.~Mockus.
@@ -32,12 +47,26 @@ P.~G. Dittmar, N.~A. Farmer, W.~Fisanick, R.~C. Haines, and J.~Mockus.
 \newblock \doi{10.1021/ci00039a002}.
 \newblock URL \url{https://doi.org/10.1021/ci00039a002}.
 
+\bibitem[Eroglu \& T{\"u}rkmen(2007)Eroglu and T{\"u}rkmen]{eroglu2007dft}
+Erol Eroglu and Hasan T{\"u}rkmen.
+\newblock A dft-based quantum theoretic qsar study of aromatic and heterocyclic
+  sulfonamides as carbonic anhydrase inhibitors against isozyme, ca-ii.
+\newblock \emph{Journal of Molecular Graphics and Modelling}, 26\penalty0
+  (4):\penalty0 701--708, 2007.
+
 \bibitem[Gallop et~al.(1994)Gallop, Barrett, Dower, Fodor, and
   Gordon]{Gallop1994ApplicationsOC}
 M.~Gallop, R.~W. Barrett, W.~Dower, S.~Fodor, and E.~Gordon.
 \newblock Applications of combinatorial technologies to drug discovery. 1.
   background and peptide combinatorial libraries.
 \newblock \emph{Journal of medicinal chemistry}, 37 9:\penalty0 1233--51, 1994.
+
+\bibitem[Guha \& Willighagen(2013)Guha and Willighagen]{descript}
+Rajarshi Guha and Egon Willighagen.
+\newblock A survey of quantitative descriptions of molecular structure.
+\newblock \emph{Current Topics in Medicinal Chemistry}, 12:\penalty0
+  1946--1956, 01 2013.
+\newblock \doi{10.2174/1568026611212180002}.
 
 \bibitem[Heller et~al.(2015)Heller, McNaught, Pletnev, Stein, and
   Tchekhovskoi]{heller2015inchi}
@@ -47,6 +76,22 @@ Stephen~R Heller, Alan McNaught, Igor Pletnev, Stephen Stein, and Dmitrii
 \newblock \emph{Journal of cheminformatics}, 7\penalty0 (1):\penalty0 1--34,
   2015.
 
+\bibitem[Katritzky et~al.(1996)Katritzky, Mu, Lobanov, and
+  Karelson]{katritzky1996correlation}
+Alan~R Katritzky, Lan Mu, Victor~S Lobanov, and Mati Karelson.
+\newblock Correlation of boiling points with molecular structure. 1. a training
+  set of 298 diverse organics and a test set of 9 simple inorganics.
+\newblock \emph{The Journal of Physical Chemistry}, 100\penalty0 (24):\penalty0
+  10400--10407, 1996.
+
+\bibitem[Kerber(2014)]{KerberAdalbert2014Mcac}
+Adalbert Kerber.
+\newblock \emph{Mathematical chemistry and chemoinformatics : structure
+  generation, elucidation, and quantitative structure-property relationships
+  [electronic resource]}.
+\newblock Ebook central. Berlin, 2014.
+\newblock ISBN 9783110254075.
+
 \bibitem[Lawlor(2016)]{Lawlor}
 Bonnie Lawlor.
 \newblock The chemical structure association trust.
@@ -54,6 +99,64 @@ Bonnie Lawlor.
   2016.
 \newblock \doi{doi:10.1515/ci-2016-0206}.
 \newblock URL \url{https://doi.org/10.1515/ci-2016-0206}.
+
+\bibitem[Mauri et~al.(2016)Mauri, Consonni, and Todeschini]{Mauri2016}
+Andrea Mauri, Viviana Consonni, and Roberto Todeschini.
+\newblock \emph{Molecular Descriptors}, pp.\  1--29.
+\newblock Springer Netherlands, Dordrecht, 2016.
+\newblock ISBN 978-94-007-6169-8.
+\newblock \doi{10.1007/978-94-007-6169-8_51-1}.
+\newblock URL \url{https://doi.org/10.1007/978-94-007-6169-8_51-1}.
+
+\bibitem[Morgan(1965)]{morgan}
+H.~L. Morgan.
+\newblock The generation of a unique machine description for chemical
+  structures-a technique developed at chemical abstracts service.
+\newblock \emph{Journal of Chemical Documentation}, 5\penalty0 (2):\penalty0
+  107--113, 1965.
+\newblock \doi{10.1021/c160017a018}.
+\newblock URL \url{https://doi.org/10.1021/c160017a018}.
+
+\bibitem[Nikoli{\'c} et~al.(2001)Nikoli{\'c}, Trinajsti{\'c}, and
+  Randi{\'c}]{nikolic2001wiener}
+Sonja Nikoli{\'c}, Nenad Trinajsti{\'c}, and Milan Randi{\'c}.
+\newblock Wiener index revisited.
+\newblock \emph{Chemical Physics Letters}, 333\penalty0 (3-4):\penalty0
+  319--321, 2001.
+
+\bibitem[Pauling(1947)]{pauling}
+Linus Pauling.
+\newblock Atomic radii and interatomic distances in metals.
+\newblock \emph{Journal of the American Chemical Society}, 69\penalty0
+  (3):\penalty0 542--553, 1947.
+\newblock \doi{10.1021/ja01195a024}.
+\newblock URL \url{https://doi.org/10.1021/ja01195a024}.
+
+\bibitem[Reenu \& Vikas(2015)Reenu and Vikas]{REENU201589}
+Reenu and Vikas.
+\newblock Exploring the role of quantum chemical descriptors in modeling acute
+  toxicity of diverse chemicals to daphnia magna.
+\newblock \emph{Journal of Molecular Graphics and Modelling}, 61:\penalty0
+  89--101, 2015.
+\newblock ISSN 1093-3263.
+\newblock \doi{https://doi.org/10.1016/j.jmgm.2015.06.009}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1093326315300176}.
+
+\bibitem[Rogers \& Hahn(2010)Rogers and Hahn]{ECFP}
+David Rogers and Mathew Hahn.
+\newblock Extended-connectivity fingerprints.
+\newblock \emph{Journal of Chemical Information and Modeling}, 50\penalty0
+  (5):\penalty0 742--754, 2010.
+\newblock \doi{10.1021/ci100050t}.
+\newblock URL \url{https://doi.org/10.1021/ci100050t}.
+\newblock PMID: 20426451.
+
+\bibitem[Senior et~al.(2011)Senior, Madbouly, et~al.]{senior2011qstr}
+Samir~A Senior, Magdy~D Madbouly, et~al.
+\newblock Qstr of the toxicity of some organophosphorus compounds by using the
+  quantum chemical and topological descriptors.
+\newblock \emph{Chemosphere}, 85\penalty0 (1):\penalty0 7--12, 2011.
 
 \bibitem[Stokes et~al.(2020)Stokes, Yang, Swanson, Jin, Cubillos-Ruiz, Donghia,
   MacNair, French, Carfrae, Bloom-Ackermann, Tran, Chiappino-Pepe, Badran,
@@ -71,6 +174,12 @@ Jonathan~M. Stokes, Kevin Yang, Kyle Swanson, Wengong Jin, Andres
 \newblock URL
   \url{https://www.sciencedirect.com/science/article/pii/S0092867420301021}.
 
+\bibitem[Todeschini \& Consonni(2008)Todeschini and
+  Consonni]{todeschini2008handbook}
+Roberto Todeschini and Viviana Consonni.
+\newblock \emph{Handbook of molecular descriptors}, volume~11.
+\newblock John Wiley \& Sons, 2008.
+
 \bibitem[Van~Drie(2007)]{article}
 John Van~Drie.
 \newblock Computer-aided drug design: The next 20 years.
@@ -86,6 +195,20 @@ David Weininger.
   28\penalty0 (1):\penalty0 31--36, 1988.
 \newblock \doi{10.1021/ci00057a005}.
 \newblock URL \url{https://pubs.acs.org/doi/abs/10.1021/ci00057a005}.
+
+\bibitem[Weininger et~al.(1989)Weininger, Weininger, and Weininger]{smiles2}
+David Weininger, Arthur Weininger, and Joseph~L. Weininger.
+\newblock Smiles. 2. algorithm for generation of unique smiles notation.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  29\penalty0 (2):\penalty0 97--101, 1989.
+\newblock \doi{10.1021/ci00062a008}.
+\newblock URL \url{https://doi.org/10.1021/ci00062a008}.
+
+\bibitem[Wiener(1947)]{wiener1947structural}
+Harry Wiener.
+\newblock Structural determination of paraffin boiling points.
+\newblock \emph{Journal of the American chemical society}, 69\penalty0
+  (1):\penalty0 17--20, 1947.
 
 \bibitem[Wiswesser(1968)]{wiswesser1968107}
 William~J Wiswesser.

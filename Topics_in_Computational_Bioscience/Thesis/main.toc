@@ -2,23 +2,24 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Brief overview of molecular property prediction}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Outline of the thesis}{1}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}History of MPP methods}{1}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.3}Disclaimer}{1}{subsection.1.3}%
 \contentsline {section}{\numberline {2}Molecules and their Representation}{1}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Molecules}{1}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Representation of Molecules}{2}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Brief history of molecular representations}{2}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Molecular Graphs}{2}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Fingerprint Vectors}{3}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Descriptors}{3}{subsubsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.3}QSAR and QSPR models}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Descriptor based models}{3}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Fingerprint}{3}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Descriptors}{3}{subsubsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.5}Application in Drug Design}{3}{subsection.2.5}%
-\contentsline {section}{List of Figures}{5}{subsection.2.5}%
-\contentsline {section}{List of Tables}{6}{subsection.2.5}%
-\contentsline {section}{Appendix}{6}{subsection.2.5}%
-\contentsline {subsection}{\numberline {A}Simulationen -- Fließbilder und Vorgaben}{6}{subsection.Alph0.1}%
-\contentsline {subsection}{\numberline {B}Kostenrechnung}{6}{subsection.Alph0.2}%
-\contentsline {subsection}{\numberline {C}Ergebnisse}{6}{subsection.Alph0.3}%
+\contentsline {subsubsection}{\numberline {2.2.2}Molecular Graphs}{3}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Molecular Descriptors}{4}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Numerical Descriptors}{5}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Fingerprint Vectors}{5}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}QSAR and QSPR models}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Descriptor based models}{7}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Fingerprint}{7}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Descriptors}{7}{subsubsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.6}Application in Drug Design}{7}{subsection.2.6}%
+\contentsline {section}{List of Figures}{10}{subsection.2.6}%
+\contentsline {section}{List of Tables}{11}{subsection.2.6}%
+\contentsline {section}{Appendix}{11}{subsection.2.6}%
+\contentsline {subsection}{\numberline {A}Simulationen -- Fließbilder und Vorgaben}{11}{subsection.Alph0.1}%
+\contentsline {subsection}{\numberline {B}Kostenrechnung}{11}{subsection.Alph0.2}%
+\contentsline {subsection}{\numberline {C}Ergebnisse}{11}{subsection.Alph0.3}%
 \contentsfinish 
