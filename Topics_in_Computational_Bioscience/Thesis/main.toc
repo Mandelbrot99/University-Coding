@@ -1,25 +1,31 @@
 \babel@toc {english}{}
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Brief overview of molecular property prediction}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Outline of the thesis}{1}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Disclaimer}{1}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Molecules and their Representation}{1}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Molecules}{1}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Representation of Molecules}{2}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Brief history of molecular representations}{2}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Molecular Graphs}{3}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}Molecular Descriptors}{4}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Numerical Descriptors}{5}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Fingerprint Vectors}{5}{subsubsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.4}QSAR and QSPR models}{8}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Descriptor based models}{8}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Fingerprint}{8}{subsubsection.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Descriptors}{8}{subsubsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.6}Application in Drug Design}{8}{subsection.2.6}%
-\contentsline {section}{List of Figures}{12}{subsection.2.6}%
-\contentsline {section}{List of Tables}{13}{subsection.2.6}%
-\contentsline {section}{Appendix}{13}{subsection.2.6}%
-\contentsline {subsection}{\numberline {A}Similarity values for fingerprints}{13}{subsection.Alph0.1}%
-\contentsline {subsection}{\numberline {B}Kostenrechnung}{13}{subsection.Alph0.2}%
-\contentsline {subsection}{\numberline {C}Ergebnisse}{13}{subsection.Alph0.3}%
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Outline of the thesis}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Disclaimer}{1}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Molecules}{1}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Brief history of molecular representations}{2}{subsection.1.4}
+\contentsline {section}{\numberline {2}Fixed Representations}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Numerical Descriptors}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Fingerprint Vectors}{4}{subsection.2.2}
+\contentsline {section}{\numberline {3}Learned Representations}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Molecular Graphs}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Graph Neural Networks}{8}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Convolutional Neural Networks for Learning Molecular Fingerprints}{9}{subsubsection.3.2.1}
+\contentsline {subsection}{\numberline {3.3}Directed MPP ? \cite {yangMPP}}{10}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Graph Convolutional Neural Networks}{10}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Graph Attention Networks}{10}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Attentive FP}{10}{subsubsection.3.3.3}
+\contentsline {subsection}{\numberline {3.4}Sequence modeling}{10}{subsection.3.4}
+\contentsline {section}{\numberline {4}Application in Drug Discovery}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Property Prediction}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}De novo design}{12}{subsection.4.2}
+\contentsline {section}{\numberline {5}Discussion}{12}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{13}{section.6}
+\contentsline {section}{References}{18}{section.6}
+\contentsline {section}{List of Figures}{19}{section.6}
+\contentsline {section}{List of Tables}{20}{section.6}
+\contentsline {section}{Appendix}{20}{section.6}
+\contentsline {subsection}{\numberline {A}Similarity values for fingerprints}{20}{subsection.Alph0.1}
+\contentsline {subsection}{\numberline {B}Kostenrechnung}{20}{subsection.Alph0.2}
+\contentsline {subsection}{\numberline {C}Ergebnisse}{20}{subsection.Alph0.3}
 \contentsfinish 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{67}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -57,6 +57,18 @@ Matthew Clark, Richard~D. Cramer~III, and Nicole Van~Opdenbosch.
 \newblock URL
   \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/jcc.540100804}.
 
+\bibitem[Corsello et~al.(2017)Corsello, Bittker, Liu, Gould, McCarren,
+  Hirschman, Johnston, Vrcic, Wong, Khan, Asiedu, Narayan, Mader, Subramanian,
+  and Golub]{corsello}
+Steven Corsello, Joshua Bittker, Zihan Liu, Joshua Gould, Patrick McCarren,
+  Jodi Hirschman, Stephen Johnston, Anita Vrcic, Bang Wong, Mariya Khan, Jacob
+  Asiedu, Rajiv Narayan, Christopher Mader, Aravind Subramanian, and Todd
+  Golub.
+\newblock The drug repurposing hub: A next-generation drug library and
+  information resource.
+\newblock \emph{Nature Medicine}, 23:\penalty0 405--408, 04 2017.
+\newblock \doi{10.1038/nm.4306}.
+
 \bibitem[David et~al.(2020)David, Thakkar, Mercado, and Engkvist]{molrep}
 Laurianne David, Amol Thakkar, Rocío Mercado, and Ola Engkvist.
 \newblock Molecular representations in ai-driven drug discovery: a review and
@@ -79,6 +91,14 @@ P.~G. Dittmar, N.~A. Farmer, W.~Fisanick, R.~C. Haines, and J.~Mockus.
 \newblock \doi{10.1021/ci00039a002}.
 \newblock URL \url{https://doi.org/10.1021/ci00039a002}.
 
+\bibitem[Duvenaud et~al.(2015)Duvenaud, Maclaurin, Aguilera-Iparraguirre,
+  Gómez-Bombarelli, Hirzel, Aspuru-Guzik, and
+  Adams]{duvenaud2015convolutional}
+David Duvenaud, Dougal Maclaurin, Jorge Aguilera-Iparraguirre, Rafael
+  Gómez-Bombarelli, Timothy Hirzel, Alán Aspuru-Guzik, and Ryan~P. Adams.
+\newblock Convolutional networks on graphs for learning molecular fingerprints,
+  2015.
+
 \bibitem[Eroglu \& T{\"u}rkmen(2007)Eroglu and T{\"u}rkmen]{eroglu2007dft}
 Erol Eroglu and Hasan T{\"u}rkmen.
 \newblock A dft-based quantum theoretic qsar study of aromatic and heterocyclic
@@ -100,6 +120,14 @@ Arup~K Ghose, Vellarkad~N Viswanadhan, and John~J Wendoloski.
 \newblock \emph{The Journal of Physical Chemistry A}, 102\penalty0
   (21):\penalty0 3762--3772, 1998.
 
+\bibitem[Gilmer et~al.(2017)Gilmer, Schoenholz, Riley, Vinyals, and
+  Dahl]{GilmerSRVD17}
+Justin Gilmer, Samuel~S. Schoenholz, Patrick~F. Riley, Oriol Vinyals, and
+  George~E. Dahl.
+\newblock Neural message passing for quantum chemistry.
+\newblock \emph{CoRR}, abs/1704.01212, 2017.
+\newblock URL \url{http://arxiv.org/abs/1704.01212}.
+
 \bibitem[Glen et~al.(2006)Glen, Bender, Arnby, Carlsson, Boyer, and
   Smith]{glen2006circular}
 Robert~C Glen, Andreas Bender, Catrin~H Arnby, Lars Carlsson, Scott Boyer, and
@@ -115,6 +143,31 @@ Rajarshi Guha and Egon Willighagen.
   1946--1956, 01 2013.
 \newblock \doi{10.2174/1568026611212180002}.
 
+\bibitem[Hamilton et~al.(2018)Hamilton, Ying, Leskovec, and
+  Sosic]{mpnn_graphics}
+William~L. Hamilton, Rex Ying, Jure Leskovec, and Rok Sosic.
+\newblock Representation learning on networks.
+\newblock \url http://snap.stanford.edu/proj/embeddings-www/, 2018.
+\newblock Retrieved: April 19, 2021.
+
+\bibitem[Hansch \& Fujita(1964)Hansch and Fujita]{hansch}
+Corwin Hansch and Toshio Fujita.
+\newblock p -??-?? analysis. a method for the correlation of biological
+  activity and chemical structure.
+\newblock \emph{Journal of the American Chemical Society}, 86, 04 1964.
+\newblock \doi{10.1021/ja01062a035}.
+
+\bibitem[Hecht \& Fogel(2009)Hecht and Fogel]{hecht}
+David Hecht and Gary Fogel.
+\newblock Computational intelligence methods for admet prediction.
+\newblock \emph{Frontiers in Drug Design and Discovery}, 4, 01 2009.
+
+\bibitem[Heikamp \& Bajorath(2013)Heikamp and Bajorath]{supv1}
+Kathrin Heikamp and Jürgen Bajorath.
+\newblock Support vector machines for drug discovery.
+\newblock \emph{Expert opinion on drug discovery}, 9, 12 2013.
+\newblock \doi{10.1517/17460441.2014.866943}.
+
 \bibitem[Heller et~al.(2015)Heller, McNaught, Pletnev, Stein, and
   Tchekhovskoi]{heller2015inchi}
 Stephen~R Heller, Alan McNaught, Igor Pletnev, Stephen Stein, and Dmitrii
@@ -122,6 +175,32 @@ Stephen~R Heller, Alan McNaught, Igor Pletnev, Stephen Stein, and Dmitrii
 \newblock Inchi, the iupac international chemical identifier.
 \newblock \emph{Journal of cheminformatics}, 7\penalty0 (1):\penalty0 1--34,
   2015.
+
+\bibitem[Honda et~al.(2019)Honda, Shi, and Ueda]{honda}
+Shion Honda, Shoi Shi, and Hiroki~R. Ueda.
+\newblock {SMILES} transformer: Pre-trained molecular fingerprint for low data
+  drug discovery.
+\newblock \emph{CoRR}, abs/1911.04738, 2019.
+\newblock URL \url{http://arxiv.org/abs/1911.04738}.
+
+\bibitem[Jiang et~al.(2020{\natexlab{a}})Jiang, Lei, Wang, Shen, Cao, and
+  Hou]{XG1}
+Dejun Jiang, Tailong Lei, Zhe Wang, Chao Shen, Dong-Sheng Cao, and Tingjun Hou.
+\newblock Admet evaluation in drug discovery. 20. prediction of breast cancer
+  resistance protein inhibition through machine learning.
+\newblock \emph{Journal of Cheminformatics}, 12:\penalty0 16, 03
+  2020{\natexlab{a}}.
+\newblock \doi{10.1186/s13321-020-00421-y}.
+
+\bibitem[Jiang et~al.(2020{\natexlab{b}})Jiang, Wu, Hsieh, Guangyong, Liao,
+  Wang, Shen, Cao, Wu, and Hou]{jiang}
+Dejun Jiang, Zhenxing Wu, Chang-Yu Hsieh, Chen Guangyong, Ben Liao, Zhe Wang,
+  Chao Shen, Dong-Sheng Cao, Jian Wu, and Tingjun Hou.
+\newblock Could graph neural networks learn better molecular representation for
+  drug discovery? a comparison study of descriptor-based and graph-based
+  models.
+\newblock 09 2020{\natexlab{b}}.
+\newblock \doi{10.21203/rs.3.rs-79416/v1}.
 
 \bibitem[Katritzky et~al.(1996)Katritzky, Mu, Lobanov, and
   Karelson]{katritzky1996correlation}
@@ -131,6 +210,16 @@ Alan~R Katritzky, Lan Mu, Victor~S Lobanov, and Mati Karelson.
 \newblock \emph{The Journal of Physical Chemistry}, 100\penalty0 (24):\penalty0
   10400--10407, 1996.
 
+\bibitem[Kearnes et~al.(2016)Kearnes, McCloskey, Berndl, Pande, and
+  Riley]{Kearnes_2016}
+Steven Kearnes, Kevin McCloskey, Marc Berndl, Vijay Pande, and Patrick Riley.
+\newblock Molecular graph convolutions: moving beyond fingerprints.
+\newblock \emph{Journal of Computer-Aided Molecular Design}, 30\penalty0
+  (8):\penalty0 595–608, Aug 2016.
+\newblock ISSN 1573-4951.
+\newblock \doi{10.1007/s10822-016-9938-8}.
+\newblock URL \url{http://dx.doi.org/10.1007/s10822-016-9938-8}.
+
 \bibitem[Kerber(2014)]{KerberAdalbert2014Mcac}
 Adalbert Kerber.
 \newblock \emph{Mathematical chemistry and chemoinformatics : structure
@@ -138,6 +227,28 @@ Adalbert Kerber.
   [electronic resource]}.
 \newblock Ebook central. Berlin, 2014.
 \newblock ISBN 9783110254075.
+
+\bibitem[Kipf \& Welling(2016)Kipf and Welling]{gcn}
+Thomas~N. Kipf and Max Welling.
+\newblock Semi-supervised classification with graph convolutional networks.
+\newblock \emph{CoRR}, abs/1609.02907, 2016.
+\newblock URL \url{http://arxiv.org/abs/1609.02907}.
+
+\bibitem[Korolev et~al.(2020)Korolev, Mitrofanov, Korotcov, and
+  Tkachenko]{korolev}
+Vadim Korolev, Artem Mitrofanov, Alexandru Korotcov, and Valery Tkachenko.
+\newblock Graph convolutional neural networks as “general-purpose” property
+  predictors: The universality and limits of applicability.
+\newblock \emph{Journal of Chemical Information and Modeling}, 60\penalty0
+  (1):\penalty0 22--28, 2020.
+\newblock \doi{10.1021/acs.jcim.9b00587}.
+\newblock URL \url{https://doi.org/10.1021/acs.jcim.9b00587}.
+\newblock PMID: 31860296.
+
+\bibitem[Landrum(2006)]{rdkit}
+G.~Landrum.
+\newblock Rdkit: Open-source cheminformatics.
+\newblock \url https://www.rdkit.org/docs/index.html, 2006.
 
 \bibitem[Lawlor(2016)]{Lawlor}
 Bonnie Lawlor.
@@ -147,6 +258,36 @@ Bonnie Lawlor.
 \newblock \doi{doi:10.1515/ci-2016-0206}.
 \newblock URL \url{https://doi.org/10.1515/ci-2016-0206}.
 
+\bibitem[Li et~al.(2019)Li, Yan, Gu, Zhou, Wu, and Xu]{deepchemstable}
+Xiuming Li, Xin Yan, Qiong Gu, Huihao Zhou, Di~Wu, and Jun Xu.
+\newblock Deepchemstable: Chemical stability prediction with an attention-based
+  graph convolution network.
+\newblock \emph{Journal of Chemical Information and Modeling}, 59\penalty0
+  (3):\penalty0 1044--1049, 2019.
+\newblock \doi{10.1021/acs.jcim.8b00672}.
+\newblock URL \url{https://doi.org/10.1021/acs.jcim.8b00672}.
+\newblock PMID: 30764613.
+
+\bibitem[Li et~al.(2015)Li, Tarlow, Brockschmidt, and Zemel]{li2015gated}
+Yujia Li, Daniel Tarlow, Marc Brockschmidt, and Richard Zemel.
+\newblock Gated graph sequence neural networks.
+\newblock \emph{arXiv preprint arXiv:1511.05493}, 2015.
+
+\bibitem[Lo et~al.(2018)Lo, Rensi, Torng, and Altman]{LO20181538}
+Yu-Chen Lo, Stefano~E. Rensi, Wen Torng, and Russ~B. Altman.
+\newblock Machine learning in chemoinformatics and drug discovery.
+\newblock \emph{Drug Discovery Today}, 23\penalty0 (8):\penalty0 1538--1546,
+  2018.
+\newblock ISSN 1359-6446.
+\newblock \doi{https://doi.org/10.1016/j.drudis.2018.05.010}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1359644617304695}.
+
+\bibitem[Lundberg \& Lee(2017)Lundberg and Lee]{lundberg2017unified}
+Scott Lundberg and Su-In Lee.
+\newblock A unified approach to interpreting model predictions.
+\newblock \emph{arXiv preprint arXiv:1705.07874}, 2017.
+
 \bibitem[Mauri et~al.(2016)Mauri, Consonni, and Todeschini]{Mauri2016}
 Andrea Mauri, Viviana Consonni, and Roberto Todeschini.
 \newblock \emph{Molecular Descriptors}, pp.\  1--29.
@@ -154,6 +295,25 @@ Andrea Mauri, Viviana Consonni, and Roberto Todeschini.
 \newblock ISBN 978-94-007-6169-8.
 \newblock \doi{10.1007/978-94-007-6169-8_51-1}.
 \newblock URL \url{https://doi.org/10.1007/978-94-007-6169-8_51-1}.
+
+\bibitem[Mayr et~al.(2018)Mayr, Klambauer, Unterthiner, Steijaert, Wegner,
+  Ceulemans, Clevert, and Hochreiter]{mayr}
+Andreas Mayr, Günter Klambauer, Thomas Unterthiner, Marvin Steijaert, Joerg
+  Wegner, Hugo Ceulemans, Djork-Arné Clevert, and Sepp Hochreiter.
+\newblock Large-scale comparison of machine learning methods for drug target
+  prediction on chembl.
+\newblock \emph{Chemical Science}, 9, 06 2018.
+\newblock \doi{10.1039/C8SC00148K}.
+
+\bibitem[Merkwirth \& Lengauer(2005)Merkwirth and Lengauer]{merkwirth}
+Christian Merkwirth and Thomas Lengauer.
+\newblock Automatic generation of complementary descriptors with molecular
+  graph networks.
+\newblock \emph{Journal of Chemical Information and Modeling}, 45\penalty0
+  (5):\penalty0 1159--1168, 2005.
+\newblock \doi{10.1021/ci049613b}.
+\newblock URL \url{https://doi.org/10.1021/ci049613b}.
+\newblock PMID: 16180893.
 
 \bibitem[Morgan(1965)]{morgan}
 H.~L. Morgan.
@@ -199,11 +359,33 @@ David Rogers and Mathew Hahn.
 \newblock URL \url{https://doi.org/10.1021/ci100050t}.
 \newblock PMID: 20426451.
 
+\bibitem[Schütt et~al.(2017)Schütt, Arbabzadah, Chmiela, Müller, and
+  Tkatchenko]{Sch_tt_2017}
+Kristof~T. Schütt, Farhad Arbabzadah, Stefan Chmiela, Klaus~R. Müller, and
+  Alexandre Tkatchenko.
+\newblock Quantum-chemical insights from deep tensor neural networks.
+\newblock \emph{Nature Communications}, 8\penalty0 (1), Jan 2017.
+\newblock ISSN 2041-1723.
+\newblock \doi{10.1038/ncomms13890}.
+\newblock URL \url{http://dx.doi.org/10.1038/ncomms13890}.
+
 \bibitem[Senior et~al.(2011)Senior, Madbouly, et~al.]{senior2011qstr}
 Samir~A Senior, Magdy~D Madbouly, et~al.
 \newblock Qstr of the toxicity of some organophosphorus compounds by using the
   quantum chemical and topological descriptors.
 \newblock \emph{Chemosphere}, 85\penalty0 (1):\penalty0 7--12, 2011.
+
+\bibitem[Shen \& Nicolaou(2019)Shen and Nicolaou]{SHEN201929}
+Jie Shen and Christos~A. Nicolaou.
+\newblock Molecular property prediction: recent trends in the era of artificial
+  intelligence.
+\newblock \emph{Drug Discovery Today: Technologies}, 32-33:\penalty0 29--36,
+  2019.
+\newblock ISSN 1740-6749.
+\newblock \doi{https://doi.org/10.1016/j.ddtec.2020.05.001}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1740674920300032}.
+\newblock Artificial Intelligence.
 
 \bibitem[Sorensen(1948)]{sorensen1948method}
 Th~A Sorensen.
@@ -228,6 +410,23 @@ Jonathan~M. Stokes, Kevin Yang, Kyle Swanson, Wengong Jin, Andres
 \newblock URL
   \url{https://www.sciencedirect.com/science/article/pii/S0092867420301021}.
 
+\bibitem[Svetnik et~al.(2003)Svetnik, Liaw, Tong, Culberson, Sheridan, and
+  Feuston]{RF1}
+Vladimir Svetnik, Andy Liaw, Christopher Tong, John Culberson, Robert Sheridan,
+  and Bradley Feuston.
+\newblock Random forest: A classification and regression tool for compound
+  classification and qsar modeling.
+\newblock \emph{Journal of chemical information and computer sciences},
+  43:\penalty0 1947--58, 11 2003.
+\newblock \doi{10.1021/ci034160g}.
+
+\bibitem[Tian et~al.(2012)Tian, Wang, Li, Xu, and Hou]{tian}
+Sheng Tian, Junmei Wang, Youyong Li, Xiaojie Xu, and Tingjun Hou.
+\newblock Drug-likeness analysis of traditional chinese medicines: Prediction
+  of drug-likeness using machine learning approaches.
+\newblock \emph{Molecular pharmaceutics}, 9:\penalty0 2875--86, 06 2012.
+\newblock \doi{10.1021/mp300198d}.
+
 \bibitem[Todeschini \& Consonni(2008)Todeschini and
   Consonni]{todeschini2008handbook}
 Roberto Todeschini and Viviana Consonni.
@@ -240,6 +439,22 @@ John Van~Drie.
 \newblock \emph{Journal of computer-aided molecular design}, 21:\penalty0
   591--601, 10 2007.
 \newblock \doi{10.1007/s10822-007-9142-y}.
+
+\bibitem[Varnek \& Baskin(2012)Varnek and Baskin]{ML_chem}
+Alexandre Varnek and Igor Baskin.
+\newblock Machine learning methods for property prediction in chemoinformatics:
+  Quo vadis?
+\newblock \emph{Journal of Chemical Information and Modeling}, 52\penalty0
+  (6):\penalty0 1413--1437, 2012.
+\newblock \doi{10.1021/ci200409x}.
+\newblock URL \url{https://doi.org/10.1021/ci200409x}.
+\newblock PMID: 22582859.
+
+\bibitem[Veličković et~al.(2018)Veličković, Cucurull, Casanova, Romero,
+  Liò, and Bengio]{gan}
+Petar Veličković, Guillem Cucurull, Arantxa Casanova, Adriana Romero, Pietro
+  Liò, and Yoshua Bengio.
+\newblock Graph attention networks, 2018.
 
 \bibitem[Weininger(1988)]{smiles}
 David Weininger.
@@ -275,5 +490,74 @@ William~J Wiswesser.
 Zhenqin Wu, Bharath Ramsundar, Evan~N. Feinberg, Joseph Gomes, Caleb Geniesse,
   Aneesh~S. Pappu, Karl Leswing, and Vijay Pande.
 \newblock Moleculenet: A benchmark for molecular machine learning, 2018.
+
+\bibitem[Xiong et~al.(2019)Xiong, Wang, Liu, Feisheng, Wan, Li, Li, Luo, Chen,
+  Jiang, and Zheng]{attentivefp}
+Zhaoping Xiong, Dingyan Wang, Xiaohong Liu, Zhong Feisheng, Xiaozhe Wan, Xutong
+  Li, Zhaojun Li, Xiaomin Luo, Kaixian Chen, H.~Jiang, and Mingyue Zheng.
+\newblock Pushing the boundaries of molecular representation for drug discovery
+  with graph attention mechanism.
+\newblock \emph{Journal of Medicinal Chemistry}, 63, 08 2019.
+\newblock \doi{10.1021/acs.jmedchem.9b00959}.
+
+\bibitem[Xiong et~al.(2020)Xiong, Wang, Liu, Zhong, Wan, Li, Li, Luo, Chen,
+  Jiang, and Zheng]{graphattentionmpp}
+Zhaoping Xiong, Dingyan Wang, Xiaohong Liu, Feisheng Zhong, Xiaozhe Wan, Xutong
+  Li, Zhaojun Li, Xiaomin Luo, Kaixian Chen, Hualiang Jiang, and Mingyue Zheng.
+\newblock Pushing the boundaries of molecular representation for drug discovery
+  with the graph attention mechanism.
+\newblock \emph{Journal of Medicinal Chemistry}, 63\penalty0 (16):\penalty0
+  8749--8760, 2020.
+\newblock \doi{10.1021/acs.jmedchem.9b00959}.
+\newblock URL \url{https://doi.org/10.1021/acs.jmedchem.9b00959}.
+\newblock PMID: 31408336.
+
+\bibitem[Yang et~al.(2019{\natexlab{a}})Yang, Swanson, Jin, Coley, Eiden, Gao,
+  Guzman-Perez, Hopper, Kelley, Mathea, Palmer, Settels, Jaakkola, Jensen, and
+  Barzilay]{yangMPP}
+Kevin Yang, Kyle Swanson, Wengong Jin, Connor Coley, Philipp Eiden, Hua Gao,
+  Angel Guzman-Perez, Timothy Hopper, Brian Kelley, Miriam Mathea, Andrew
+  Palmer, Volker Settels, Tommi Jaakkola, Klavs Jensen, and Regina Barzilay.
+\newblock Analyzing learned molecular representations for property prediction.
+\newblock \emph{Journal of Chemical Information and Modeling}, 59\penalty0
+  (8):\penalty0 3370--3388, 2019{\natexlab{a}}.
+\newblock \doi{10.1021/acs.jcim.9b00237}.
+\newblock URL \url{https://doi.org/10.1021/acs.jcim.9b00237}.
+\newblock PMID: 31361484.
+
+\bibitem[Yang et~al.(2019{\natexlab{b}})Yang, Yang, Dong, Wang, Zhang, Ding,
+  Ding, Lu, Hou, and Cao]{XG2}
+Zi-Yi Yang, Zhi-Jiang Yang, Jie Dong, Liang-Liang Wang, Liu-Xia Zhang, Jun-Jie
+  Ding, Xiao-Qin Ding, Ai-Ping Lu, Ting-Jun Hou, and Dong-Sheng Cao.
+\newblock Structural analysis and identification of colloidal aggregators in
+  drug discovery.
+\newblock \emph{Journal of Chemical Information and Modeling}, 59\penalty0
+  (9):\penalty0 3714--3726, 2019{\natexlab{b}}.
+\newblock \doi{10.1021/acs.jcim.9b00541}.
+\newblock URL \url{https://doi.org/10.1021/acs.jcim.9b00541}.
+\newblock PMID: 31430151.
+
+\bibitem[Zampieri et~al.(2017)Zampieri, Zimmermann, Claassen, and
+  Sauer]{ZAMPIERI20171214}
+Mattia Zampieri, Michael Zimmermann, Manfred Claassen, and Uwe Sauer.
+\newblock Nontargeted metabolomics reveals the multilevel response to
+  antibiotic perturbations.
+\newblock \emph{Cell Reports}, 19\penalty0 (6):\penalty0 1214--1228, 2017.
+\newblock ISSN 2211-1247.
+\newblock \doi{https://doi.org/10.1016/j.celrep.2017.04.002}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S2211124717304618}.
+
+\bibitem[Zernov et~al.(2003)Zernov, Balakin, Ivaschenko, Savchuk, and
+  Pletnev]{supv2}
+Vladimir~V. Zernov, Konstantin~V. Balakin, Andrey~A. Ivaschenko, Nikolay~P.
+  Savchuk, and Igor~V. Pletnev.
+\newblock Drug discovery using support vector machines. the case studies of
+  drug-likeness, agrochemical-likeness, and enzyme inhibition predictions.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  43\penalty0 (6):\penalty0 2048--2056, 2003.
+\newblock \doi{10.1021/ci0340916}.
+\newblock URL \url{https://doi.org/10.1021/ci0340916}.
+\newblock PMID: 14632457.
 
 \end{thebibliography}
