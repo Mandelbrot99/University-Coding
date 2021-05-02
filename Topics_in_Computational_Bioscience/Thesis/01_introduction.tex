@@ -117,6 +117,88 @@ Nowadays, the use of molecular representations has branched. On the one hand, at
 Rather than assigning molecules a fixed representation, these techniques aim to learn  that works.a flexible representation depending on the properties of interests of the molecules. This new approach seems equally innovative as crazy (TODO different word) and we will discuss the prospects of this in the following. 
 \end{comment}
 \section{Technical Background}
+\subsection{Molecular Graphs}
+\label{sec:mol_graphs}
+Molecular graphs are a convenient means to represent molecules in two dimensions being the starting point for using various molecular representations such as circular fingerprints or GNNs. Formally a graph is defined as a tuple of sets $G = (V,E)$, where $V$ are the vertices of the graph and $E$ are the edges. Any edge $e \in E$ is uniquely identified by a pair of vertices $(v_1, v_2), \, v_1, v_2 \in V$ that it connects. In a molecular graph the vertices are given by the atoms and edges represent bonds between atoms. An example of a molecular graph is given in Figure \ref{fig:mol_graph}. We also note that the number of edges, i.e. the edge \emph{multiplicity}, may differ. This corresponds to the bond order in the molecule, i.e. the difference between the number of bonds and anti-bonds between two atoms, as introduced by \cite{pauling}. 
+
+In computers, graphs are represented by a matrix - most commonly by their adjacency matrix $A$. The entries of this matrix are given by 
+\begin{equation}
+A_{ij} = 
+\begin{cases}
+1 & \text{if there is an edge from } v_i \text{ to } v_j \\
+0 & \text{otherwise.}
+\end{cases}
+\end{equation}
+%Compared to data structures like vectors, graphs are very high dimensional and irregular, simultaneously enabling the representation of more complex information and being harder to process.
+Note that for an undirected graph, like a molecular graph, the adjacency matrix is always symmetric. In order to represent a graph by its adjacency matrix, we need to make a non-canonical choice of ordering the nodes. This is inconvenient for molecular graphs since these do not possess any kind of ordering and hence this representation is not well-defined. 
+
+\begin{minipage}{0.5\textwidth}
+	\centering
+	\chemfig{OH\textsuperscript{1}-S\textsuperscript{2}(=[2]O\textsuperscript{3})(=[6]O\textsuperscript{4})-OH\textsuperscript{5}}
+	\captionof{figure}{Molecular graph of sulfuric acid.}
+	\label{fig:mol_graph}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\centering
+	$
+	\begin{blockarray}{cccccc}
+	1 & 2 & 3 & 4 & 5 \\
+	\begin{block}{(ccccc)c}
+	0 & 1 & 0 & 0 & 0 & 1 \\
+	1 & 0 & 1 & 1 & 1 & 2 \\
+	0 & 1 & 0 & 0 & 0 & 3 \\
+	0 & 1 & 0 & 0 & 0 & 4 \\
+	0 & 1 & 0 & 0 & 0 & 5 \\
+	\end{block}
+	\end{blockarray}
+	$
+	\captionof{figure}{Adjacency matrix of the molecular graph representing sulfuric acid given the node ordering.}
+	\label{fig:mol_adj_matrix}
+\end{minipage}
+\newline\newline
+Figure \ref{fig:mol_adj_matrix} shows the adjacency matrix corresponding to the graph in Figure \ref{fig:mol_graph}. The ordering of the vertices is indicated by superscripts. If we assumed a different ordering of the vertices this would result in a permutation of the rows and columns of the adjacency matrix. For representation methods that use molecular graphs this means that the generated representation needs to be invariant to permutations of the adjacency matrix.
+% This dependence on the node ordering is a fundamental problem for GNNs which is solved by the introduction of an \emph{inductive bias}. This means that  devising algorithms that give the same results regardless of a permutation of the matrix.
+
+In order to represent information about molecules beyond the connection of its atom, the adjacency matrix is complemented with two more matrices - a node feature matrix and an edge feature matrix. These contain additional information about each atom and bond in a molecular graph. The node feature matrix has the same number of rows as the adjacency matrix, where row $i$ corresponds to the feature values for node $i$. The number of columns may vary depending on the number of features that are chosen to be encoded. An example for a node feature matrix is shown in Figure \ref{fig:mol_node_feature_matrix}. Finally, the edge feature matrix contains one row for every edge in the graph and the number of columns may vary depending on the number of encoded features, see Figure \ref{fig:mol_edge_feature_matrix}.
+
+\begin{minipage}{0.45\textwidth}
+	\centering
+	$
+	\begin{blockarray}{ccccc}
+	O & S & 0H & 1H  \\
+	\begin{block}{(cccc)c}
+	1 & 0 & 0 & 1 &  1 \\
+	0 & 1 & 1 & 0 & 2 \\
+	1 & 0 & 1 & 0 &  3 \\
+	1 & 0 & 1 & 0 &  4 \\
+	1 & 0 & 0 & 1 &  5 \\
+	\end{block}
+	\end{blockarray}
+	$
+	\captionof{figure}{Example feature matrix of the graph in Figure \ref{fig:mol_graph}. The first two columns encode the atom type and the last two columns are a one-hot encoding of the number of implicit hydrogen atoms.}
+	\label{fig:mol_node_feature_matrix}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+	\vspace{.1cm}
+	\centering
+	$
+	\begin{blockarray}{cccc}
+	1 & 2 & 3  \\
+	\begin{block}{(ccc)c}
+	1 & 0 & 0 &  (1,2) \\
+	0 & 1 & 0 &  (2,3) \\
+	0 & 1 & 0 &  (2,4) \\
+	1 & 0 & 0 &  (2,5) \\
+	\end{block}
+	\end{blockarray}
+	$
+	\captionof{figure}{Example edge feature matrix of the graph in Figure \ref{fig:mol_graph}. The chosen features represent a one-hot encoding of the bond type.}
+	\label{fig:mol_edge_feature_matrix}
+\end{minipage}
+\newline\newline
+%TODO : more sources on moelcular graphs 
+While the graphical representation allows for the representation of complex 3D information of molecules, there are some drawbacks of working directly on the graph level. Firstly, not all molecules can be represented as graphs \citep{molrep} such as those that contain bonds that cannot be explained by valence bond theory. Secondly, graphs are not a suitable means of depicting molecules whose arrangement of molecules change over time as this would require a reordering of the adjacency matrix every time. Finally, graphs are neither very compact nor easy to process. The adjacency matrix alone has a memory requirement quadratic in the number of atoms in the molecule and depending on the amount of atomic and bond information that is to be encoded the feature matrices might get even bigger. As opposed to this, a linear representation as a single string allows for using substantially less memory while being simultaneously easier to store and process by algorithms. Therefore, graphs are usually used as the basis of more compact representations that we are going to depict in the following subsections. 
 \subsection{Extended-Connectivity Fingerprints}
 \label{sec:circ_finger}
 %Circular fingerprints are among the most widely used fingerprints for QSAR models and inspired the development of GNNs. 
@@ -144,17 +226,17 @@ Two identifiers are considered structurally equal if they encode the same substr
 			break\;
 		}
 	}
-	\caption{Morgan Algorithm TODO check with paper}
+	\caption{Morgan Algorithm}
 	\label{algo:morgan}
 \end{algorithm}
-
-The first step is repeated $n$ times using the updated identifiers of each atom as the the initial identifiers for the next step. This way, the identifier of each atom represents substructures of increasing sizes as illustrated in Figure \ref{fig:iteration_ECFP}. After the completion of the $n$ steps, numerically equal values are removed from the set $A$ and the remaining identifiers define the circular fingerprint. This final set of identifiers can be interpreted in a similar fashion as dictionary-based fingerprints. Each identifier in $A$ corresponds to a bit in a huge virtual bit string denoting the presence or absence of a particular substructural feature \citep{ecfp_bit}. This representation allows for the folding of the string into a bit vector of consistent size, e.g. 1024 bits. 
 \begin{figure}[h]
 	\centering 
 	\includegraphics[width=0.5\textwidth]{iterative_updating.png}
 	\caption{Illustration of the iterative updating in the computation of the ECFPs. In this example the atom type is used as an identifier. In iteration 0 the middle atom' identifier only represents the information about its own type. After the first iteration it has aggregated the information from its immediate neighbors and after the second iteration the represented substructure has grown even further. Reprinted from \cite{ECFP}. }
 	\label{fig:iteration_ECFP}
 \end{figure}
+The first step is repeated $n$ times using the updated identifiers of each atom as the the initial identifiers for the next step. This way, the identifier of each atom represents substructures of increasing sizes as illustrated in Figure \ref{fig:iteration_ECFP}. After the completion of the $n$ steps, numerically equal values are removed from the set $A$ and the remaining identifiers define the circular fingerprint. This final set of identifiers can be interpreted in a similar fashion as dictionary-based fingerprints. Each identifier in $A$ corresponds to a bit in a huge virtual bit string denoting the presence or absence of a particular substructural feature \citep{ecfp_bit}. This representation allows for the folding of the string into a bit vector of consistent size, e.g. 1024 bits. 
+
 
 %We clearly see ECFP's local nature. It generates a representation of the entire molecule by using only local operations thereby implicitly encoding the molecule's structure. 
 \begin{figure}[h]
@@ -228,96 +310,16 @@ The results are described in Table \ref{tab:dis_metric_2Dshapes}. Note that we a
 \end{table}
 \end{comment}
 
-\subsection{Molecular Graphs}
-\label{sec:mol_graphs}
-Molecular graphs are a convenient means to represent molecules in two dimensions. Formally a graph is defined as a tuple of sets $G = (V,E)$, where $V$ are the vertices of the graph and $E$ are the edges. Any edge $e \in E$ is uniquely identified by a pair of vertices $(v_1, v_2), \, v_1, v_2 \in V$ that it connects. In a molecular graph the vertices are given by the atoms and edges represent bonds between atoms. An example of a molecular graph is given in Figure \ref{fig:mol_graph}. We also note that the number of edges, i.e. the edge \emph{multiplicity}, may differ. This corresponds to the bond order in the molecule, i.e. the difference between the number of bonds and anti-bonds between two atoms, as introduced by \cite{pauling}. 
 
-In computers, graphs are represented by a matrix - most commonly by their adjacency matrix $A$. The entries of this matrix are given by 
-\begin{equation}
-A_{ij} = 
-\begin{cases}
-1 & \text{if there is an edge from } v_i \text{ to } v_j \\
-0 & \text{otherwise.}
-\end{cases}
-\end{equation}
-%Compared to data structures like vectors, graphs are very high dimensional and irregular, simultaneously enabling the representation of more complex information and being harder to process.
-Note that for an undirected graph, like a molecular graph, the adjacency matrix is always symmetric. In order to represent a graph by its adjacency matrix, we need to make a non-canonical choice of ordering the nodes. This is inconvenient for molecular graphs since these do not possess any kind of ordering and hence this representation is not well-defined. 
-
-\begin{minipage}{0.5\textwidth}
-	\centering
-	\chemfig{OH\textsuperscript{1}-S\textsuperscript{2}(=[2]O\textsuperscript{3})(=[6]O\textsuperscript{4})-OH\textsuperscript{5}}
-	\captionof{figure}{Molecular graph of sulfuric acid.}
-	\label{fig:mol_graph}
-\end{minipage}
-\begin{minipage}{0.5\textwidth}
-	\centering
-	$
-	\begin{blockarray}{cccccc}
-	1 & 2 & 3 & 4 & 5 \\
-	\begin{block}{(ccccc)c}
-	0 & 1 & 0 & 0 & 0 & 1 \\
-	1 & 0 & 1 & 1 & 1 & 2 \\
-	0 & 1 & 0 & 0 & 0 & 3 \\
-	0 & 1 & 0 & 0 & 0 & 4 \\
-	0 & 1 & 0 & 0 & 0 & 5 \\
-	\end{block}
-	\end{blockarray}
-	$
-	\captionof{figure}{Adjacency matrix of the molecular graph representing sulfuric acid given the node ordering.}
-	\label{fig:mol_adj_matrix}
-\end{minipage}
-\newline\newline
-Figure \ref{fig:mol_adj_matrix} shows the adjacency matrix corresponding to the graph in Figure \ref{fig:mol_graph}. The ordering of the vertices is indicated by superscripts. If we assumed a different ordering of the vertices this would results in a permutation of the rows and columns of the adjacency matrix. As we will see, this is a common problem for Graph Neural Network which is attempted to be solve by the introduction of an \emph{inductive bias} devising algorithms that give the same results regardless of a permutation of the matrix.
-
-In order to represent information about molecules beyond the connection of its atom, the adjacency matrix is complemented with two more matrices - a node feature matrix and an edge feature matrix. These contain additional information about each atom and bond in a molecular graph. The node feature matrix has the same number of rows as the adjacency matrix, where row $i$ corresponds to the feature values for node $i$. The number of columns may vary depending on the number of features that are chosen to be encoded. An example feature matrix is shown is Figure \ref{fig:mol_node_feature_matrix}. Finally, the edge feature matrix contains one row for every edge in the graph, where row $i$ corresponds to edge $i$ (TODO edge ordering?) and again the number of columns may vary depending on the number of features, see Figure \ref{fig:mol_edge_feature_matrix}.
-
-\begin{minipage}{0.45\textwidth}
-	\centering
-	$
-	\begin{blockarray}{ccccc}
-	O & S & 0H & 1H  \\
-	\begin{block}{(cccc)c}
-	1 & 0 & 0 & 1 &  1 \\
-	0 & 1 & 1 & 0 & 2 \\
-	1 & 0 & 1 & 0 &  3 \\
-	1 & 0 & 1 & 0 &  4 \\
-	1 & 0 & 0 & 1 &  5 \\
-	\end{block}
-	\end{blockarray}
-	$
-	\captionof{figure}{Example feature matrix of the graph in Figrue \ref{fig:mol_graph}. The first two columns encode the atom type and the last two columns are a one-hot encoding of the number of implicit hydrogen atoms.}
-	\label{fig:mol_node_feature_matrix}
-\end{minipage}
-\hfill
-\begin{minipage}{0.45\textwidth}
-	\vspace{.1cm}
-	\centering
-	$
-	\begin{blockarray}{cccc}
-	1 & 2 & 3  \\
-	\begin{block}{(ccc)c}
-	1 & 0 & 0 &  (1,2) \\
-	0 & 1 & 0 &  (2,3) \\
-	0 & 1 & 0 &  (2,4) \\
-	1 & 0 & 0 &  (2,5) \\
-	\end{block}
-	\end{blockarray}
-	$
-	\captionof{figure}{Example edge feature matrix of the graph in Figure \ref{fig:mol_graph}. The choses features represent a one-hot encoding of the bond type.}
-	\label{fig:mol_edge_feature_matrix}
-\end{minipage}
-\newline\newline
-%TODO : more sources on moelcular graphs 
-While the graphical representation allows for the representation of complex 3D information of molecules, there are some drawbacks of working directly on the graph level. First, not all molecules can be represented as graphs \citep{molrep} such as those that contain bonds that cannot be explained by valence bond theory. Second, graphs are not a suitable means of depicting molecules whose arrangement of molecules change over time as this would require a reordering of the adjacency matrix every time. Finally, graphs are neither very compact nor easy to process. The adjacency matrix alone has a memory requirement quadratic in the number of atoms in the molecule and depending on the amount of atomic and bond information that is to be encoded the feature matrices might get even bigger. As opposed to this, a linear representation as a single string allows for using substantially less memory while being simultaneously easier to store and process by algorithms. Therefore, graphs are usually used as the basis of more compact representations that we are going to depict in the following subsections. 
 
 \subsection{Message Passing Neural Networks}
 \label{sec:MPNN}
 
-Convolutional Neural Networks (cite) have achieved remarkable success at learning representations of grid-like structures such as images. The idea to generalise these frameworks to less regular structures like graphs motivated the introduction of many Graph Convolutional Neural Networks (GCNNs) as in \citep{li2015gated,duvenaud2015convolutional,Kearnes_2016, Sch_tt_2017}. An attempt to unify all these approaches in a general framework was made by \cite{GilmerSRVD17} introducing Message Passing Neural Networks (MPNNs). In the following we will outline how MPNNs work and mention how they restore the previous approaches. 
+Convolutional Neural Networks \citep{lecun1999object} have achieved remarkable success at learning representations of grid-like structures such as images. The idea to generalise these frameworks to less regular structures like graphs motivated the introduction of many Graph Convolutional Neural Networks (GCNNs) as in \citep{li2015gated,duvenaud2015convolutional,Kearnes_2016, Sch_tt_2017}. An attempt to unify all these approaches in a general framework was made by \cite{GilmerSRVD17} introducing Message Passing Neural Networks (MPNNs). In the following we will outline how MPNNs work and mention how specific GNNs can be restored. 
 
-MPNNs combine edge and node properties of a graph together with an implicit encoding of the structure. This is achieved through a similar aggregation step as for circular fingerprints in which a node update its own feature vector by combining it with the aggregated information from its neighbours. The difference is that a weighting of the features can be learned. As an input they require a graph represented by its adjacency matrix and the node and edge feature matrices that encode the properties. They output a feature vector for the full graph. 
+MPNNs combine edge and node properties of a graph together with an implicit encoding of the structure. This is achieved through a similar aggregation step as for circular fingerprints in which a node updates its own feature vector by combining it with the aggregated information from its neighbours. The difference is that a weighting of the features can be learned which allows for emphasising more important features while less important one contribute less to the final representation. As an input MPNNs require a graph represented by its adjacency matrix and the node and edge feature matrices that encode the properties. They output a feature vector for the full graph. 
 
-An entire forward pass of an MPNN can be divided into two phases: The message passing phase that runs for $T$ time steps and a consecutive readout phase. Each node stores information about its own features and those of its local environment in a hidden state vector ${\vecb h}_v^t \in {\mathbb{R}}^L$.  $\vecb h_v^0$ is initialised with the node's feature vector $\vecb x_v$. For each time step during the first phase any node receives `messages' about its neighbours' hidden states and then updates its own hidden state based on that. Specifically, this can be described as the two equations
+An entire forward pass of an MPNN can be divided into two phases: The message passing phase that runs for $T$ time steps and a consecutive readout phase. Each node stores information about its own features and those of its local environment in a hidden state vector ${\vecb h}_v^t \in {\mathbb{R}}^L$.  $\vecb h_v^0$ is initialised with the node's feature vector $\vecb x_v$ obtained from the node feature matrix. For each time step during the first phase any node receives `messages' about its neighbours' hidden states and then updates its own hidden state based on that. Specifically, this can be described by the two equations
 
 \begin{eqnarray}
 \vecb m_v^{t+1} & =& \sum_{w\in N(v)} M_t(\vecb h_v^t, \vecb h_w^t, \vecb e_{vw}) \label{eq:message_passing} \\
@@ -332,7 +334,7 @@ After $T$ time steps, any node $v$ has now received information about any node $
 	\caption{Illustration of the message passing in a MPNN. Reprinted from \cite{mpnn_graphics}. }
 	\label{fig:mpnn}
 \end{figure}
-
+ 
 The consecutive readout phase now computes a feature vector for the whole graph as given in equation \ref{eq:readout}
 
 \begin{equation}
@@ -340,26 +342,27 @@ The consecutive readout phase now computes a feature vector for the whole graph 
 \end{equation}
 Different choices for the functions $M_t, U_t$ and $R$ restore different Graph Neural Networks proposed in the literature. All of them have in common that they are differentiable and learned through backpropagation. Furthermore, $R$ must be permutation-invariant in order for the MPNN to be insensitive to the node ordering.
 
-
+Note the parallels to the computation of circular fingerprints as outlined in section \ref{sec:circ_finger}. This is no coincidence as the introduction of one of the earliest GNNs \citep{duvenaud2015convolutional} was motivated by replacing the steps in the computation of circular fingerprints by differentiable analogs. This will be explained in detail in section \ref{sec:conv}.
 
 
 \section{Results}
 \label{sec:results}
-One of the major drawbacks of using a fixed representation as inputs for ML methods in drug discovery is that the performance of the respective method is dependent on an a priori selection of features and therefore biased by expert knowledge \cite{merkwirth}. For descriptors this choice is given by the selection of properties to be represented by the descriptor. Molecular fingerprints require this selection in the form of the identifier that is used to initialise the atom's values. This manual feature design means that a significant inductive bias is imposed and the resulting method can only perform as well as the feature selection allows. An idea to remedy this problem is given by stepping away from a fixed target feature space and instead use deep learning to learn the space itself. Specifically, Graph Neural Networks operate directly on a molecular graph and extract structural information combined with the features most relevant to a property of interest.
+In this section we study the application of GNNs to drug discovery. Their main motivation lies in overcoming the dependence on an explicit choice of features that are used to compute a fixed representation. For descriptors this choice is given by the selection of properties to be represented by the descriptor. Molecular fingerprints require this selection in form of the identifier that is used to initialise the atom's values. This manual feature design means that a bias is imposed and the resulting method can only perform as well as the feature selection allows \citep{merkwirth}. GNNs remedy this problem by using deep learning to learn the features most relevant to a property of interest.
 
-In this section we present two applications of GNNs to drug discovery that highlight their potential as state-of-the-art featurization techniques. Anticipated benefits were listed by \citep{SHEN201929} and comprise:
+We present two applications of GNNs to drug discovery that highlight their potential as state-of-the-art featurization techniques. Anticipated benefits were listed by \citep{SHEN201929} and comprise:
 \begin{enumerate}
 	\item a compact final representation of the molecule, 
 	\item enhanced interpretability, 
 	\item the possibility to use attention algorithms that allow the model to focus on the most relevant parts of the molecule \citep{deepchemstable, graphattentionmpp}
 	\item an improvement in predictive performance given large enough data sets \citep{yangMPP}.
 \end{enumerate}
-We will review these factors in the next section to understand and discuss their validity based on the presented applications in this section.
+We will review these factors in the next section to understand and discuss their validity based on the presented results in this section.
 
 \subsection{GNNs for the prediction of solubility, drug efficacy and photovoltaic effciency}
-\subsubsection*{Setup}
-The method presented by \cite{duvenaud2015convolutional} was one of the first to challenge the state-of-the art approach of using circular fingerprints for the prediction of molecular properties. They noticed that the mechanism used for circular fingerprints, i.e. applying the same operation locally everywhere, was analogous to that of convolutional neural networks. This motivated the idea of creating a differentiable fingerprint that could be learned through backpropagation. To implement this, they went ahead to replace every non-differentiable operation of circular fingerprints by a differentiable analog. These adaptations are illustrated by a comparison of both algorithms in Figure \ref{fig:algos}.
-
+\label{sec:conv}
+\subsubsection*{Setup.}
+The method presented by \cite{duvenaud2015convolutional} was one of the first to challenge the state-of-the art approach of using circular fingerprints for the prediction of molecular properties. They noticed that the mechanism used for circular fingerprints, i.e. applying the same operation locally everywhere, was analogous to that of convolutional neural networks. This motivated the idea of creating a differentiable `neural graph' fingerprint that could be learned through backpropagation. To implement this, they went ahead to replace every non-differentiable operation of circular fingerprints by a differentiable analog. These adaptations are illustrated by a comparison of both algorithms in Figure \ref{fig:algos}.
+Note that invariance to the node ordering is achieved by using a permutation-invariant aggregation function, i.e. summing.
 \begin{figure}[h]
 	\centering 
 	\includegraphics[width=\textwidth]{algos.png}
@@ -371,13 +374,14 @@ This method for generating neural graph fingerprints is summarised by the messag
 
 The message function $M_t$ is the same across all time steps and given by
 \begin{align*}
-M(\vecb h_v, \vecb h_w, \vecb e_{vw}) &= (\vecb h_w, \vecb e_{vw}), 
-\intertext{where $(\cdot, \cdot)$ denotes concatentation. The update and readout functions are given by}
-U_t(\vecb h_v^t, \vecb m_v^{t+1}) & = \sigma(\vecb H_t^{\text{deg}(v)} \vecb m_v^{t+1})
+M(\vecb h_v, \vecb h_w, \vecb e_{vw}) &= \frac{1}{|N(v)|}\vecb h_v + \vecb h_w%(\vecb h_w, \vecb e_{vw}), 
+\intertext{%where $(\cdot, \cdot)$ denotes concatentation. 
+	The update and readout functions are given by}
+U_t(\vecb h_v^t, \vecb m_v^{t+1}) & = \sigma( \vecb m_v^{t+1} \vecb H_t^{\text{deg}(v)})
 \intertext{which includes learnable parameters as given by the matrices $\vecb H_t^{k}$ for all time steps $t$ and node degrees $k$. $\sigma$ denotes the sigmoid activation function. Finally, the readout function is given by}
- R(\vecb h_1^T, \ldots, \vecb h_{|V|}^T) &= f\left(\sum_{v,t} \text{softmax}(\vecb W_t \vecb h_v^t)\right)
+ R(\vecb h_1^T, \ldots, \vecb h_{|V|}^T) &= \sum_{v,t} \text{softmax}( \vecb h_v^t \vecb W_t)
 \end{align*}
-with learnable matrices $\vecb W_t$ for all time steps $t$ and a neural network $f$. 
+with learnable matrices $\vecb W_t$ for all time steps $t$. 
 
 \subsubsection*{Experiments} 
 \cite{duvenaud2015convolutional} applied their proposed architecture to predict the following properties of molecules:
@@ -386,7 +390,7 @@ with learnable matrices $\vecb W_t$ for all time steps $t$ and a neural network 
 	\item efficacy as a drug against a parasite that causes malaria as measured by \cite{gamo2010thousands},
 	\item photovoltaic efficiency as in \citep{hachmann2011harvard}.
 \end{itemize}
-To obtain the predicted property from the output of the GNN they used a fully connected neural network that receives the output of the GNN and computes the predicted value of the property. This whole architecture is trained in and end-to-end fashion through backpropagation such that the GNN can adapt its weights to favor the contribution of the most relevant features for the desired property. Figure \ref{fig:table_du} reports the RMSEs of both the GNN and ECFPs as input features for the neural network. 
+To obtain the predicted property from the output of the GNN they used a fully connected neural network that receives the output of the GNN and computes the predicted value of the property. This whole architecture is trained in an end-to-end fashion through backpropagation such that the GNN can adapt its weights to favour the contribution of the most relevant features for the desired property. Figure \ref{fig:table_du} reports the RMSEs of both the GNN and ECFPs as input features for the neural network. 
 
 \begin{figure}[h]
 	\centering 
@@ -394,7 +398,7 @@ To obtain the predicted property from the output of the GNN they used a fully co
 	\caption{Comparison of the root-mean-square error on the three data set mentioned above for circular fingerprints and neural fingerprints (GNN). Reprinted from \cite{duvenaud2015convolutional}. }
 	\label{fig:table_du}
 \end{figure}
-Overall, we see that the GNN gives slightly better results than ECFPs. However, the advantage of GNNs is not consistent across all data sets. For predicting drug efficiency the combination of using ECFPs with linear layers in the fully connected network achieves the best scores. However, GNNs perform only slightly worse. 
+Overall, we see that the GNN gives slightly better results than ECFPs. However, the advantage of GNNs is not consistent across all data sets. For predicting drug efficacy the combination of using ECFPs with linear layers in the fully connected network achieves the best scores. However, GNNs perform only slightly worse.
 
 \begin{comment}
 \subsubsection{Deep Tensor Neural Networks}
@@ -437,7 +441,7 @@ GCN, GAN, Attentive FP?
 \subsection{GNNs for antibiotic discovery}
 The second application of GNNs for drug discovery is concerned with antibiotic discovery. The discovery of new antibiotics is becoming increasingly difficult due to the dereplication problem that the same molecules are discovered over and over \citep{COX201798}. Given the simultaneous stagnation of the success of existing methods for antibiotic discovery and development of antibiotic-resistant determinants this creates a great urge for new methods to enter the stage.  
 
-\cite{STOKES2020688} employed a GNN for both target identification and the prediction of toxicity of potential antibiotic candidates. The molecular representation was built using a directed-message passing neural network \cite{yangMPP}. This D-MPNN extends the framework from section \ref{sec:MPNN} by ...
+\cite{STOKES2020688} employed a GNN for both target identification and the prediction of toxicity of potential antibiotic candidates. The molecular representation was built using a directed-message passing neural network \cite{yangMPP}. This D-MPNN extends the framework from section \ref{sec:MPNN} by considering directed messages associated with bonds instead of atoms. This is motivated by the hope to avoid messages being passed forth and back between two atoms which can lead to noise in the representation.
 
 The full workflow can be separated into three stages. The fist stage concerns the training of the model and a classifier.
 Since (D-)MPNNs can struggle to represent global features of molecules, especially if the number of message passing iterations is greater than the longest path in the molecule as discussed in section \ref{sec:MPNN}. Therefore, the final representation generated by the D-MPNN was augmented with 300 additional molecule-level features. This combined representation was then input in a feed-forward neural network that outputs a number between 0 and 1 as the prediction of the molecule showing growth inhibitory against E. Coli. This whole architecture is trained in an end-to-end fashion such that the D-MPNN can generate a representation that is highly attuned to the desired property.
@@ -447,27 +451,27 @@ In the second stage, 20 folds of the trained model using different weight initia
 
 Finally, the best scoring 99 molecules were empirically tested for growth inhibition out of which 51 displayed this property. The resulting 51 molecules were ranked according to their clinical phase of investigation, structural similarity to the training data set and their toxicity that was also predicted using a D-MPNN. This resulted in the discovery ot the broad-spectrum bactericidal antibiotic halicin with a very low structural similarity to its nearest neighbour antibiotic in the training data emphasising the model's capacity to generalise. 
 
-This case study shows the versatility and potential of using Graph Neural Network for property prediction in early drug discovery. They could be employed for both prediction of growth inhibitory effects as well as toxicity and resulted in the finding of a new antibiotic after years of stagnation in this field. \cite{STOKES2020688} also reported the prediction scores using Morgan fingerprints and various classifier and the rank of the newly discovered antibiotic halicin was lower in all of them ranging between 773-2644 compared to 69 for the D-MPNN approach. Therefore, it could be argued that halcin would not have been found if molecular fingerprints had been used. However, between there is still some correlation among the top scoring molecules. For instance, both the D-MPNN and Morgan fingerprints predict the same highest ranking molecule and the fourth place for D-MPNN is in second place for Morgan fingerprints. The question that remains to be answered is if this is just a correlation of numerical values and halicin being ranked much higher for learned representations is just a fortunate coincidence or if the predictions of GNNs actually carry more physical relevance.
+This case study shows the versatility and potential of using Graph Neural Network for property prediction in early drug discovery. They could be employed for both prediction of growth inhibitory effects as well as toxicity and resulted in the finding of a new antibiotic after years of stagnation in this field. \cite{STOKES2020688} also reported the prediction scores using Morgan fingerprints and various classifier and the rank of the newly discovered antibiotic halicin was lower in all of them ranging between 773-2644 compared to 69 for the D-MPNN approach. Therefore, it could be argued that halicin would not have been found if molecular fingerprints had been used. However, there is still some correlation among the top scoring molecules. For instance, both the D-MPNN and Morgan fingerprints predict the same highest ranking molecule and the fourth place for D-MPNN is in second place for Morgan fingerprints. The question that remains to be answered is if this is just a correlation of numerical values and halicin being ranked much higher for learned representations is just a fortunate coincidence or if the predictions of GNNs actually carry more physical relevance.
 
 Despite this breakthrough using the GNN approach, \cite{STOKES2020688} still emphasise the importance of a combination of \emph{in silico} and empirical investigations. 
 
 \section{Discussion}
-Artificial intelligence and machine learning are currently one of the most rapidly evolving research areas and the progress in these fields has direct impacts on  a great variety of disciplines. In particular, we have hinted at ther potential to revolutionise the entire field of drug discovery coming with significant reductions in time and resources (TODO where? maybe time span to see how little time). Most recently, a variety of Graph Neural Networks has been introduced as a way to automatize the feature selection for molecular property prediction. Instead of relying on expert knowledge to select the most relevant attributes to be used for a computer-interpretable interpretation, which has been shown to heavily impact the performance of the property prediction \citep{tian}, Graph Neural Network manage to learn a continuous vector representation that is highly attuned to the property of concern. After reviewing two applications of GNNs in drug discovery we come back to the anticipated benefits oultined in section \ref{sec:results}. 
+Artificial intelligence and machine learning are currently one of the most rapidly evolving research areas and the progress in these fields has direct impacts on  a great variety of disciplines. Recently, a variety of Graph Neural Networks has been introduced as a way to automatise the feature selection for molecular property prediction. Instead of relying on expert knowledge to select the most relevant attributes to be used for a computer-interpretable interpretation, which has been shown to heavily impact the performance of the property prediction \citep{tian}, Graph Neural Networks manage to learn a continuous vector representation that is highly attuned to the property of concern. After reviewing two applications of GNNs in drug discovery we come back to the anticipated benefits oultined in section \ref{sec:results}. 
 
 While GNNs do learn a compact representation compared to molecular fingerprints if they are stored as sparse bit-vectors, this is at the downside of substantially higher computational costs. Molecular fingerprints as well as most descriptors can be computed immediately and serve as an off-the-shelf representation of molecules. The higher computational costs of GNNs is not only attributed to the time that it takes to train the network and adapt the weight. Beyond that, they require resource-intensive hyperparameter tuning in order to find a suitable configuration of weights. 
 
-In terms of interpretability, the comparison of fixed representations and GNNs is more level. Methods like studying the activations of the GNN can be used in order to identify the substructures that maximally excite certain feature maps in the GNN as described by \cite{duvenaud2015convolutional}. However, these methods are quite costly to perform and ultimately do not help to understand the contribution of the initialised features to the final representations. For molecular fingerprints on the other side, the SHAP method \citep{lundberg2017unified} allows for a way to interpret the final prediction scores by computing the contribution of each input feature that had been selected. This might be even more helpful than understanding the correspondence between substructures and feature maps in a GNN. 
+In terms of interpretability, the comparison of fixed representations and GNNs is more level. Methods like studying the activations of the GNN can be used in order to identify the substructures that maximally excite certain feature maps in the GNN as described by \cite{duvenaud2015convolutional}. However, these methods are quite costly to perform and ultimately do not help to understand the contribution of the initialised features to the final representations. For molecular fingerprints on the other side, the SHAP method \citep{lundberg2017unified} allows for a way to interpret the final prediction scores by computing the contribution of each input feature that was selected. This might be even more helpful than understanding the correspondence between substructures and feature maps in a GNN. 
 
-As another anticipated benefit the use of attention algorithm was mentioned in section \ref{sec:results}. While attention algorithm have been introduced as an extension for GNNs \citep{graphattentionmpp}, the ultimate benefit of GNNs is more fundamental. GNNs are extremely flexible and can be extended very easily. They are a current topic of research even beyond the prediction of chemical properties and general advances of the framework can have immediate impacts on their application in drug discovery. This makes them promising to take over the paradigm in molecular representations as their advances are much more far reaching compared to the development of a new descriptor.
+As another anticipated benefit the use of attention algorithm was mentioned in section \ref{sec:results}. While attention algorithms have been introduced as an extension for GNNs \citep{graphattentionmpp}, the ultimate benefit of GNNs is more fundamental. GNNs are extremely flexible and can be extended very easily. They are a current topic of research even beyond the prediction of chemical properties and general advances of the framework can have immediate impacts on their application in drug discovery. This makes them promising to take over the paradigm in molecular representations as their advances are much more far reaching compared to the development of a new descriptor.
 
-Finally, we compare the predictive accuracy of GNNs to that of molecular fingerprints and descriptors. While many studies report that learned representations are superior to fixed representations in term of the property prediction accuracy for a variety of different applications \citep{wu2018moleculenet,yangMPP, korolev}, there is still no consensus on this and others report the dominance of descriptor-based approaches and fingerprints \citep{mayr, jiang}. This suggests that there are other relevant factors that influence which approach is better. Since there a substantially more parameters involved in learning a representation compared with using a fixed representation a sufficiently large data set is critical to learned approaches. Something else to take into account is the mode of evaluation. As mentioned by \cite{SHEN201929}, the evaluation of model performance is critical to molecular property prediction. This is because unlike images there is no standard to generating ground truth labels for the data. These are usually obtained from experiments and experimental procedures can differ and are subject to human errors. Furthermore, baseline models are often not tuned enough to reach peak performance. Therefore, the question of which method is the state of the art remains to be answered. However, the ongoing research on GNNs is likely to further increase their performance, ultimately leaving fixed representations behind.
+Finally, we compare the predictive accuracy of GNNs to that of molecular fingerprints and descriptors. While many studies report that learned representations are superior to fixed representations in term of the property prediction accuracy for a variety of different applications \citep{wu2018moleculenet,yangMPP, korolev}, there is still no consensus on this. Others report the dominance of descriptor-based approaches and fingerprints \citep{mayr, jiang}. This suggests that there are other relevant factors that influence which approach is better. Since there are substantially more parameters involved in learning a representation compared with using a fixed representation, a sufficiently large data set is critical to learned approaches. Something else to take into account is the mode of evaluation. As mentioned by \cite{SHEN201929}, the evaluation of model performance is critical to molecular property prediction. This is because unlike images there is no standard to generating ground truth labels for the data. These are usually obtained from experiments and experimental procedures can differ and are subject to human errors. Furthermore, baseline models are often not tuned enough to reach peak performance. Therefore, the question of which method is the state of the art remains to be answered. However, the ongoing research on GNNs is likely to further increase their performance, ultimately leaving fixed representations behind.
 %( Finally a fundamental assumption of employing and comparing machine different machine learning models is that training and test data are all independently identically distributed. It has been noted that for different molecules this requirement is very hard to verify let alone achieve.) (find source)
 
 
-I personally think that the future of property prediction is within learned molecular representations. While their lack of interpretability is a considerable drawback, there are two major advantages. First, GNNs are able to achieve state-of-the-art performance and they have already successfully used to impel (word?) areas that were stagnating before their introduction \citep{STOKES2020688}. While there are still publications reporting better results for descriptor-based approaches, GNN's great potential to be adjusted will probably keep improving their results (phrasing). For example, since the message passing approach may struggle to represent global properties of a graph, a global readout (cite) has been proposed helping overcome this. Secondly, GNNs enable their application to property prediction without having to rely on domain experts that need to select appropriate features. This allows for a wider application across disciplines making GNNs a versatile and promising tool for the future. 
+I personally think that learned representation obtained by GNNs will be the future of molecular property prediction in drug discovery. While their computational costs are a considerable drawback these are likely to become less significant as GPUs continue to become faster and more widely available. Furthermore, GNNs are able to achieve state-of-the-art performance and they have already been successfully used to impel areas that were stagnating before their introduction \citep{STOKES2020688}. While there are still publications reporting better results for descriptor-based approaches, GNNs' great potential for adjustment helps them to continually improve. For example, since the message passing approach may struggle to represent global properties of a graph, a global readout can be used helping to overcome this. Finally, GNNs enable their application to property prediction without having to rely on domain experts that need to select appropriate features. This allows for a wider application across disciplines making GNNs a versatile and promising tool for the future. 
 
-Extensions ...
+In my opinion, a key challenge for the future of GNNs is to enable their employment without the necessity to tune a lot of hyperparameters. This will allow for their use across even more disciplines without needing computer scientists as a guide. This could be achieved by conducting more studies that concern multiple data sets to obtain a better understanding for the role of individual parameters.  
 \section{Conclusion}
-In this report we have studied the role of graph neural networks for generating molecular representations that can be used as an input for machine learning methods predicting molecular properties. These turned out to be an extension of molecular fingerprints by making their aggregation differentiable and learning a weighting of the atom identifiers according to their relevance for the target property.
+In this report we have studied the role of GNNs for generating molecular representations that can be used as an input for machine learning methods predicting molecular properties. These turned out to be an extension of molecular fingerprints by making their aggregation differentiable and learning a weighting of the atom identifiers according to their relevance for the target property.
 Two applications of GNNs for drug discovery were explained in detail. The first by \cite{duvenaud2015convolutional} concerned the prediction of molecular properties like solubility or their efficacy as a drug. The second application by \cite{STOKES2020688} was about the application of GNNs in the process of finding a new antibiotic. 
-Finally, we compared learned representations with fixed representations in terms of accuracy, computational costs and interpretability. Despite fixed approaches outperforming GNNs in terms of their computational costs, we hypothesised Graph Neural Networks to be a key future technology for molecular prpoerty predictions. On the one hand this was because of their performance that is probable to be further improved in the line of ongoing research and on the other hand due to their wide applicability given that they do not require expert knowledge to be used. 
+Finally, we compared learned representations with fixed representations in terms of accuracy, computational costs and interpretability. Despite fixed approaches outperforming GNNs in terms of their computational costs, we hypothesised Graph Neural Networks to be a key future technology for molecular property predictions. This is due to their performance that is likely to be further improved in the line of ongoing research and +due to their wide applicability given that they do not require expert knowledge to be used. 

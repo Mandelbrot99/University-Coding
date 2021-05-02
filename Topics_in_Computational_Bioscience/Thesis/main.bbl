@@ -1,4 +1,4 @@
-\begin{thebibliography}{58}
+\begin{thebibliography}{59}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -218,6 +218,12 @@ Vadim Korolev, Artem Mitrofanov, Alexandru Korotcov, and Valery Tkachenko.
 G.~Landrum.
 \newblock Rdkit: Open-source cheminformatics.
 \newblock \url https://www.rdkit.org/docs/index.html, 2006.
+
+\bibitem[LeCun et~al.(1999)LeCun, Haffner, Bottou, and Bengio]{lecun1999object}
+Yann LeCun, Patrick Haffner, L{\'e}on Bottou, and Yoshua Bengio.
+\newblock Object recognition with gradient-based learning.
+\newblock In \emph{Shape, contour and grouping in computer vision}, pp.\
+  319--345. Springer, 1999.
 
 \bibitem[Li et~al.(2017)Li, Cai, and He]{li2017learning}
 Junying Li, Deng Cai, and Xiaofei He.
