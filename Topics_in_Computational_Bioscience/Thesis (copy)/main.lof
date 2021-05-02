@@ -1,0 +1,11 @@
+\babel@toc {english}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Illustration of the QSAR/SQPR workflow using ML/DL. Reprinted from \cite {yangMPP}. \relax }}{1}{figure.caption.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Illustration of the iterative updating in the computation of the ECFPs. In this example the atom type is used as an identifier. In iteration 0 the middle atom' identifier only represents the information about its own type. After the first iteration it has aggregated the information from its immediate neighbors and after the second iteration the represented substructure has grown even further. Reprinted from \cite {ECFP}. \relax }}{4}{figure.caption.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Molecular graphs corresponding to the SMILES strings `c1nccc2n1ccc2' and 1CNC(=O)c1nccc2cccn12'.\relax }}{5}{figure.caption.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Molecular graphs corresponding to the SMILES strings `CCC(CO)Nc1nc(NCc2ccccc2)c2ncn(C(C)C)c2n1' and `CC(C)C(CO)Nc1nc(Nc2ccc(C(=O)[O-])c(Cl)c2)c2ncn(C(C)C)c2n1" \relax }}{5}{figure.caption.5}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Molecular graph of sulfuric acid.\relax }}{7}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Adjacency matrix of the molecular graph representing sulfuric acid given the node ordering.\relax }}{7}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Example feature matrix of the graph in Figrue \ref {fig:mol_graph}. The first two columns encode the atom type and the last two columns are a one-hot encoding of the number of implicit hydrogen atoms.\relax }}{7}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Example edge feature matrix of the graph in Figure \ref {fig:mol_graph}. The choses features represent a one-hot encoding of the bond type.\relax }}{7}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Illustration of the message passing in a MPNN. Reprinted from \cite {mpnn_graphics}. \relax }}{8}{figure.caption.7}%
+\contentsfinish 

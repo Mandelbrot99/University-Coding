@@ -1,0 +1,141 @@
+
+	
+	
+
+
+
+
+
+
+\appendix
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+
+\subsection{Similarity values for fingerprints}
+\label{ch:a_sim}
+Used RDKit\citep{rdkit} implementation. Note that this library implements Morgan fingerprints which use the same algorithms as the one proposed in \citep{ECFP} but with a different hashing function
+    
+    
+    
+    
+    %\DeclareCaptionFormat{nocaption}{}
+    %\captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \hypersetup{
+    	breaklinks=true,  % so long urls are correctly broken across lines
+    	colorlinks=true,
+    	urlcolor=urlcolor,
+    	linkcolor=linkcolor,
+    	citecolor=citecolor,
+    }
+    \footnotesize
+    
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{rdkit} \PY{k+kn}{import} \PY{n}{Chem}
+\PY{k+kn}{from} \PY{n+nn}{rdkit}\PY{n+nn}{.}\PY{n+nn}{Chem} \PY{k+kn}{import} \PY{n}{Draw}
+\PY{k+kn}{from} \PY{n+nn}{rdkit}\PY{n+nn}{.}\PY{n+nn}{Chem}\PY{n+nn}{.}\PY{n+nn}{Draw} \PY{k+kn}{import} \PY{n}{IPythonConsole}
+\PY{k+kn}{from} \PY{n+nn}{rdkit}\PY{n+nn}{.}\PY{n+nn}{Chem}\PY{n+nn}{.}\PY{n+nn}{Draw} \PY{k+kn}{import} \PY{n}{rdMolDraw2D}
+\PY{k+kn}{from} \PY{n+nn}{rdkit}\PY{n+nn}{.}\PY{n+nn}{Chem} \PY{k+kn}{import} \PY{n}{rdDepictor}
+\PY{k+kn}{from} \PY{n+nn}{rdkit}\PY{n+nn}{.}\PY{n+nn}{Chem}\PY{n+nn}{.}\PY{n+nn}{AtomPairs} \PY{k+kn}{import} \PY{n}{Pairs}
+\PY{k+kn}{from} \PY{n+nn}{rdkit} \PY{k+kn}{import} \PY{n}{DataStructs}
+
+\PY{c+c1}{\PYZsh{} rdDepictor.SetPreferCoordGen(True)}
+\PY{k+kn}{from} \PY{n+nn}{IPython}\PY{n+nn}{.}\PY{n+nn}{display} \PY{k+kn}{import} \PY{n}{SVG}
+\PY{k+kn}{from} \PY{n+nn}{rdkit}\PY{n+nn}{.}\PY{n+nn}{Chem} \PY{k+kn}{import} \PY{n}{AllChem}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{m1s} \PY{o}{=} \PY{p}{[}\PY{n}{Chem}\PY{o}{.}\PY{n}{MolFromSmiles}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{c1nccc2n1ccc2}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,} \PY{n}{Chem}\PY{o}{.}\PY{n}{MolFromSmiles}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CNC(=O)c1nccc2cccn12}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{]}
+\PY{n}{m2s} \PY{o}{=} \PY{p}{[}\PY{n}{Chem}\PY{o}{.}\PY{n}{MolFromSmiles}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CC(C)(O1)C[C@@H](O)[C@@]1(O2)[C@@H](C)[C@@H]3CC=C4[C@]3(C2)C(=O)C[C@H]5[C@H]4CC[C@@H](C6)[C@]5(C)Cc(n7)c6nc(C[C@@]89(C))c7C[C@@H]8CC[C@@H]}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{10[C@@H]9C[C@@H](O)[C@@]}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{11(C)C}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{10=C[C@H](O}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{12)[C@]}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{11(O)[C@H](C)[C@]}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{12(O}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{13)[C@H](O)C[C@@]}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{13(C)CO}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,} \PY{n}{Chem}\PY{o}{.}\PY{n}{MolFromSmiles}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CC(C)C(CO)CC(C)C(CO)Nc1nc(Nc2ccc(C(=O)[O\PYZhy{}])c(Cl)c2)c2ncn(C(C)C)c2n1}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{img1} \PY{o}{=} \PY{n}{Draw}\PY{o}{.}\PY{n}{MolsToGridImage}\PY{p}{(}\PY{n}{m1s}\PY{p}{,}\PY{n}{molsPerRow}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{subImgSize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{300}\PY{p}{,}\PY{l+m+mi}{300}\PY{p}{)}\PY{p}{,} \PY{n}{returnPNG}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{legends} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}    
+\PY{n}{img1}\PY{o}{.}\PY{n}{save}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{test1.png}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{img2} \PY{o}{=} \PY{n}{Draw}\PY{o}{.}\PY{n}{MolsToGridImage}\PY{p}{(}\PY{n}{m2s}\PY{p}{,}\PY{n}{molsPerRow}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{subImgSize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{300}\PY{p}{,}\PY{l+m+mi}{300}\PY{p}{)}\PY{p}{,} \PY{n}{returnPNG}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{legends} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}    
+\PY{n}{img2}\PY{o}{.}\PY{n}{save}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{test2.png}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{} atom pair fingerprints}
+\PY{n}{AP\PYZus{}FP1s} \PY{o}{=} \PY{p}{[}\PY{n}{Pairs}\PY{o}{.}\PY{n}{GetAtomPairFingerprint}\PY{p}{(}\PY{n}{m}\PY{p}{)} \PY{k}{for} \PY{n}{m} \PY{o+ow}{in} \PY{n}{m1s}\PY{p}{]}
+\PY{n}{AP\PYZus{}FP2s} \PY{o}{=} \PY{p}{[}\PY{n}{Pairs}\PY{o}{.}\PY{n}{GetAtomPairFingerprint}\PY{p}{(}\PY{n}{m}\PY{p}{)} \PY{k}{for} \PY{n}{m} \PY{o+ow}{in} \PY{n}{m2s}\PY{p}{]}
+\PY{n}{hashdict0} \PY{o}{=} \PY{n}{AP\PYZus{}FP1s}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{GetNonzeroElements}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(} \PY{n}{hashdict0}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{==} \PY{l+m+mi}{36}\PY{p}{)} \PY{c+c1}{\PYZsh{}number of hash values equals number of atom pairs in the first molecule= 9 choose 2}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+True
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Dice Similarity of Atom Pair Fingerprints of molecules m1 and m2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{DataStructs}\PY{o}{.}\PY{n}{DiceSimilarity}\PY{p}{(}\PY{n}{AP\PYZus{}FP1s}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{AP\PYZus{}FP1s}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Dice Similarity of Atom Pair Fingerprints of molecules m1 and m2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{DataStructs}\PY{o}{.}\PY{n}{DiceSimilarity}\PY{p}{(}\PY{n}{AP\PYZus{}FP2s}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{AP\PYZus{}FP2s}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Dice Similarity of Atom Pair Fingerprints of molecules m1 and m2
+0.5087719298245614
+Dice Similarity of Atom Pair Fingerprints of molecules m1 and m2
+0.21837837837837837
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}Morgan fingerprints}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
+    \PY{n}{M\PYZus{}FP1s} \PY{o}{=} \PY{p}{[}\PY{n}{AllChem}\PY{o}{.}\PY{n}{GetMorganFingerprintAsBitVect}\PY{p}{(}\PY{n}{m}\PY{p}{,}\PY{n}{k}\PY{p}{,}\PY{n}{nBits}\PY{o}{=}\PY{l+m+mi}{1024}\PY{p}{)} \PY{k}{for} \PY{n}{m} \PY{o+ow}{in} \PY{n}{m1s}\PY{p}{]}
+    \PY{n}{M\PYZus{}FP2s} \PY{o}{=} \PY{p}{[}\PY{n}{AllChem}\PY{o}{.}\PY{n}{GetMorganFingerprintAsBitVect}\PY{p}{(}\PY{n}{m}\PY{p}{,}\PY{n}{k}\PY{p}{,}\PY{n}{nBits}\PY{o}{=}\PY{l+m+mi}{1024}\PY{p}{)} \PY{k}{for} \PY{n}{m} \PY{o+ow}{in} \PY{n}{m2s}\PY{p}{]}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Dice Similarity of Morgan Fingerprints of a and b using r = }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{n}{DataStructs}\PY{o}{.}\PY{n}{DiceSimilarity}\PY{p}{(}\PY{n}{M\PYZus{}FP1s}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{M\PYZus{}FP1s}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Dice Similarity of Morgan Fingerprints of c and d using r = }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{k}\PY{p}{)}\PY{p}{,} \PY{n}{DataStructs}\PY{o}{.}\PY{n}{DiceSimilarity}\PY{p}{(}\PY{n}{M\PYZus{}FP2s}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{M\PYZus{}FP2s}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+    
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Dice Similarity of Morgan Fingerprints of a and b using r = 1 0.5625
+Dice Similarity of Morgan Fingerprints of c and d using r = 1
+0.20689655172413793
+Dice Similarity of Morgan Fingerprints of a and b using r = 2
+0.46153846153846156
+Dice Similarity of Morgan Fingerprints of c and d using r = 2 0.174496644295302
+Dice Similarity of Morgan Fingerprints of a and b using r = 3
+0.34285714285714286
+Dice Similarity of Morgan Fingerprints of c and d using r = 3 0.1791044776119403
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+\subsection{Kostenrechnung}
+\label{ch:a_kosten}
+
+
+\subsection{Ergebnisse}
+\label{ch:a_erg}

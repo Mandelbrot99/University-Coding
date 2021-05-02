@@ -1,0 +1,70 @@
+%laden der Präambel mit Latexbefehlen/-klassen
+\include{bericht.preambel}
+
+\begin{document}
+%globale Einstellung für Quellcodedarstellung mit listings
+\lstset{basicstyle=\scriptsize\ttfamily,language={[LaTeX]TeX}}
+
+%Seitennummerierung arabisch
+\pagenumbering{arabic}
+
+%Kopf- und Fusszeilen
+
+\automark[subsection]{section}
+\pagestyle{scrheadings}
+
+\clearscrheadfoot
+%\ohead{  \ifstr{\rightbotmark}{\leftmark}{}{\rightbotmark}}
+\ihead{Candidate Number: }
+\rohead*{\leftmark}
+\makeatletter
+%\ihead{Candidate Number: }
+%\ohead{Abschlussbericht}
+%\ifoot{Gruppe 1 -- Biogas}
+\setlength{\footskip}{50pt}
+\cfoot{- \pagemark \ -}
+%\ofoot{\today}
+
+%Titel
+\input{00_titelei}
+
+%Beginn der Kapitel
+\input{01_introduction}
+	
+%\input{02_histor}
+
+%weitere Kapitel hier einfügen
+%\input{03_neues_kapitel}
+
+%Literatur
+\newpage
+\addcontentsline{toc}{section}{References}
+\printbibliography[heading=bibintoc]
+
+%Bildnachweise
+%Kann auskommentiert werden, wenn keine Übernahme von Abbildungen erfolgt ist.
+%\clearpage
+%\input{97_bildnachweis}
+
+%%Abkürzungs- und Symbolverzeichnis
+%\clearpage
+%\input{98_symbole_abk}
+
+%Abbildungsverzeichnis
+\clearpage
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+
+%Tabellenverzeichnis
+\clearpage
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+
+%Anhang
+%Ausführliche Datentabellen, umfangreiche Fließbilder und lange Berechnungen können in den Anhang
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\clearpage
+\appendix
+\input{99_anhang}
+
+\end{document}

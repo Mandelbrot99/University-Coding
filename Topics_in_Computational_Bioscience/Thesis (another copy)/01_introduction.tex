@@ -1,87 +1,25 @@
 \section{Introduction}
-\subsection{Motivation}
 From 2010 to 2020 the amount of data that was processed rose from 1.2 trillion gigabytes to 59 trillion gigabytes - an increase by 5,000\% \citep{data}. This exponential growth has evoked a high demand to leverage these amounts of data to promote scientific discoveries. In particular, it motivated the use of machine learning across all disciplines. Machine learning (ML) refers to a field of study that gives computers the ability to learn without being explicitly programmed. The benefits of this approach are immediate, since it allows computational systems to automatically process and reason about the enormous amounts of data, exceeding task-specific human capabilities considerably. 
 Most recently, deep learning (DL) has emerged as a sub-discipline of machine learning denoting the use of multiple hidden layers in a network. Deep learning models can achieve even better accuracy than standard machine learning architectures given the availability of a substantially greater amount of data.
 
-A field that has seen a particularly high interest in employing machine and deep learning technologies is drug discovery. Discovery and development of a new drug can take 12-15 years to end up with one approved drug requiring costs of more than \$1.3B. Only 2 out of 10 approved and marketed drugs can recover these costs \cite{hecht}. These figures put a great emphasis of making this process less resource-intensive promoting the use of machine learning. One of the main applications of ML for drug discovery lies in early stages that are concerned with target and hit identification as well as lead optimization. Here, ML is used in  quantitative structure-activity relationships (QSAR) and quantitative structure-property relationships (QSPR) models to predict properties and activities of potential drug candidates. For instance, after finding a hit compound researchers would like to understand how its chemical structure can be optimised in order to improve properties like binding affinity, biological responses or physiochemical properties \citep{LO20181538}. 
+A great potential of these developments in drug discovery lies within early stages to predict structure-activity relationships (SARs) and structure-property relationships (SPRs). These are grounded on the fundamental assumption that structurally similar molecules have similar activities/properties. For instance, after finding a hit compound in a drug screening campaign researchers would like to understand how its chemical structure can be optimised in order to improve properties like binding affinity, biological responses or physiochemical properties \citep{LO20181538}. Classically, this problem could only be solved through resource-intensive \emph{in vitro} screeening and \emph{in vivo} testing. Early quantitative structure-activity/property relationships (QSAR) models \citep{hansch}, that attempted to solve this problem \emph{in silico}, were limited by a lack of experimental data and the linearity assumption made for modeling \citep{LO20181538}.
+The introduction of high-throughput screening (HTS) and combinatorial synthesis resulted in a rapid explosion of the availability of data screening 100,000s or more samples per day for a desired biological activity. Ultimately, this led to the development of large databases containing the profiles of millions of chemical substances. How to effectively use these amounts of data for machine and deep learning methods has become a crucial challenge for drug discovery.
 
-In abstract terms, fitting a QSAR/QSPR model amounts to finding a generally non-linear function between a class of molecules and a desired biological activity/property. ML/DL methods solve this problem by learning this function automatically. Pretty much any machine learning methods has been applied to learn this function \cite{SHEN201929} and popular examples include support vector machines \cite{supv1, supv2}, extreme gradient boosting \cite{XG1, XG2} and random forest \cite{RF1}. Since ML methods cannot operate on molecules directly a suitable mathematical representation of molecules is needed. Finding and selecting this representation is referred to as featurisation. It has been noted that the performance of the predictor can highly depend on the choices made in the featurisation step. Therefore, great emphasis has been put on developing methods for featurisation that maximise the performance of the predictor. 
-
+In abstract terms, fitting a QSAR/QSPR model amounts to finding a generally non-linear function between a class of molecules and a desired biological activity/property. ML/DL methods solve this problem by learning this function automatically. Pretty much any machine learning methods has been applied in this second step \cite{SHEN201929} and popular examples include support vector machines \cite{supv1, supv2}, extreme gradient boosting \cite{XG1, XG2} and random forest \cite{RF1}. However, the performance of these methods crucially depends on the used mathematical representation of molecules, since it needs to describe the attributes of the molecules necessary to predict the activity/property of concern. Two approaches to design these `features' have been introduced. On the one hand, fixed representations, like descriptors and fingerprints, map a molecule to a predefined vector space that contains the numerical values of some selected properties of a molecule. The drawback of this approach is that expert knowledge is necessary in order to make a meaningful selection of properties that are useful for learning the relationship to the target activity/property. Furthermore, this selection is inherently biased by the domain knowledge \citep{merkwirth}. The other, recently emerged, class of representations is given by learned representations. Instead of manually employing a mapping to a fixed space, Recurrent Neural Networks (RNNs) and Graph Neural Networks (GNNs) can be used to learn the space itself such that is contains the most suitable properties for predicting the target values.  The typical workflow of designing features and predicting an activity/property is summarised in figure \ref{fig:mpp_workflow}.
 \begin{figure}[h]
 	\centering 
 	\includegraphics[width=0.6\textwidth]{MPP_workflow.png}
-	\caption{Illustration of the QSAR/QSPR workflow using ML/DL. Reprinted from \cite{yangMPP}. }
+	\caption{Illustration of the QSAR/SQPR workflow using ML/DL. Reprinted from \cite{yangMPP}. }
 	\label{fig:mpp_workflow}
 \end{figure}
-Recently, Graph Neural Networks emerged to present a fresh solution ot this problem \citep{duvenaud2015convolutional, li2019deepchemstable, STOKES2020688}. Until then, the reigning paradigm was to map molecules to a numerical vector in a fixed, pre-defined space that represent some properties of the molecule relevant to the prediction task. A drawback of this approach is that it requires expert knowledge to choose these properties and is the result of the prediction is ultimately biased by this knowledge \citep{merkwirth}. Graph Neural Networks solve this problem by automatising the selection process and learning the space itself to find the most suitable representation for a specific task. Figure \ref{fig:mpp_workflow} shows the branching between fixed and learned representations in a property prediction workflow. The potential of employing Graph Neural Networks in drug discovery was shortly highlighted by the discovery of a new broad-spectrum bactericidal antibiotic `halicin' after decades of stagnation in the field. They employed a directed-message passing neural network \cite{yangMPP} for both target selection to predict growth inhibitory effects against E. Coli. and ADME/T modelling predicting the toxicity of potential candidates.% This finding underlines both the potential of learned representations to lead to meaningful discoveries as well as their versatility to be employed at various stages of an early-stage drug discovery workflow. 
 
-\subsection{Outline}
-The goal of this thesis is to give an overview of Graph Neural Networks in the context of learning the input representation of molecules for machine learning prediction tasks in drug discovery. We present their technical background together with an analysis of the results that have been obtained using them. The outline for the thesis is as follows:
-Firstly, we give brief overview of other techniques that have been used for featurisation. Most prominently, these concern molecular descriptors and fingerprints. Consecutively, the technical background to understand Graph Neural Networks is presented. This involves a detailed explanation of circular fingerprints motivating the introduction of Graph Neural Networks, a summary of molecular graphs building the basis for employing Graph Neural Networks and ultimately an introduction to Message-Passing Neural Networks. These have been introduce as a general technical framework summarising some of the most prominent implementations of Graph Neural Networks for drug discovery. In the next section we depict the application of Graph Neural Networks in drug discovery by explaining two studies in detail. Finally, we discuss the advantages and disadvantages of GNNs and give and outlook for future research. 
+There are numerous examples highlighting the potential of learned representations \citep{duvenaud2015convolutional, li2019deepchemstable, honda}. Most prominently, \cite{STOKES2020688} achieved a breakthrough in antibiotic discovery when they discovered a new broad-spectrum bactericidal antibiotic `halicin' after decades of stagnation in the field. They employed a directed-message passing neural network \cite{yangMPP} at two stages of their work. Firstly, this graph neural network was used to predict growth inhibitory effects against E. Coli. Later, another D-MPNN was used to predict the toxicity of potential candidates. This finding underlines both the potential of learned representations to lead to meaningful discoveries as well as their versatility to be employed at various stages of an early-stage drug discovery workflow. 
 
-
-%Two approaches to design these `features' have been introduced. On the one hand, fixed representations, like descriptors and fingerprints, map a molecule to a predefined vector space that contains the numerical values of some selected properties of a molecule. The drawback of this approach is that expert knowledge is necessary in order to make a meaningful selection of properties that are useful for learning the relationship to the target activity/property. Furthermore, this selection is inherently biased by the domain knowledge \citep{merkwirth}. The other, recently emerged, class of representations is given by learned representations. Instead of manually employing a mapping to a fixed space, Recurrent Neural Networks (RNNs) and Graph Neural Networks (GNNs) can be used to learn the space itself such that is contains the most suitable properties for predicting the target values.  The typical workflow of designing features and predicting an activity/property is summarised in figure \ref{fig:mpp_workflow}.
+The goal of this thesis is to present both fixed and learned molecular representations to understand the advantages and drawbacks of either approach. In the following two sections these are introduced, accompanied by technical background information where needed. Consecutively, we exemplify the application of a learned representation using the paper of \cite{STOKES2020688}. Finally, we discuss both approaches in terms of interpretability, computational costs and accuracy.  
 
 
 
-%A great potential of these developments in drug discovery lies within early stages to predict structure-activity relationships (SARs) and structure-property relationships (SPRs). These are grounded on the fundamental assumption that structurally similar molecules have similar activities/properties. For instance, after finding a hit compound in a drug screening campaign researchers would like to understand how its chemical structure can be optimised in order to improve properties like binding affinity, biological responses or physiochemical properties \citep{LO20181538}. Classically, this problem could only be solved through resource-intensive \emph{in vitro} screeening and \emph{in vivo} testing. Early quantitative structure-activity/property relationships (QSAR) models \citep{hansch}, that attempted to solve this problem \emph{in silico}, were limited by a lack of experimental data and the linearity assumption made for modeling \citep{LO20181538}.
-%The introduction of high-throughput screening (HTS) and combinatorial synthesis resulted in a rapid explosion of the availability of data screening 100,000s or more samples per day for a desired biological activity. Ultimately, this led to the development of large databases containing the profiles of millions of chemical substances. How to effectively use these amounts of data for machine and deep learning methods has become a crucial challenge for drug discovery.
-
-
-%There are numerous examples highlighting the potential of learned representations \citep{duvenaud2015convolutional, li2019deepchemstable, honda}. Most prominently, \cite{STOKES2020688} achieved a breakthrough in antibiotic discovery when they discovered a new broad-spectrum bactericidal antibiotic `halicin' after decades of stagnation in the field. They employed a directed-message passing neural network \cite{yangMPP} at two stages of their work. Firstly, this graph neural network was used to predict growth inhibitory effects against E. Coli. Later, another D-MPNN was used to predict the toxicity of potential candidates. This finding underlines both the potential of learned representations to lead to meaningful discoveries as well as their versatility to be employed at various stages of an early-stage drug discovery workflow. 
-\subsection{Overview of methods for featurization}
-A variety of methods have been used to design the input features for machine learning prediction tasks in drug discovery. Most of them fall into the category of fixed representations characterised a pre-defined target space. These fixed representations can be broadly separated into molecular descriptors and fingerprints. 
-\label{sec:fixed_rep}
-%Mapping molecules to a fixed representation is the classical form of generating a machine-interpretable input for QSAR/QSPR models. As the name suggests these are characterised by a fixed target space that contains a pre-selected choice of local or global information about the molecule.  Fixed representations can be broadly separated into two categories: Molecular descriptors and fingerprints. Descriptors are generally characterised by a more holistic representation of the molecule. Fingerprints, on the other hand, are local in nature by aggregating information of subgroups of atoms in a molecule.
-
-\subsubsection*{Descriptors.}
-As the name suggests, (numerical) descriptors represent molecules by describing their properties. According to \cite{todeschini2008handbook} `the molecular descriptor is the final result of a logical and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into a useful number or the result of some standardized experiment'. As this definition suggests descriptors can be given by all kinds of properties that represent chemical information about the molecule. This makes them a straightforward, yet versatile means to encode a molecule mathematically. Critically, these properties need to be `useful'. Some basic requirements for the usefulness of a descriptor are outlined by \cite{Mauri2016} concerning for example
-\begin{enumerate}
-	\item invariance to node reorderings,
-	\item invariance to rotations and translations of the molecule,
-	\item definition by an umabiguous algorithm,
-	\item well-defined applicability to molecular structures.
-\end{enumerate}
-However, these ultimately depend on the application domain \citep{jiang}. This highlights a drawback of the descriptor approach since their usefulness as molecular representations for property prediction is constrained by the problem-specific knowledge \citep{SHEN201929}. 
-
-Due to the enormous amount of different descriptors that have been proposed there are a lot of ways to categorise them. One attempt is based on the nature of the structural information that they require \citep{descript}: Constitutional, topological, geometric and quantum mechanical descriptors. Constitutional descriptors are the most rudimentary form of descriptors not taking into account any spatial information about the molecule. Quantum mechanical descriptors are the most complex descriptors and their high time complexity to compute can make them unsuitable for large-scale screenings. 
-
-Popular examples of descriptors for QSAR models include \begin{itemize}
-	\item the Wiener index \citep{wiener1947structural, nikolic2001wiener}
-	\item the coulomb matrix \citep{coulumb} or
-	\item symmetry functions \citep{symfunc}.
-\end{itemize}
-
-%The expectations for the usefulness of a descriptor vary a lot depending on the application domain but according to \cite{Mauri2016} these typically include
-
-%These desiderata are supposed to guarantee that the descriptor always gives the same representations for molecules that are considered the same and is generally applicable to all molecules. Beyond that, common extra requirements concern the inclusion of structural information (according to the fundamental principle of chemistry that different structures possess differeny properties), certain discriminative abilities and degeneracy/continuity, i.e. small structural differences result in small but existing differences in the value of the descriptor. 
-
-%The variety of different descriptors that have been used for QSAR analysis is enormous and depends highly on the considered application.
-%Any attempt to group descriptors into different categories would be quite arbitrary given the sheer amount of different application domains and descriptors. However, \cite{descript} propose an grouping based on the nature of the structural information that they require: 
-
-
-\begin{comment}
-
-Constitutional descriptors are the most rudimentary form of descriptors as they do not take into account any spatial information about the molecule but just its basic structural properties. Examples include basic attributes like the molecular weight the number of atoms but also more complex ones such as the sum of atomic van der Waals volumes. 
-
-Topological descriptors are based on the connectivity of the atoms in a molecule and encode 2D structural properties using graph invariants of the underlying molecular graphs, i.e. properties that only depend on the abstract mathematical object and not on a particular labeling or ordering of the vertices. Such invariants include the Wiener index \cite{wiener1947structural, nikolic2001wiener} $W = \frac{1}{2} \sum_{i,j}^ N d_{ij}$, where $N$ is the number of non-hydrogen atoms and $d_{ij}$ is the edge count of the shortest part between atoms $i$ and $j$. A drawback of topological descriptors compared with constitutional descriptors is that they often tend to be less interpretable due to the abstract nature of the underlying graph. 
-
-Geometric descriptors receive 3D information about the molecule as their input which may be resourceful to obtain from crystallographic data or molecular optimization \cite{Mauri2016}. However, they may also come with more information compared to descriptors that receive lower dimensional inputs. Therefore, they are usually employed in domains when this additional information is critical such as when two conformations are compared (TODO rewrite). An example of a geometric descriptor is given by the 3D Wiener Index which extends the 2D case by weighing the edges by their actual length or the gravitation index \cite{katritzky1996correlation}.
-
-Finally, quantum mechanical descriptors are based on quantum mechanical calculations. For instance, they have been used to predict toxicity of molecules in QSAR studies \citep{REENU201589, senior2011qstr}. However, their tendency to require high computational costs impediment their application ot large scale virtual screenings.
-
-Note that these categories are a non-exhaustive classification of descriptors and many others exist such as auto-correlation descriptors \citep{broto1984molecular} (TODO one more?). We conclude that descriptors are a popular method to represent molecules as they are a flexible means to encode the properties that are relevant to the particular application domain. However, this comes also with a downside as the performance of the application may heavily depend on the choice of descriptors and this selection is by no means a trivial task.
-\end{comment}
-\subsubsection*{Fingerprint Vectors.}
-Descriptors are often derived from performing mathematical computations on the underlying structure and give a holistic representation of the substances considered. Fingerprint vectors on the other hand are given as bit vectors that indicate the presence or absence of a local property and are thus local in nature. Two classes of fingerprints can be distinguished \citep{SHEN201929}: Dictionary-based and hash-based fingerprints. Dictionary-based fingerprints such as Molecular ACCess System (MACCS) are computed by encoding each position of the vector as the presence or absence of structural property from a pre-defined dictionary. However, these can be very sparse if arbitrarily large vectors are used leading to an inefficient representation. To overcome this sparsity hash-based fingerprints have been introduced that employ a hashing algorithm to combine the different substructures into a unique bit-vector. These substructures can be enumerated linearly by iterating over all edges in a molecular graph \citep{daylight} or in a circular manner as for extended connectivity fingerprints (ECFPs). 
-
-ECFPs \citep{ECFP} are among the most popular fingerprints and they are often used as baseline results for the development of new featurizations techniques \citep{li2017learning, wu2018moleculenet, STOKES2020688}. Furthermore, they motivated the introduction of Graph Neural Networks that adapt their aggregation process to become differentiable. For this reason, we depict the technical details of ECFPs in section \ref{sec:circ_finger}.
-
-Other circular fingerprints can be obtained from ECFPs by selecting different atom identifiers. This gives rise to fingerprints like FCFPs (Functional Class Fingerprints) that are based on the pharmacophore role of the atoms in a molecule (\cite{ECFP}), SCFPs \citep{SCFP} or LCFPs \citep{LCFP}. The choice of the identifier is ultimately responsible for the discriminative abilities of the fingerprint. So expert knowledge is needed to make a meaningful decision.
-
-Similarly to numerical descriptors, fingerprints are also a powerful mean to represent molecules in form of a fixed-size vector. They differ from descriptors by implicitly encoding the molecular structure. However, they suffer from a similar drawback as their usefulness for QSAR models is dependent on the choice of the atom identifier.
-
-\subsubsection*{Others.} Sequence modeling RNNs
+The advancements of these methods are further motivated by the enormous costs time and costs connected to drug development. Discovery and development of a new drug can take 5000-10000 compounds to screen and 12-15 years to end up with one approved drug requiring costs of more than \$1.3B. Only 2 out of 10 approved and marketed drugs can recover these costs \cite{hecht}.`
 
  \begin{comment}
 
@@ -118,20 +56,45 @@ Nowadays, the use of molecular representations has branched. On the one hand, at
  the reigning paradigm in molecular representations is given by fingerprint vectors, first introduced in , and descriptors. These methods have been experiencing particular popularity, because these representation can easily be used as the input for machine learning techniques for property prediction. However, this paradigm slowly begins to be challenged by newly emerging deep learning techniques such as Graph Neural Networks.
 Rather than assigning molecules a fixed representation, these techniques aim to learn  that works.a flexible representation depending on the properties of interests of the molecules. This new approach seems equally innovative as crazy (TODO different word) and we will discuss the prospects of this in the following. 
 \end{comment}
-\section{Technical Background}
-\subsection{Extended-Connectivity Fingerprints}
-\label{sec:circ_finger}
-%Circular fingerprints are among the most widely used fingerprints for QSAR models and inspired the development of GNNs. 
-%Since most of the recent studies that explore fixed and learned representations for drug discovery use ECFPs for baseline results \citep{li2017learning, STOKES2020688,wu2018moleculenet}, we choose to demonstrate their technical details in the following.
+\section{Fixed Representations}
+\label{sec:fixed_rep}
+Mapping molecules to a fixed representation is the classical form of generating a machine-interpretable input for QSAR/QSPR models. As the name suggests these are characterised by a fixed target space that contains a pre-selected choice of local or global information about the molecule.  Fixed representations can be broadly separated into two categories: Molecular descriptors and fingerprints. Descriptors are generally characterised by a more holistic representation of the molecule. Fingerprints, on the other hand, are local in nature by aggregating information of subgroups of atoms in a molecule.
 
-%Extended Connectivity Fingerprints (ECFPs) were first introduced by the software Pipeline Pilot in 2000 and then described in detail by \cite{ECFP}. The origin of this representation goes back to \cite{morgan} who introduced the Morgan algorithm on which ECFPs are based. This is why they are also often referred to as Morgan fingerprints. This algorithm assigns numerical values to each atom by an iterative process that does not depend on a specific numbering of the atoms. It is depicted in Algorithm \ref{algo:morgan}.
-Extended-Connectivity fingerprints are based on a variation of the Morgan algorithm \citep{morgan} which is outlined in Algorithm \ref{algo:morgan}. Given a molecular graph, they assign each atom a unique identifier that is based on a selection of properties. Then, this information is propagated from each atom to its neighbours. Contrary to the original Morgan algorithm, this process is terminated after a pre-defined number of iterations. In the following we detail the generation of ECFPs.
+\subsection{Descriptors}
+According to \cite{todeschini2008handbook} `The molecular descriptor is the final result of a logical and mathematical procedure which transforms chemical information encoded within a symbolic representation of a molecule into an useful number or the result of some standardized experiment'. This definition highlights the purpose of a descriptor to generate a numerical representation, such as a vector of numbers, from a symbolic representation.
 
-%ECFPs adapt this algorithm by stopping the while-loop after a predefined number of steps rather than until completion and storing the intermediate values. We outline each part of the full algorithm in detail in the following paragraphs.
+The expectations for the usefulness of a descriptor vary a lot depending on the application domain but according to \cite{Mauri2016} these typically include
+\begin{enumerate}
+	\item invariance to node reorderings,
+	\item invariance to rotations and translations of the molecule,
+	\item definition by an umabiguous algorithm,
+	\item well-defined applicability to molecular structures.
+\end{enumerate}
+These desiderata are supposed to guarantee that the descriptor always gives the same representations for molecules that are considered the same and is generally applicable to all molecules. Beyond that, common extra requirements concern the inclusion of structural information (according to the fundamental principle of chemistry that different structures possess differeny properties), certain discriminative abilities and degeneracy/continuity, i.e. small structural differences result in small but existing differences in the value of the descriptor. 
 
-Firstly, every non-hydrogen atom is assigned an integer identifier that can be chosen arbitrarily as long as it is independent of the node ordering, e.g. the atom's mass or atomic number. \cite{ECFP} choose a 32 bit integer value as an identifier that results from hashing the properties used in the Daylight atomic invariants rule \citep{smiles2}. A set $A$ is created containing the initial identifiers of all the atoms. Then, for each atom we add the atom's own identifier and that of its immediate neighbouring atoms together with their bond order to an array (ordered by the atoms' identifiers and the order of the attaching bonds). These values are then hashed to get a single-integer identifier which overrides the initial identifier that the atom was assigned. This way, each atom updates its own features by incorporating those of its neighbours. The updated identifiers are added to the set $A$ if there are no two structurally equal identifiers in the set.
+The variety of different descriptors that have been used for QSAR analysis is enormous and depends highly on the considered application.
+Any attempt to group descriptors into different categories would be quite arbitrary given the sheer amount of different application domains and descriptors. However, \cite{descript} propose an grouping based on the nature of the structural information that they require: Constitutional, topological, geometric and quantum mechanical descriptors. 
 
-Two identifiers are considered structurally equal if after an equal number of iterations they encode the same substructure of the molecule. This may occur for example for the nitrogen and oxygen atoms at the top and right of the structure shown in Figure \ref{fig:iteration_ECFP}. After two iterations they both encode the same substructure consisting of the two carbon atoms, the oxygen atom and the nitrogen atom. To avoid this information redundancy only one of the corresponding hashes is added.
+.
+
+Constitutional descriptors are the most rudimentary form of descriptors as they do not take into account any spatial information about the molecule but just its basic structural properties. Examples include basic attributes like the molecular weight the number of atoms but also more complex ones such as the sum of atomic van der Waals volumes. 
+
+Topological descriptors are based on the connectivity of the atoms in a molecule and encode 2D structural properties using graph invariants of the underlying molecular graphs, i.e. properties that only depend on the abstract mathematical object and not on a particular labeling or ordering of the vertices. Such invariants include the Wiener index \cite{wiener1947structural, nikolic2001wiener} $W = \frac{1}{2} \sum_{i,j}^ N d_{ij}$, where $N$ is the number of non-hydrogen atoms and $d_{ij}$ is the edge count of the shortest part between atoms $i$ and $j$. A drawback of topological descriptors compared with constitutional descriptors is that they often tend to be less interpretable due to the abstract nature of the underlying graph. 
+
+Geometric descriptors receive 3D information about the molecule as their input which may be resourceful to obtain from crystallographic data or molecular optimization \cite{Mauri2016}. However, they may also come with more information compared to descriptors that receive lower dimensional inputs. Therefore, they are usually employed in domains when this additional information is critical such as when two conformations are compared (TODO rewrite). An example of a geometric descriptor is given by the 3D Wiener Index which extends the 2D case by weighing the edges by their actual length or the gravitation index \cite{katritzky1996correlation}.
+
+Finally, quantum mechanical descriptors are based on quantum mechanical calculations. For instance, they have been used to predict toxicity of molecules in QSAR studies \citep{REENU201589, senior2011qstr}. However, their tendency to require high computational costs impediment their application ot large scale virtual screenings.
+
+Note that these categories are a non-exhaustive classification of descriptors and many others exist such as auto-correlation descriptors \citep{broto1984molecular} (TODO one more?). We conclude that descriptors are a popular method to represent molecules as they are a flexible means to encode the properties that are relevant to the particular application domain. However, this comes also with a downside as the performance of the application may heavily depend on the choice of descriptors and this selection is by no means a trivial task.
+
+\subsection{Fingerprint Vectors}
+
+All descriptors considered so far are derived from performing mathematical computations on the underlying structure and give a holistic representation of the substances considered. Fingerprint vectors on the other hand are given as bit vectors that indicate the presence or absence of a local property and are thus local in nature. Two classes of fingerprints can be distinguished \citep{SHEN201929}: Dictionary-based and hash-based fingerprints. Dictionary-based fingerprints such as Molecular ACCess System (MACCS) are computed by encoding each position of the vector as the presence or absence of structural property from a pre-defined dictionary. However, these can be very sparse if arbitrarily large vectors are used leading to an inefficient representation. To overcome this sparsity hash-based fingerprints have been introduced that employ a hashing algorithm to combine the different substructures into a unique bit-vector. These substructures can be enumerated linearly by iterating over all edges in a molecular graph \citep{daylight} or in a circular manner as for extended connectivity fingerprints (ECFPs). 
+
+Since most of the recent studies that explore fixed and learned representations for drug discovery use ECFPs for baseline results \citep{li2017learning, STOKES2020688,wu2018moleculenet}, we choose to demonstrate their technical details in the following.
+
+Extended Connectivity Fingerprints (ECFPs) were first introduced by the software Pipeline Pilot in 2000 and then described in detail by \cite{ECFP}. The origin of this representation goes back to \cite{morgan} who introduced the Morgan algorithm on which ECFPs are based. This is why they are also often referred to as Morgan fingerprints. This algorithm assigns numerical values to each atom by an iterative process that does not depend on a specific numbering of the atoms. It is depicted in Algorithm \ref{algo:morgan}.
+
 \begin{algorithm}[t]
 	\SetAlgoLined
 	\KwData{Molecular graph}
@@ -149,8 +112,11 @@ Two identifiers are considered structurally equal if after an equal number of it
 	\caption{Morgan Algorithm TODO check with paper}
 	\label{algo:morgan}
 \end{algorithm}
+ECFPs adapt this algorithm by stopping the while-loop after a predefined number of steps rather than until completion and storing the intermediate values. We outline each part of the full algorithm in detail in the following paragraphs.
 
-The first step is repeated $n$ times using the updated identifiers of each atom as the the initial identifiers for the next step. This way, the identifier of each atom represents substructures of increasing sizes as illustrated in Figure \ref{fig:iteration_ECFP}. After the completion of the $n$ steps, numerically equal values are removed from the set $A$ and the remaining identifiers define the circular fingerprint. This final set of identifiers can be interpreted in a similar fashion as dictionary-based fingerprints. Each identifier in $A$ corresponds to a bit in a huge virtual bit string denoting the presence or absence of a particular substructural feature \citep{ecfp_bit}. This representation allows for the folding of the string into a bit vector of consistent size, e.g. 1024 bits. 
+In the first step every non-hydrogen atom is assigned an integer identifier that can be chosen arbitrarily as long as it is independent of the node ordering, e.g. the atom's mass or atomic number. \cite{ECFP} choose a 32 bit integer value as an identifier that results from hashing the properties used in the Daylight atomic invariants rule \citep{smiles2}. A set $A$ is created containing the initial identifiers of all the atoms. Then, for each atom we add the atom's own identifier and that of its immediate neighbouring atoms together with their bond order to an array (ordered by the atoms' identifiers and the order of the attaching bonds). These values are then hashed to get a single-integer identifier which overrides the initial identifier that the atom was assigned. The updated identifiers are added to the set $A$ if there are no two structurally equal identifiers in the set. Two identifiers are considered structurally equal if after an equal number of iterations they encode the same substructure of the molecule. This may occur for example for the nitrogen and oxygen atoms at the top and right of the structure shown in Figure \ref{fig:iteration_ECFP}. After two iterations they both encode the same substructure consisting of the two carbon atoms, the oxygen atom and the nitrogen atom. To avoid this information redundancy only one of the corresponding hashes is added.
+
+The first step is repeated $n$ times using the updated identifiers of each atom as the the initial identifiers for the next step. After the completion of the $n$ steps, numerically equal values are removed from the set $A$ to arrive at the final ECFP. (fixed length?)
 \begin{figure}[h]
 	\centering 
 	\includegraphics[width=0.5\textwidth]{iterative_updating.png}
@@ -158,7 +124,8 @@ The first step is repeated $n$ times using the updated identifiers of each atom 
 	\label{fig:iteration_ECFP}
 \end{figure}
 
-%We clearly see ECFP's local nature. It generates a representation of the entire molecule by using only local operations thereby implicitly encoding the molecule's structure. 
+We clearly see ECFP's local nature. It manages to generate a global representation by using only local operations thereby implicitly encoding the molecule's structure. This is opposed to molecular descriptors discussed in the previous subsection that are based on global properties.
+
 \begin{figure}[h]
 	\centering 
 	\includegraphics[width=0.5\textwidth]{test1.png}
@@ -171,34 +138,7 @@ The first step is repeated $n$ times using the updated identifiers of each atom 
 	\caption{Molecular graphs corresponding to the SMILES strings `CCC(CO)Nc1nc(NCc2ccccc2)c2ncn(C(C)C)c2n1' and `CC(C)C(CO)Nc1nc(Nc2ccc(C(=O)[O-])c(Cl)c2)c2ncn(C(C)C)c2n1" }
 	\label{fig:molsb}
 \end{figure}
-In the literature ECFP fingerprints are usually used with $n=2$ which is referred to as ECFP4 (4 being the maximum diameter of substructures considered). To understand the importance of this parameter,  we compare the predicted structural similarity of two pairs of molecules in Figure \ref{fig:molsa} and \ref{fig:molsb} for $n=1,2,3$. 
-%Furthermore, we list the similarity scores of Atom-Pair fingerprints \citep{atompairs} that are considered more suitable for representing larger molecules since they aggregate information of all pairs of atoms seperated by an arbitrary distance. 
-The results are described in Table \ref{tab:dis_metric_2Dshapes}. The source code for this experiment can be found in the Appendix \ref{ch:a_sim}. We choose a pair of smaller molecules and one of larger molecules to understand if their size has any impact on the similarity scores. As expected, the predicted similarity drops for either pair with an increasing $n$ since larger and more dissimilar substructures are taken into account. However, the drop is substantially more significant for molecules a \& b.  This may be because for the first pair the proportion of dissimilar parts is larger for greater $n$ relative to the second pair. We remark that this hyperparameter appears to play an important role for when ECFPs are used as the input features for machine learning techniques. We can interpret $n$ as a regularisation parameter that penalises structurally too dissimilar molecules to be assigned too similar properties by a machine learning algorithm.
-\begin{table}[h]
-	\centering
-	\begin{tabularx}{0.47\textwidth}{l
-			r
-			r 
-			r
-		}
-		\toprule
-		& \multicolumn{3}{c}{Morgan Fingerprints}    \\
-		\cmidrule(r){2-4} 
-		\bf{Molecules}  &  \multicolumn{1}{c}{\bf{ECFP2}}   & \multicolumn{1}{c}{\bf{ECFP4}}&  \multicolumn{1}{c}{\bf{ECFP6}}  \\
-		\midrule
-		a \& b   & 56.25\%   &  46.15\%  & 34.29\%     \\
-		
-		c \& d   & 68.66\%  &  58.71\% &  52.86\%  \\
-		
-		
-		\bottomrule
-	\end{tabularx} 
-	
-	
-	\caption{Sørensen-Dice similarity values \cite{sorensen1948method, dice1945measures} using different fingerprints for molecules in Figure \ref{fig:molsa} and Figure \ref{fig:molsb} respectively}
-	\label{tab:dis_metric_2Dshapes}
-\end{table}
-\begin{comment}
+In the literature ECFP fingerprints are usually used with $n=2$ which is referred to as ECFP4 (4 being the maximum diameter of substructures considered). To understand the importance of this parameters,  we compare the predicted structural similarity of two pairs of molecules in Figure \ref{fig:molsa} and \ref{fig:molsb} for $n=1,2,3$. Furthermore, we list the similarity scores of Atom-Pair fingerprints \citep{atompairs} that are considered more suitable for representing larger molecules since they aggregate information of all pairs of atoms seperated by an arbitrary distance. The results are described in Table \ref{tab:dis_metric_2Dshapes}. The source code for this experiment can be found in the Appendix \ref{ch:a_sim}. We choose a pair of smaller molecules and one of larger molecules to understand if their size has any impact on the similarity scores. As expected, the predicted similarity drops for either pair with an increasing $n$ since larger and more dissimilar substructures are taken into account. However, the drop is substantially more significant for molecules a \& b.  This may be because for the first pair the proportion of dissimilar parts is larger for greater $n$ relative to the second pair. We remark that this hyperparameter appears to play an important role for when ECFPs are used as the input features for machine learning techniques. We can interpret $n$ as a regularisation parameter that penalises structurally too dissimilar molecules to be assigned too similar properties by a machine learning algorithm.
 \begin{table}[h]
 	\centering
 	\begin{tabularx}{0.57\textwidth}{l
@@ -224,9 +164,30 @@ The results are described in Table \ref{tab:dis_metric_2Dshapes}. The source cod
 	\caption{Sørensen-Dice similarity values \cite{sorensen1948method, dice1945measures} using different fingerprints for molecules in Figure \ref{fig:molsa} and Figure \ref{fig:molsb} respectively}
 	\label{tab:dis_metric_2Dshapes}
 \end{table}
-\end{comment}
 
-\subsection{Molecular Graphs}
+
+Other circular fingerprints can be obtained by selecting different identifiers such as FCFPs (Functional Class Fingerprints) that is based on the pharmacophore role of the atoms in a molecule (\cite{ECFP}), SCFPs \citep{SCFP} or LCFPs \citep{LCFP}. The choice of the identifier is ultimately responsible for the discriminative abilities of the fingerprint. So expert knowledge is needed to make a meaningful decision.
+
+As with numerical descriptors fingerprints are also a powerful mean to represent molecules in form of a fixed-size array. But a similar drawback as to numerical descriptors is that the best fingerprints depend strongly on the considered data set which again is  non-trivial to find.
+
+
+
+\section{Learned Representations}
+One of the major drawbacks of using a fixed representation as inputs for ML methods in drug discovery is that the performance of the respective method is dependent on an a priori selection of features and therefore biased by expert knowledge \cite{merkwirth}. For descriptors this choice is given by the selection of properties to be represented by the descriptor. Molecular fingerprints require this selection in the form of the identifier that is used to initialise the atom's values. This manual feature design means that a significant inductive bias is imposed and the resulting method can only perform as well as the feature selection allows. An idea to remedy this problem is given by stepping away from a fixed target feature space and instead use deep learning to learn the space itself. Specifically, two kinds of model have been proposed. Graph Neural Networks operate directly on a molecular graph and extract structural information combined with the features most relevant to a property of interest.
+
+In this section we first give a technical description of the basic Graph Neural Network framework. This is accompanied by high-level explanations. Furthermore, we list the most recent extensions to this framework in the literature and briefly mention their application. 
+
+%Continuous degenerated representation due since the representation is encoded by differential mathematical operations and learned via backpropagation.
+
+There are several anticipated benefits of using a learned representation \citep{SHEN201929}:
+\begin{enumerate}
+	\item It does not result in large, sparse representations as fingerprints.
+	\item It provides a level of interpretability through \citep{duvenaud2015convolutional} (read)
+	\item Attention algorithms can be adopted to f \citep{deepchemstable, graphattentionmpp}
+	\item It could improce predictive performance on large data sets. \citep{yangMPP}
+\end{enumerate}
+\subsection{Technical Background}
+\subsubsection{Molecular Graphs}
 \label{sec:mol_graphs}
 Molecular graphs are a convenient means to represent molecules in two dimensions. Formally a graph is defined as a tuple of sets $G = (V,E)$, where $V$ are the vertices of the graph and $E$ are the edges. Any edge $e \in E$ is uniquely identified by a pair of vertices $(v_1, v_2), \, v_1, v_2 \in V$ that it connects. In a molecular graph the vertices are given by the atoms and edges represent bonds between atoms. An example of a molecular graph is given in Figure \ref{fig:mol_graph}. We also note that the number of edges, i.e. the edge \emph{multiplicity}, may differ. This corresponds to the bond order in the molecule, i.e. the difference between the number of bonds and anti-bonds between two atoms, as introduced by \cite{pauling}. 
 
@@ -308,8 +269,8 @@ In order to represent information about molecules beyond the connection of its a
 %TODO : more sources on moelcular graphs 
 While the graphical representation allows for the representation of complex 3D information of molecules, there are some drawbacks of working directly on the graph level. First, not all molecules can be represented as graphs \citep{molrep} such as those that contain bonds that cannot be explained by valence bond theory. Second, graphs are not a suitable means of depicting molecules whose arrangement of molecules change over time as this would require a reordering of the adjacency matrix every time. Finally, graphs are neither very compact nor easy to process. The adjacency matrix alone has a memory requirement quadratic in the number of atoms in the molecule and depending on the amount of atomic and bond information that is to be encoded the feature matrices might get even bigger. As opposed to this, a linear representation as a single string allows for using substantially less memory while being simultaneously easier to store and process by algorithms. Therefore, graphs are usually used as the basis of more compact representations that we are going to depict in the following subsections. 
 
-\subsection{Message Passing Neural Networks}
-\label{sec:MPNN}
+\subsubsection{Message Passing Neural Networks}
+\label{sec:GNN}
 
 Convolutional Neural Networks (cite) have achieved remarkable success at learning representations of grid-like structures such as images. The idea to generalise these frameworks to less regular structures like graphs motivated the introduction of many Graph Convolutional Neural Networks (GCNNs) as in \citep{li2015gated,duvenaud2015convolutional,Kearnes_2016, Sch_tt_2017}. An attempt to unify all these approaches in a general framework was made by \cite{GilmerSRVD17} introducing Message Passing Neural Networks (MPNNs). In the following we will outline how MPNNs work and mention how they restore the previous approaches. 
 
@@ -334,39 +295,17 @@ After $T$ time steps, any node $v$ has now received information about any node $
 The consecutive readout phase now computes a feature vector for the whole graph as given in equation \ref{eq:readout}
 
 \begin{equation}
-\hat{\vecb y} = R(\vecb h_1^T, \ldots, \vecb h_{|V|}^T) \label{eq:readout}
+	\hat{\vecb y} = R(\vecb h_1^T, \ldots, \vecb h_{|V|}^T) \label{eq:readout}
 \end{equation}
 Different choices for the functions $M_t, U_t$ and $R$ restore different Graph Neural Networks proposed in the literature. All of them have in common that they are differentiable and learned through backpropagation. Furthermore, $R$ must be permutation-invariant in order for the MPNN to be insensitive to the node ordering.
 
+\subsection{Results}
+We illustrate how MPNNs recover two former architectures of Graph Neural Networks. For more detail, we refer to \cite{GilmerSRVD17}.
 
+\subsubsection{Convolutional Neural Networks for Learning Molecular Fingerprints}
+The method presented by \cite{duvenaud2015convolutional} was one of the first to challenge the state-of-the art approach of using circular fingerprints for the prediction of molecular properties. They noticed that the mechanism used for circular fingerprints, i.e. applying the same operation locally everywhere, was analogous to that of convolutional neural networks. This motivated the idea of creating a differentiable fingerprint that could be learned through backpropagation. To implement this, they went ahead to replace every non-differentiable operation of circular fingerprints by a differentiable analog.
 
-
-\section{Results}
-One of the major drawbacks of using a fixed representation as inputs for ML methods in drug discovery is that the performance of the respective method is dependent on an a priori selection of features and therefore biased by expert knowledge \cite{merkwirth}. For descriptors this choice is given by the selection of properties to be represented by the descriptor. Molecular fingerprints require this selection in the form of the identifier that is used to initialise the atom's values. This manual feature design means that a significant inductive bias is imposed and the resulting method can only perform as well as the feature selection allows. An idea to remedy this problem is given by stepping away from a fixed target feature space and instead use deep learning to learn the space itself. Specifically, Graph Neural Networks operate directly on a molecular graph and extract structural information combined with the features most relevant to a property of interest.
-
-In this section we present two applications of GNNs to drug discovery that highlight their potential as state-of-the-art featurization techniques. Anticipated benefits were listed by \citep{SHEN201929} and comprise:
-\begin{enumerate}
-	\item a compact final representation of the molecule, 
-	\item enhanced interpretability, 
-	\item the possibility to use attention algorithms that allow the model to focus on the most relevant parts of the molecule \citep{deepchemstable, graphattentionmpp}
-	\item an improvement in predictive performance given large enough data sets \citep{yangMPP}.
-\end{enumerate}
-We will review these factors in the next section to understand and discuss their validity based on the presented applications in this section.
-
-\subsection{GNNs for the prediction of ADME/T properties}
-\subsubsection*{Setup}
-The method presented by \cite{duvenaud2015convolutional} was one of the first to challenge the state-of-the art approach of using circular fingerprints for the prediction of molecular properties. They noticed that the mechanism used for circular fingerprints, i.e. applying the same operation locally everywhere, was analogous to that of convolutional neural networks. This motivated the idea of creating a differentiable fingerprint that could be learned through backpropagation. To implement this, they went ahead to replace every non-differentiable operation of circular fingerprints by a differentiable analog. These adaptations are illustrated by a comparison of both algorithms in Figure \ref{fig:algos}.
-
-\begin{figure}[h]
-	\centering 
-	\includegraphics[width=\textwidth]{algos.png}
-	\caption{Comparison of the algorithm that generated circular fingerprints  with that for generating neural graph fingerprints. Note that the left algorithm uses the interpretation of the atom's hashed identifiers as indices of bits in an array as explained in section \ref{sec:circ_finger}. Reprinted from \cite{duvenaud2015convolutional}. }
-	\label{fig:algos}
-\end{figure}
-
-This method for generating neural graph fingerprints is summarised by the message-passing framework presented in section \ref{sec:MPNN} using the following message- and readout functions:
-
-The message function $M_t$ is the same across all time steps and given by
+\cite{duvenaud2015convolutional}. Here, the message function $M_t$ is the same across all time steps and given by
 \begin{align*}
 M(\vecb h_v, \vecb h_w, \vecb e_{vw}) &= (\vecb h_w, \vecb e_{vw}), 
 \intertext{where $(\cdot, \cdot)$ denotes concatentation. The update and readout functions are given by}
@@ -375,14 +314,6 @@ U_t(\vecb h_v^t, \vecb m_v^{t+1}) & = \sigma(\vecb H_t^{\text{deg}(v)} \vecb m_v
  R(\vecb h_1^T, \ldots, \vecb h_{|V|}^T) &= f\left(\sum_{v,t} \text{softmax}(\vecb W_t \vecb h_v^t)\right)
 \end{align*}
 with learnable matrices $\vecb W_t$ for all time steps $t$ and a neural network $f$. 
-
-\subsubsection*{Experiments} 
-\cite{duvenaud2015convolutional} applied their proposed architecture to predict the following properties of molecules:
-\begin{itemize}
-	\item Aqueous solubility as in \citep{delaney2004esol},
-	\item efficacy as a drug against a parasite that causes malaria as measured by \cite{gamo2010thousands},
-	\item Photovoltaic efficiency as in \citep{hachmann2011harvard}.
-\end{itemize}
 \begin{comment}
 \subsubsection{Deep Tensor Neural Networks}
 This archtiecture refers to the one porposed by \cite{Sch_tt_2017}. Here, the message function at time $t$ is given by 
@@ -394,9 +325,8 @@ U_t(\vecb h_v^t, \vecb m_v^{t+1}) & = \vecb h_v^t \ \vecb m_v^{t+1}
 R(\vecb h_1^T, \ldots, \vecb h_{|V|}^T) &=\sum_v \text{NN}(\vecb h_v^t)
 \end{align*}
 \end{comment}
-%\subsection{Directed MPP ? \cite{yangMPP}}
-\begin{comment}
-\subsection{Graph Convolutional Neural Networks}
+\subsection{Directed MPP ? \cite{yangMPP}}
+\subsubsection{Graph Convolutional Neural Networks}
 \label{sec:GCN}
 These belong to the most popular classes of Graph Neural Networks and was proposed by \citep{gcn}. A detailed derivation of the message and update functions can be found on \cite{GilmerSRVD17}. The resulting functions are given by:
 
@@ -417,14 +347,14 @@ The attention score weighes the information from neighbours according to how imp
 The most recent state of the art Graph Neural Network architecture was propsed by \cite{attentivefp}. It proceeds similarly to GANs by stacking multiple attention layers together with Gated Recurrent Units (GRUs) to update the nodes' hidden states recursively and allow an atom to focus on its most important neighbors. To generate the final graph embedding, Attentive FP treats the whole molecule as a virtual node that connects to all its atoms. Then, it employs the same architecture as for the individual atoms to learn the molecule's final representation. 
 These 
 GCN, GAN, Attentive FP?
-\end{comment}
-
-%\subsection{Sequence modeling}
-%SMILES RNNs, LSTMs? \cite{honda}
-\subsection{GNNs for antibiotic discovery}
 
 
-As an example for a full MPP workflow, we choose \cite{STOKES2020688} who used a Graph Neural Network to predict the growth of E. Coli. Their approach can be divided into three stages. The fist stage concerns the training of the model and a classifier according to Figure \ref{fig:mpp_workflow}. The molecular representation was built using a directed-message passing neural network \cite{yangMPP} and can therefore be classified as a learned representation. Similarly to ECFP fingerprints, (D-)MPNNs can struggle to represent global features of molecules, especially if the number of message passing iterations is greater than the longest path in the molecule as discussed in section \ref{sec:MPNN}. Therefore, the final representation generated by the D-MPNN was augmented with 300 additional molecule-level features. This combined representation was then input in a feed-forward neural network that outputs a number between 0 and 1 as the prediction of the molecule showing growth inhibitory against E. Coli. This whole architecture is trained in an end-to-end fashion such that the D-MPNN can generate a representation that is highly attuned to the desired property.
+\subsection{Sequence modeling}
+SMILES RNNs, LSTMs? \cite{honda}
+\section{Case study}
+
+
+As an example for a full MPP workflow, we choose \cite{STOKES2020688} who used a Graph Neural Network to predict the growth of E. Coli. Their approach can be divided into three stages. The fist stage concerns the training of the model and a classifier according to Figure \ref{fig:mpp_workflow}. The molecular representation was built using a directed-message passing neural network \cite{yangMPP} and can therefore be classified as a learned representation. Similarly to ECFP fingerprints, (D-)MPNNs can struggle to represent global features of molecules, especially if the number of message passing iterations is greater than the longest path in the molecule as discussed in section \ref{sec:GNN}. Therefore, the final representation generated by the D-MPNN was augmented with 300 additional molecule-level features. This combined representation was then input in a feed-forward neural network that outputs a number between 0 and 1 as the prediction of the molecule showing growth inhibitory against E. Coli. This whole architecture is trained in an end-to-end fashion such that the D-MPNN can generate a representation that is highly attuned to the desired property.
 The training of this architecture was performed using a set of 2335 molecules that had been classified as hit or non-hit using 80 \% growth inhibition against E. coli BW251113 \cite{ZAMPIERI20171214} as a hit cut-off. On the test data this model achieved an AUC-ROC score of 0.896.
 
 In the secong stage, 20 folds of the trained model using different weight initialisations were applied to 6,111 molecules from the Drug Repurposing Hub \citep{corsello} to predict their probability of growth inhibition against E. Coli. The 20 different results were averaged to arrive at the final prediction scores. 
@@ -434,6 +364,10 @@ Finally, the best scoring 99 molecules were empirically tested for growth inhibi
 This case study shows the versatility and potential of using Graph Neural Network for property prediction in early drug discovery. They could be employed for both prediction of growth inhibitory effects as well as toxicity and resulted in the finding of a new antibiotic after years of stagnation in this field. \cite{STOKES2020688} also reported the prediction scores using Morgan fingerprints and various classifier and the rank of the newly discovered antibiotic halicin was lower in all of them ranging between 773-2644 compared to 69 for the D-MPNN approach. Therefore, it could be argued that halcin would not have been found if molecular fingerprints had been used. However, between there is still some correlation among the top scoring molecules. For instance, both the D-MPNN and Morgan fingerprints predict the same highest ranking molecule and the fourth place for D-MPNN is in second place for Morgan fingerprints. The question that remains to be answered is if this is just a correlation of numerical values and halicin being ranked much higher for learned representations is just a fortunate coincidence or if the predictions of GNNs actually carry more physical relevance.
 
 Despite this breakthrough using the GNN approach, \cite{STOKES2020688} still emphasise the importance of a combination of \emph{in silico} and empirical investigations. 
+
+
+ADMET study, other properties?
+\subsection{De novo design}
 
 \section{Discussion}
 Artificial intelligence and machine learning are currently one of the most rapidly evolving research areas and the progress in these fields has direct impacts on  a great variety of disciplines. In particular, we have hinted at ther potential to revolutionise the entire field of drug discovery coming with significant reductions in time and resources (TODO where? maybe time span to see how little time). Most recently, a variety of Graph Neural Networks has been introduced as a way to automatize the feature selection for molecular property prediction. Instead of relying on expert knowledge to select the most relevant attributes to be used for a computer-interpretable interpretation, which has been shown to heavily impact the performance of the property prediction \citep{tian}, Graph Neural Network manage to learn a continuous vector representation that is highly attuned to the property of concern. 

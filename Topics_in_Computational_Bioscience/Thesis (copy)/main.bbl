@@ -1,4 +1,4 @@
-\begin{thebibliography}{52}
+\begin{thebibliography}{58}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -16,20 +16,31 @@ Daylight chemical information systems.
   2021.
 \newblock Retrieved: May 1, 2021.
 
-\bibitem[ecf(2021)]{ecfp_bit}
-Extended connectivity fingerprint ecfp.
-\newblock \url
-  https://docs.chemaxon.com/display/docs/extended-connectivity-fingerprint-ecfp.md,
-  2021.
-\newblock Retrieved: May 2, 2021.
+\bibitem[Awale \& Reymond(2019)Awale and Reymond]{awaleecfp4}
+Mahendra Awale and Jean-Louis Reymond.
+\newblock Polypharmacology browser ppb2: Target prediction combining nearest
+  neighbors with machine learning.
+\newblock \emph{Journal of Chemical Information and Modeling}, 59\penalty0
+  (1):\penalty0 10--17, 2019.
+\newblock \doi{10.1021/acs.jcim.8b00524}.
+\newblock URL \url{https://doi.org/10.1021/acs.jcim.8b00524}.
 
-\bibitem[Behler \& Parrinello(2007)Behler and Parrinello]{symfunc}
-J\"org Behler and Michele Parrinello.
-\newblock Generalized neural-network representation of high-dimensional
-  potential-energy surfaces.
-\newblock \emph{Phys. Rev. Lett.}, 98:\penalty0 146401, Apr 2007.
-\newblock \doi{10.1103/PhysRevLett.98.146401}.
-\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevLett.98.146401}.
+\bibitem[Broto et~al.(1984)Broto, Moreau, and Vandycke]{broto1984molecular}
+P~Broto, G~Moreau, and C~Vandycke.
+\newblock Molecular structures: perception, autocorrelation descriptor and sar
+  studies: system of atomic contributions for the calculation of the
+  n-octanol/water partition coefficients.
+\newblock \emph{European journal of medicinal chemistry}, 19\penalty0
+  (1):\penalty0 71--78, 1984.
+
+\bibitem[Carhart et~al.(1985)Carhart, Smith, and Venkataraghavan]{atompairs}
+Raymond~E. Carhart, Dennis~H. Smith, and R.~Venkataraghavan.
+\newblock Atom pairs as molecular features in structure-activity studies:
+  definition and applications.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  25\penalty0 (2):\penalty0 64--73, 1985.
+\newblock \doi{10.1021/ci00046a002}.
+\newblock URL \url{https://doi.org/10.1021/ci00046a002}.
 
 \bibitem[Clark et~al.(1989)Clark, Cramer~III, and Van~Opdenbosch]{SCFP}
 Matthew Clark, Richard~D. Cramer~III, and Nicole Van~Opdenbosch.
@@ -59,13 +70,6 @@ Laurianne David, Amol Thakkar, Rocío Mercado, and Ola Engkvist.
 \newblock \emph{Journal of Cheminformatics}, 12, 09 2020.
 \newblock \doi{10.1186/s13321-020-00460-5}.
 
-\bibitem[Delaney(2004)]{delaney2004esol}
-John~S Delaney.
-\newblock Esol: estimating aqueous solubility directly from molecular
-  structure.
-\newblock \emph{Journal of chemical information and computer sciences},
-  44\penalty0 (3):\penalty0 1000--1005, 2004.
-
 \bibitem[Dice(1945)]{dice1945measures}
 Lee~R Dice.
 \newblock Measures of the amount of ecologic association between species.
@@ -78,15 +82,6 @@ David Duvenaud, Dougal Maclaurin, Jorge Aguilera-Iparraguirre, Rafael
   Gómez-Bombarelli, Timothy Hirzel, Alán Aspuru-Guzik, and Ryan~P. Adams.
 \newblock Convolutional networks on graphs for learning molecular fingerprints,
   2015.
-
-\bibitem[Gamo et~al.(2010)Gamo, Sanz, Vidal, De~Cozar, Alvarez, Lavandera,
-  Vanderwall, Green, Kumar, Hasan, et~al.]{gamo2010thousands}
-Francisco-Javier Gamo, Laura~M Sanz, Jaume Vidal, Cristina De~Cozar, Emilio
-  Alvarez, Jose-Luis Lavandera, Dana~E Vanderwall, Darren~VS Green, Vinod
-  Kumar, Samiul Hasan, et~al.
-\newblock Thousands of chemical starting points for antimalarial lead
-  identification.
-\newblock \emph{Nature}, 465\penalty0 (7296):\penalty0 305--310, 2010.
 
 \bibitem[Ghose et~al.(1998)Ghose, Viswanadhan, and Wendoloski]{LCFP}
 Arup~K Ghose, Vellarkad~N Viswanadhan, and John~J Wendoloski.
@@ -103,6 +98,14 @@ Justin Gilmer, Samuel~S. Schoenholz, Patrick~F. Riley, Oriol Vinyals, and
 \newblock \emph{CoRR}, abs/1704.01212, 2017.
 \newblock URL \url{http://arxiv.org/abs/1704.01212}.
 
+\bibitem[Glen et~al.(2006)Glen, Bender, Arnby, Carlsson, Boyer, and
+  Smith]{glen2006circular}
+Robert~C Glen, Andreas Bender, Catrin~H Arnby, Lars Carlsson, Scott Boyer, and
+  James Smith.
+\newblock Circular fingerprints: flexible molecular descriptors with
+  applications from physical chemistry to adme.
+\newblock \emph{IDrugs}, 9\penalty0 (3):\penalty0 199, 2006.
+
 \bibitem[Guha \& Willighagen(2013)Guha and Willighagen]{descript}
 Rajarshi Guha and Egon Willighagen.
 \newblock A survey of quantitative descriptions of molecular structure.
@@ -110,23 +113,19 @@ Rajarshi Guha and Egon Willighagen.
   1946--1956, 01 2013.
 \newblock \doi{10.2174/1568026611212180002}.
 
-\bibitem[Hachmann et~al.(2011)Hachmann, Olivares-Amaya, Atahan-Evrenk,
-  Amador-Bedolla, S{\'a}nchez-Carrera, Gold-Parker, Vogt, Brockway, and
-  Aspuru-Guzik]{hachmann2011harvard}
-Johannes Hachmann, Roberto Olivares-Amaya, Sule Atahan-Evrenk, Carlos
-  Amador-Bedolla, Roel~S S{\'a}nchez-Carrera, Aryeh Gold-Parker, Leslie Vogt,
-  Anna~M Brockway, and Al{\'a}n Aspuru-Guzik.
-\newblock The harvard clean energy project: large-scale computational screening
-  and design of organic photovoltaics on the world community grid.
-\newblock \emph{The Journal of Physical Chemistry Letters}, 2\penalty0
-  (17):\penalty0 2241--2251, 2011.
-
 \bibitem[Hamilton et~al.(2018)Hamilton, Ying, Leskovec, and
   Sosic]{mpnn_graphics}
 William~L. Hamilton, Rex Ying, Jure Leskovec, and Rok Sosic.
 \newblock Representation learning on networks.
 \newblock \url http://snap.stanford.edu/proj/embeddings-www/, 2018.
 \newblock Retrieved: April 19, 2021.
+
+\bibitem[Hansch \& Fujita(1964)Hansch and Fujita]{hansch}
+Corwin Hansch and Toshio Fujita.
+\newblock p -??-?? analysis. a method for the correlation of biological
+  activity and chemical structure.
+\newblock \emph{Journal of the American Chemical Society}, 86, 04 1964.
+\newblock \doi{10.1021/ja01062a035}.
 
 \bibitem[Hecht \& Fogel(2009)Hecht and Fogel]{hecht}
 David Hecht and Gary Fogel.
@@ -138,6 +137,13 @@ Kathrin Heikamp and Jürgen Bajorath.
 \newblock Support vector machines for drug discovery.
 \newblock \emph{Expert opinion on drug discovery}, 9, 12 2013.
 \newblock \doi{10.1517/17460441.2014.866943}.
+
+\bibitem[Honda et~al.(2019)Honda, Shi, and Ueda]{honda}
+Shion Honda, Shoi Shi, and Hiroki~R. Ueda.
+\newblock {SMILES} transformer: Pre-trained molecular fingerprint for low data
+  drug discovery.
+\newblock \emph{CoRR}, abs/1911.04738, 2019.
+\newblock URL \url{http://arxiv.org/abs/1911.04738}.
 
 \bibitem[Jiang et~al.(2020{\natexlab{a}})Jiang, Lei, Wang, Shen, Cao, and
   Hou]{XG1}
@@ -158,6 +164,14 @@ Dejun Jiang, Zhenxing Wu, Chang-Yu Hsieh, Chen Guangyong, Ben Liao, Zhe Wang,
 \newblock 09 2020{\natexlab{b}}.
 \newblock \doi{10.21203/rs.3.rs-79416/v1}.
 
+\bibitem[Katritzky et~al.(1996)Katritzky, Mu, Lobanov, and
+  Karelson]{katritzky1996correlation}
+Alan~R Katritzky, Lan Mu, Victor~S Lobanov, and Mati Karelson.
+\newblock Correlation of boiling points with molecular structure. 1. a training
+  set of 298 diverse organics and a test set of 9 simple inorganics.
+\newblock \emph{The Journal of Physical Chemistry}, 100\penalty0 (24):\penalty0
+  10400--10407, 1996.
+
 \bibitem[Kearnes et~al.(2016)Kearnes, McCloskey, Berndl, Pande, and
   Riley]{Kearnes_2016}
 Steven Kearnes, Kevin McCloskey, Marc Berndl, Vijay Pande, and Patrick Riley.
@@ -167,6 +181,12 @@ Steven Kearnes, Kevin McCloskey, Marc Berndl, Vijay Pande, and Patrick Riley.
 \newblock ISSN 1573-4951.
 \newblock \doi{10.1007/s10822-016-9938-8}.
 \newblock URL \url{http://dx.doi.org/10.1007/s10822-016-9938-8}.
+
+\bibitem[Kipf \& Welling(2016)Kipf and Welling]{gcn}
+Thomas~N. Kipf and Max Welling.
+\newblock Semi-supervised classification with graph convolutional networks.
+\newblock \emph{CoRR}, abs/1609.02907, 2016.
+\newblock URL \url{http://arxiv.org/abs/1609.02907}.
 
 \bibitem[Korolev et~al.(2020)Korolev, Mitrofanov, Korotcov, and
   Tkachenko]{korolev}
@@ -278,6 +298,17 @@ Linus Pauling.
 \newblock \doi{10.1021/ja01195a024}.
 \newblock URL \url{https://doi.org/10.1021/ja01195a024}.
 
+\bibitem[Reenu \& Vikas(2015)Reenu and Vikas]{REENU201589}
+Reenu and Vikas.
+\newblock Exploring the role of quantum chemical descriptors in modeling acute
+  toxicity of diverse chemicals to daphnia magna.
+\newblock \emph{Journal of Molecular Graphics and Modelling}, 61:\penalty0
+  89--101, 2015.
+\newblock ISSN 1093-3263.
+\newblock \doi{https://doi.org/10.1016/j.jmgm.2015.06.009}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1093326315300176}.
+
 \bibitem[Rogers \& Hahn(2010)Rogers and Hahn]{ECFP}
 David Rogers and Mathew Hahn.
 \newblock Extended-connectivity fingerprints.
@@ -286,16 +317,6 @@ David Rogers and Mathew Hahn.
 \newblock \doi{10.1021/ci100050t}.
 \newblock URL \url{https://doi.org/10.1021/ci100050t}.
 \newblock PMID: 20426451.
-
-\bibitem[Rupp et~al.(2012)Rupp, Tkatchenko, M\"uller, and von
-  Lilienfeld]{coulumb}
-Matthias Rupp, Alexandre Tkatchenko, Klaus-Robert M\"uller, and O.~Anatole von
-  Lilienfeld.
-\newblock Fast and accurate modeling of molecular atomization energies with
-  machine learning.
-\newblock \emph{Phys. Rev. Lett.}, 108:\penalty0 058301, Jan 2012.
-\newblock \doi{10.1103/PhysRevLett.108.058301}.
-\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevLett.108.058301}.
 
 \bibitem[Schütt et~al.(2017)Schütt, Arbabzadah, Chmiela, Müller, and
   Tkatchenko]{Sch_tt_2017}
@@ -306,6 +327,12 @@ Kristof~T. Schütt, Farhad Arbabzadah, Stefan Chmiela, Klaus~R. Müller, and
 \newblock ISSN 2041-1723.
 \newblock \doi{10.1038/ncomms13890}.
 \newblock URL \url{http://dx.doi.org/10.1038/ncomms13890}.
+
+\bibitem[Senior et~al.(2011)Senior, Madbouly, et~al.]{senior2011qstr}
+Samir~A Senior, Magdy~D Madbouly, et~al.
+\newblock Qstr of the toxicity of some organophosphorus compounds by using the
+  quantum chemical and topological descriptors.
+\newblock \emph{Chemosphere}, 85\penalty0 (1):\penalty0 7--12, 2011.
 
 \bibitem[Shen \& Nicolaou(2019)Shen and Nicolaou]{SHEN201929}
 Jie Shen and Christos~A. Nicolaou.
@@ -365,6 +392,12 @@ Roberto Todeschini and Viviana Consonni.
 \newblock \emph{Handbook of molecular descriptors}, volume~11.
 \newblock John Wiley \& Sons, 2008.
 
+\bibitem[Veličković et~al.(2018)Veličković, Cucurull, Casanova, Romero,
+  Liò, and Bengio]{gan}
+Petar Veličković, Guillem Cucurull, Arantxa Casanova, Adriana Romero, Pietro
+  Liò, and Yoshua Bengio.
+\newblock Graph attention networks, 2018.
+
 \bibitem[Weininger et~al.(1989)Weininger, Weininger, and Weininger]{smiles2}
 David Weininger, Arthur Weininger, and Joseph~L. Weininger.
 \newblock Smiles. 2. algorithm for generation of unique smiles notation.
@@ -384,6 +417,15 @@ Harry Wiener.
 Zhenqin Wu, Bharath Ramsundar, Evan~N. Feinberg, Joseph Gomes, Caleb Geniesse,
   Aneesh~S. Pappu, Karl Leswing, and Vijay Pande.
 \newblock Moleculenet: A benchmark for molecular machine learning, 2018.
+
+\bibitem[Xiong et~al.(2019)Xiong, Wang, Liu, Feisheng, Wan, Li, Li, Luo, Chen,
+  Jiang, and Zheng]{attentivefp}
+Zhaoping Xiong, Dingyan Wang, Xiaohong Liu, Zhong Feisheng, Xiaozhe Wan, Xutong
+  Li, Zhaojun Li, Xiaomin Luo, Kaixian Chen, H.~Jiang, and Mingyue Zheng.
+\newblock Pushing the boundaries of molecular representation for drug discovery
+  with graph attention mechanism.
+\newblock \emph{Journal of Medicinal Chemistry}, 63, 08 2019.
+\newblock \doi{10.1021/acs.jmedchem.9b00959}.
 
 \bibitem[Xiong et~al.(2020)Xiong, Wang, Liu, Zhong, Wan, Li, Li, Luo, Chen,
   Jiang, and Zheng]{graphattentionmpp}

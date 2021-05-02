@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.16)  2 MAY 2021 13:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.16)  1 MAY 2021 18:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1202,7 +1202,7 @@ Package caption Info: End \AtBeginDocument code.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1210,7 +1210,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1226,9 +1226,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Underfull \vbox (badness 1360) has occurred while \output is active []
-
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
@@ -1236,62 +1233,58 @@ Underfull \vbox (badness 1360) has occurred while \output is active []
 \openout8 = `main.toc'.
 
  [2]) (./01_introduction.tex
-<./figures/MPP_workflow.png, id=164, 1039.885pt x 265.99374pt>
+<./figures/MPP_workflow.png, id=181, 1039.885pt x 265.99374pt>
 File: ./figures/MPP_workflow.png Graphic file (type png)
 <use ./figures/MPP_workflow.png>
-Package pdftex.def Info: ./figures/MPP_workflow.png  used on input line 12.
+Package pdftex.def Info: ./figures/MPP_workflow.png  used on input line 11.
 (pdftex.def)             Requested size: 1039.88246pt x 265.99309pt.
+
+Underfull \vbox (badness 7362) has occurred while \output is active []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.17 
-      [1 <./figures/MPP_workflow.png>]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 5
-0.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
+      [1 <./figures/MPP_workflow.png>]pdfTeX warning (ext4): destination with t
+he same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.77 
-      [2]
-<./figures/iterative_updating.png, id=267, 861.2175pt x 611.28375pt>
+l.81 
+      [2] [3]
+<./figures/iterative_updating.png, id=297, 861.2175pt x 611.28375pt>
 File: ./figures/iterative_updating.png Graphic file (type png)
 <use ./figures/iterative_updating.png>
 Package pdftex.def Info: ./figures/iterative_updating.png  used on input line 1
-56.
+22.
 (pdftex.def)             Requested size: 861.2154pt x 611.28226pt.
-
-Underfull \vbox (badness 2005) has occurred while \output is active []
-
- [3]
-<./figures/test1.png, id=290, 602.25pt x 301.125pt>
+<./figures/test1.png, id=302, 602.25pt x 301.125pt>
 File: ./figures/test1.png Graphic file (type png)
 <use ./figures/test1.png>
-Package pdftex.def Info: ./figures/test1.png  used on input line 164.
+Package pdftex.def Info: ./figures/test1.png  used on input line 131.
 (pdftex.def)             Requested size: 602.24852pt x 301.12425pt.
 
-Underfull \hbox (badness 1661) in paragraph at lines 165--165
+Underfull \hbox (badness 1661) in paragraph at lines 132--132
 []\T1/ptm/m/n/10 (+20) Figure 3: |Molec-u-lar graphs cor-re-spond-ing to the SM
 ILES strings `c1nccc2n1ccc2' and
  []
 
-<./figures/test2.png, id=291, 602.25pt x 301.125pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./figures/test2.png, id=303, 602.25pt x 301.125pt>
 File: ./figures/test2.png Graphic file (type png)
 <use ./figures/test2.png>
-Package pdftex.def Info: ./figures/test2.png  used on input line 170.
+Package pdftex.def Info: ./figures/test2.png  used on input line 137.
 (pdftex.def)             Requested size: 602.24852pt x 301.12425pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
 []\T1/ptm/m/n/10 (+20) Figure 4: |Molec-u-lar graphs cor-re-spond-ing to the SM
 ILES strings
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 171--171
+Underfull \hbox (badness 1038) in paragraph at lines 138--138
 \T1/ptm/m/n/10 (+20) `CCC(CO)Nc1nc(NCc2ccccc2)c2ncn(C(C)C)c2n1' and `CC(C)C(CO)
 Nc1nc(Nc2ccc(C(=O)[O-
  []
@@ -1300,79 +1293,92 @@ Nc1nc(Nc2ccc(C(=O)[O-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 195--195
-[][][][] 
- []
+Underfull \vbox (badness 5417) has occurred while \output is active []
 
-[4 <./figures/iterative_updating.png> <./figures/test1.png (PNG copy)>]
+ [4 <./figures/iterative_updating.png>] [5 <./figures/test1.png (PNG copy)> <./
+figures/test2.png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 247.
+(caption)                particular \caption on input line 205.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 264.
+(caption)                particular \caption on input line 222.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (1.90002pt too wide) in paragraph at lines 244--269
+Overfull \hbox (1.90002pt too wide) in paragraph at lines 202--227
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--269
-
- []
-
-[5 <./figures/test2.png (PNG copy)>]
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 286.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 304.
-See the caption package documentation for explanation.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--310
+Underfull \hbox (badness 10000) in paragraph at lines 202--227
 
  []
 
 
-Underfull \vbox (badness 2717) has occurred while \output is active []
+Underfull \vbox (badness 3260) has occurred while \output is active []
 
  [6]
-<./figures/MPNN.png, id=370, 819.06pt x 334.24875pt>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 244.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 262.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--268
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+<./figures/MPNN.png, id=416, 819.06pt x 334.24875pt>
 File: ./figures/MPNN.png Graphic file (type png)
 <use ./figures/MPNN.png>
-Package pdftex.def Info: ./figures/MPNN.png  used on input line 329.
+Package pdftex.def Info: ./figures/MPNN.png  used on input line 294.
 (pdftex.def)             Requested size: 819.058pt x 334.24792pt.
 
-Underfull \vbox (badness 1661) has occurred while \output is active []
+[8 <./figures/MPNN.png>]
 
- [7 <./figures/MPNN.png>]
-<./figures/algos.png, id=402, 1314.9125pt x 556.0775pt>
-File: ./figures/algos.png Graphic file (type png)
-<use ./figures/algos.png>
-Package pdftex.def Info: ./figures/algos.png  used on input line 362.
-(pdftex.def)             Requested size: 1314.9093pt x 556.07614pt.
- [8 <./figures/algos.png>] [9])
-Underfull \vbox (badness 1424) has occurred while \output is active []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\begingroup' on input line 321.
 
- [10]
-[11] (./main.bbl
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 321.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\NAT@ctype' on input line 321.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 321.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 321.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 321.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\new@ifnextchar' on input line 321.
+
+[9] [10]) [11] (./main.bbl
 Overfull \hbox (14.64874pt too wide) in paragraph at lines 14--18
 []\T1/ptm/m/n/10 (-20) Daylight chem-i-cal in-for-ma-tion sys-tems.  []$h$[]ttp
 s://www.daylight.com/dayhtml/doc/theory/theory.finger.html,
- []
-
-
-Underfull \hbox (badness 2671) in paragraph at lines 20--25
-[]\T1/ptm/m/n/10 (+20) Extended con-nec-tiv-ity fin-ger-print ecfp.  []$h$[]ttp
-s://docs.chemaxon.com/display/docs/extended-
  []
 
 [12
@@ -1440,14 +1446,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CA29D4C9AD4CE19A047FC7BB7E06233D;1249.
+(rerunfilecheck)             Checksum: D76629B6010DF5BA824C010AB403D180;1174.
  ) 
 Here is how much of TeX's memory you used:
- 31036 strings out of 483107
- 560258 string characters out of 5964630
- 915767 words of memory out of 5000000
- 45004 multiletter control sequences out of 15000+600000
- 620179 words of font info for 305 fonts, out of 8000000 for 9000
+ 31034 strings out of 483107
+ 560244 string characters out of 5964630
+ 913619 words of memory out of 5000000
+ 44998 multiletter control sequences out of 15000+600000
+ 619865 words of font info for 304 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  71i,14n,96p,2024b,797s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1466,10 +1472,10 @@ share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive
 onts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (20 pages, 562128 bytes).
+Output written on main.pdf (20 pages, 472728 bytes).
 PDF statistics:
- 689 PDF objects out of 1000 (max. 8388607)
- 592 compressed objects within 6 object streams
- 112 named destinations out of 1000 (max. 500000)
- 48939 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 715 PDF objects out of 1000 (max. 8388607)
+ 621 compressed objects within 7 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 48422 words of extra memory for PDF output out of 51595 (max. 10000000)
 
