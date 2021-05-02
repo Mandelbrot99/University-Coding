@@ -8,45 +8,45 @@ Warning--to sort, need author or key in daylight
 Warning--to sort, need author or key in ecfp_bit
 Warning--empty journal in jiang
 Warning--can't use both author and editor fields in Mauri2016
-You've used 52 entries,
+You've used 58 entries,
             2773 wiz_defined-function locations,
-            979 strings with 17763 characters,
-and the built_in function-call counts, 29715 in all, are:
-= -- 2567
-> -- 2328
-< -- 18
-+ -- 787
-- -- 732
-* -- 2797
-:= -- 4739
-add.period$ -- 222
-call.type$ -- 52
-change.case$ -- 397
-chr.to.int$ -- 49
-cite$ -- 112
-duplicate$ -- 1030
-empty$ -- 1972
-format.name$ -- 799
-if$ -- 6067
+            1020 strings with 19230 characters,
+and the built_in function-call counts, 33072 in all, are:
+= -- 2862
+> -- 2587
+< -- 19
++ -- 874
+- -- 813
+* -- 3115
+:= -- 5284
+add.period$ -- 249
+call.type$ -- 58
+change.case$ -- 442
+chr.to.int$ -- 55
+cite$ -- 124
+duplicate$ -- 1153
+empty$ -- 2193
+format.name$ -- 886
+if$ -- 6748
 int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 46
-newline$ -- 334
-num.names$ -- 196
-pop$ -- 697
+missing$ -- 52
+newline$ -- 373
+num.names$ -- 220
+pop$ -- 769
 preamble$ -- 1
-purify$ -- 347
+purify$ -- 386
 quote$ -- 0
-skip$ -- 875
+skip$ -- 975
 stack$ -- 0
-substring$ -- 903
-swap$ -- 78
+substring$ -- 995
+swap$ -- 84
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 562
+type$ -- 628
 warning$ -- 5
-while$ -- 192
+while$ -- 216
 width$ -- 0
-write$ -- 804
+write$ -- 899
 (There were 5 warnings)

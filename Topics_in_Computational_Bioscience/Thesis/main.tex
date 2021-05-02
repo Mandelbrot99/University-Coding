@@ -27,30 +27,45 @@
 \usepackage{titletoc}
 \titlecontents{section}[1.5em]{}{\contentslabel{1.5em}}{\hspace*{-1.5em}}{\titlerule*[8pt]{.}\contentspage}
 \usepackage{setspace}
-\title{Reproducibility Challenge for Advanced Topics in Machine Learning Report (Group 9)}
 
-\date{April 2021}
 \usepackage{caption}
 \begin{document}
+
+\fancyhead[L]{Candidate number: 1047400}
+%\fancyhead[R]{\leftmark}
+
+%\rhead{\rightmark}
 
 \setlength{\headsep}{5ex}
 \input{00_titelei.tex}
 \input{01_introduction.tex}
 
-\clearpage
 % Speicherort der Literaturangaben (*.bib Datei)
-\bibliography{literature/references}
+
+\clearpage
+\phantomsection
 \addcontentsline{toc}{section}{References}
+\bibliography{literature/references}
 \bibliographystyle{iclr2021_conference}
-%Abbildungsverzeichnis
+
 \clearpage
 \addcontentsline{toc}{section}{\listfigurename}
 \listoffigures
-
-%Tabellenverzeichnis
 \clearpage
 \addcontentsline{toc}{section}{\listtablename}
 \listoftables
+\clearpage
+\addcontentsline{toc}{section}{Appendix}
+
+
+
+%Abbildungsverzeichnis
+
+
+
+%Tabellenverzeichnis
+
+
 \renewcommand{\thesubsection}{\Alph{subsection}}
 
 \input{99_appendix.tex}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{52}
+\begin{thebibliography}{58}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -52,6 +52,19 @@ Steven Corsello, Joshua Bittker, Zihan Liu, Joshua Gould, Patrick McCarren,
 \newblock \emph{Nature Medicine}, 23:\penalty0 405--408, 04 2017.
 \newblock \doi{10.1038/nm.4306}.
 
+\bibitem[Cox et~al.(2017)Cox, Sieron, King, {De Pascale}, Pawlowski, Koteva,
+  and Wright]{COX201798}
+Georgina Cox, Arthur Sieron, Andrew~M. King, Gianfranco {De Pascale}, Andrew~C.
+  Pawlowski, Kalinka Koteva, and Gerard~D. Wright.
+\newblock A common platform for antibiotic dereplication and adjuvant
+  discovery.
+\newblock \emph{Cell Chemical Biology}, 24\penalty0 (1):\penalty0 98--109,
+  2017.
+\newblock ISSN 2451-9456.
+\newblock \doi{https://doi.org/10.1016/j.chembiol.2016.11.011}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S2451945616304342}.
+
 \bibitem[David et~al.(2020)David, Thakkar, Mercado, and Engkvist]{molrep}
 Laurianne David, Amol Thakkar, Rocío Mercado, and Ola Engkvist.
 \newblock Molecular representations in ai-driven drug discovery: a review and
@@ -70,6 +83,13 @@ John~S Delaney.
 Lee~R Dice.
 \newblock Measures of the amount of ecologic association between species.
 \newblock \emph{Ecology}, 26\penalty0 (3):\penalty0 297--302, 1945.
+
+\bibitem[Durant et~al.(2002)Durant, Leland, Henry, and
+  Nourse]{durant2002reoptimization}
+Joseph~L Durant, Burton~A Leland, Douglas~R Henry, and James~G Nourse.
+\newblock Reoptimization of mdl keys for use in drug discovery.
+\newblock \emph{Journal of chemical information and computer sciences},
+  42\penalty0 (6):\penalty0 1273--1280, 2002.
 
 \bibitem[Duvenaud et~al.(2015)Duvenaud, Maclaurin, Aguilera-Iparraguirre,
   Gómez-Bombarelli, Hirzel, Aspuru-Guzik, and
@@ -138,6 +158,21 @@ Kathrin Heikamp and Jürgen Bajorath.
 \newblock Support vector machines for drug discovery.
 \newblock \emph{Expert opinion on drug discovery}, 9, 12 2013.
 \newblock \doi{10.1517/17460441.2014.866943}.
+
+\bibitem[Heller et~al.(2015)Heller, McNaught, Pletnev, Stein, and
+  Tchekhovskoi]{heller2015inchi}
+Stephen~R Heller, Alan McNaught, Igor Pletnev, Stephen Stein, and Dmitrii
+  Tchekhovskoi.
+\newblock Inchi, the iupac international chemical identifier.
+\newblock \emph{Journal of cheminformatics}, 7\penalty0 (1):\penalty0 1--34,
+  2015.
+
+\bibitem[Honda et~al.(2019)Honda, Shi, and Ueda]{honda}
+Shion Honda, Shoi Shi, and Hiroki~R. Ueda.
+\newblock {SMILES} transformer: Pre-trained molecular fingerprint for low data
+  drug discovery.
+\newblock \emph{CoRR}, abs/1911.04738, 2019.
+\newblock URL \url{http://arxiv.org/abs/1911.04738}.
 
 \bibitem[Jiang et~al.(2020{\natexlab{a}})Jiang, Lei, Wang, Shen, Cao, and
   Hou]{XG1}
@@ -365,6 +400,15 @@ Roberto Todeschini and Viviana Consonni.
 \newblock \emph{Handbook of molecular descriptors}, volume~11.
 \newblock John Wiley \& Sons, 2008.
 
+\bibitem[Weininger(1988)]{smiles}
+David Weininger.
+\newblock Smiles, a chemical language and information system. 1. introduction
+  to methodology and encoding rules.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  28\penalty0 (1):\penalty0 31--36, 1988.
+\newblock \doi{10.1021/ci00057a005}.
+\newblock URL \url{https://pubs.acs.org/doi/abs/10.1021/ci00057a005}.
+
 \bibitem[Weininger et~al.(1989)Weininger, Weininger, and Weininger]{smiles2}
 David Weininger, Arthur Weininger, and Joseph~L. Weininger.
 \newblock Smiles. 2. algorithm for generation of unique smiles notation.
@@ -372,6 +416,18 @@ David Weininger, Arthur Weininger, and Joseph~L. Weininger.
   29\penalty0 (2):\penalty0 97--101, 1989.
 \newblock \doi{10.1021/ci00062a008}.
 \newblock URL \url{https://doi.org/10.1021/ci00062a008}.
+
+\bibitem[Wieder et~al.(2020)Wieder, Kohlbacher, Kuenemann, Garon, Ducrot,
+  Seidel, and Langer]{WIEDER2020}
+Oliver Wieder, Stefan Kohlbacher, Mélaine Kuenemann, Arthur Garon, Pierre
+  Ducrot, Thomas Seidel, and Thierry Langer.
+\newblock A compact review of molecular property prediction with graph neural
+  networks.
+\newblock \emph{Drug Discovery Today: Technologies}, 2020.
+\newblock ISSN 1740-6749.
+\newblock \doi{https://doi.org/10.1016/j.ddtec.2020.11.009}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1740674920300305}.
 
 \bibitem[Wiener(1947)]{wiener1947structural}
 Harry Wiener.

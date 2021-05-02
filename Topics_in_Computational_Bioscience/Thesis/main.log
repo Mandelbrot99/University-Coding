@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.16)  2 MAY 2021 13:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.16)  2 MAY 2021 21:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1110,22 +1110,22 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 \AtBeginShipoutBox=\box101
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1150,14 +1150,14 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \microtypecontext on input line 34.
+LaTeX Info: Redefining \microtypecontext on input line 32.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 34.
+LaTeX Info: Redefining \showhyphens on input line 32.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1169,12 +1169,12 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
 most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 34.
+loading the todonotes package. on input line 32.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-Package hyperref Info: Link coloring OFF on input line 34.
+Package hyperref Info: Link coloring OFF on input line 32.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1187,9 +1187,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count356
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \nameref on input line 32.
 
 (./main.out) (./main.out)
 \@outlinefile=\write7
@@ -1226,17 +1226,14 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Underfull \vbox (badness 1360) has occurred while \output is active []
-
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+)
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- [2]) (./01_introduction.tex
-<./figures/MPP_workflow.png, id=164, 1039.885pt x 265.99374pt>
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./01_introduction.tex
+<./figures/MPP_workflow.png, id=151, 1039.885pt x 265.99374pt>
 File: ./figures/MPP_workflow.png Graphic file (type png)
 <use ./figures/MPP_workflow.png>
 Package pdftex.def Info: ./figures/MPP_workflow.png  used on input line 12.
@@ -1246,98 +1243,75 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.17 
-      [1 <./figures/MPP_workflow.png>]
+      [1 <./figures/MPP_workflow.png>] [2]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 5
 0.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.77 
-      [2]
-<./figures/iterative_updating.png, id=267, 861.2175pt x 611.28375pt>
+) [3]
+<./figures/iterative_updating.png, id=285, 861.2175pt x 611.28375pt>
 File: ./figures/iterative_updating.png Graphic file (type png)
 <use ./figures/iterative_updating.png>
 Package pdftex.def Info: ./figures/iterative_updating.png  used on input line 1
-56.
+54.
 (pdftex.def)             Requested size: 861.2154pt x 611.28226pt.
-
-Underfull \vbox (badness 2005) has occurred while \output is active []
-
- [3]
 <./figures/test1.png, id=290, 602.25pt x 301.125pt>
 File: ./figures/test1.png Graphic file (type png)
 <use ./figures/test1.png>
-Package pdftex.def Info: ./figures/test1.png  used on input line 164.
+Package pdftex.def Info: ./figures/test1.png  used on input line 162.
 (pdftex.def)             Requested size: 602.24852pt x 301.12425pt.
-
-Underfull \hbox (badness 1661) in paragraph at lines 165--165
-[]\T1/ptm/m/n/10 (+20) Figure 3: |Molec-u-lar graphs cor-re-spond-ing to the SM
-ILES strings `c1nccc2n1ccc2' and
- []
-
-<./figures/test2.png, id=291, 602.25pt x 301.125pt>
-File: ./figures/test2.png Graphic file (type png)
-<use ./figures/test2.png>
-Package pdftex.def Info: ./figures/test2.png  used on input line 170.
-(pdftex.def)             Requested size: 602.24852pt x 301.12425pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
-[]\T1/ptm/m/n/10 (+20) Figure 4: |Molec-u-lar graphs cor-re-spond-ing to the SM
-ILES strings
- []
-
-
-Underfull \hbox (badness 1038) in paragraph at lines 171--171
-\T1/ptm/m/n/10 (+20) `CCC(CO)Nc1nc(NCc2ccccc2)c2ncn(C(C)C)c2n1' and `CC(C)C(CO)
-Nc1nc(Nc2ccc(C(=O)[O-
- []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<./figures/test2.png, id=293, 602.25pt x 301.125pt>
+File: ./figures/test2.png Graphic file (type png)
+<use ./figures/test2.png>
+Package pdftex.def Info: ./figures/test2.png  used on input line 168.
+(pdftex.def)             Requested size: 602.24852pt x 301.12425pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 195--195
-[][][][] 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (1.05318pt too wide) in alignment at lines 197--197
+[][][][][][] 
  []
 
-[4 <./figures/iterative_updating.png> <./figures/test1.png (PNG copy)>]
+[4 <./figures/iterative_updating.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 247.
+(caption)                particular \caption on input line 249.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 264.
+(caption)                particular \caption on input line 266.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (1.90002pt too wide) in paragraph at lines 244--269
+Overfull \hbox (1.90002pt too wide) in paragraph at lines 246--271
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--269
+Underfull \hbox (badness 10000) in paragraph at lines 246--271
 
  []
 
-[5 <./figures/test2.png (PNG copy)>]
+[5 <./figures/test1.png (PNG copy)> <./figures/test2.png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 286.
+(caption)                particular \caption on input line 288.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 304.
+(caption)                particular \caption on input line 306.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--310
+Underfull \hbox (badness 10000) in paragraph at lines 274--312
 
  []
 
@@ -1345,25 +1319,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 272--310
 Underfull \vbox (badness 2717) has occurred while \output is active []
 
  [6]
-<./figures/MPNN.png, id=370, 819.06pt x 334.24875pt>
+<./figures/MPNN.png, id=376, 819.06pt x 334.24875pt>
 File: ./figures/MPNN.png Graphic file (type png)
 <use ./figures/MPNN.png>
-Package pdftex.def Info: ./figures/MPNN.png  used on input line 329.
+Package pdftex.def Info: ./figures/MPNN.png  used on input line 331.
 (pdftex.def)             Requested size: 819.058pt x 334.24792pt.
 
 Underfull \vbox (badness 1661) has occurred while \output is active []
 
  [7 <./figures/MPNN.png>]
-<./figures/algos.png, id=402, 1314.9125pt x 556.0775pt>
+<./figures/algos.png, id=408, 1314.9125pt x 556.0775pt>
 File: ./figures/algos.png Graphic file (type png)
 <use ./figures/algos.png>
-Package pdftex.def Info: ./figures/algos.png  used on input line 362.
+Package pdftex.def Info: ./figures/algos.png  used on input line 365.
 (pdftex.def)             Requested size: 1314.9093pt x 556.07614pt.
- [8 <./figures/algos.png>] [9])
+ [8 <./figures/algos.png>]
+<./figures/table_du.png, id=438, 1293.83376pt x 287.0725pt>
+File: ./figures/table_du.png Graphic file (type png)
+<use ./figures/table_du.png>
+Package pdftex.def Info: ./figures/table_du.png  used on input line 393.
+(pdftex.def)             Requested size: 1293.8306pt x 287.0718pt.
+ [9 <./figures/table_du.png>]
 Underfull \vbox (badness 1424) has occurred while \output is active []
 
- [10]
-[11] (./main.bbl
+ [10])
+Underfull \vbox (badness 7238) has occurred while \output is active []
+
+ [11]
+[12] (./main.bbl
 Overfull \hbox (14.64874pt too wide) in paragraph at lines 14--18
 []\T1/ptm/m/n/10 (-20) Daylight chem-i-cal in-for-ma-tion sys-tems.  []$h$[]ttp
 s://www.daylight.com/dayhtml/doc/theory/theory.finger.html,
@@ -1375,37 +1358,28 @@ Underfull \hbox (badness 2671) in paragraph at lines 20--25
 s://docs.chemaxon.com/display/docs/extended-
  []
 
-[12
+[13
 
-] [13] [14]) [15] (./main.lof
-Underfull \hbox (badness 10000) in paragraph at lines 5--5
- [][] [][]\T1/ptm/m/n/10 (+20) Molecular graphs cor-re-spond-ing to the SMILES 
-strings 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--5
- \T1/ptm/m/n/10 (+20) `CCC(CO)Nc1nc(NCc2ccccc2)c2ncn(C(C)C)c2n1' and 
- []
-
-)
+] [14] [15]) [16] (./main.lof)
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
- [16
+ [17
 
 ] (./main.lot)
 \tf@lot=\write10
 \openout10 = `main.lot'.
 
- (./99_appendix.tex
+ [18
+
+] (./99_appendix.tex
 Package hyperref Info: Option `breaklinks' set `true' on input line 30.
 
 
 Package hyperref Warning: Option `colorlinks' has already been used,
 (hyperref)                setting the option has no effect on input line 30.
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 36
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 35
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -1415,39 +1389,25 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 46.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 73.
+ [19
 
-Overfull \hbox (1015.21512pt too wide) in paragraph at lines 56--56
-[][]\T1/pcr/m/n/9 MolFromSmiles([]"[][]CC(C)(O1)C[C@@H](O)[C@@]1(O2)[C@@H](C)[C
-@@H]3CC=C4[C@]3(C2)C(=O)C[C@H]5[C@H]4CC[C@@H](C6)[C@]5(C)Cc(n7)c6nc(C[C@@]89(C)
-)c7C[C@@H]8CC[C@@H][][]%[][]10[C@@H]9C[C@@H](O)[C@@][][]%[][]11(C)C[][]%[][]10=
-C[C@H](O[][]%[][]12)[C@][][]%[][]11(O)[C@H](C)[C@][][]%[][]12(O[][]%[][]13)[C@H
-](O)C[C@@][][]%[][]13(C)CO[][]"[]), [] 
- []
+]) [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 
-
-Overfull \hbox (81.01617pt too wide) in paragraph at lines 56--56
-[][]\T1/pcr/m/n/9 MolFromSmiles([]"[][]CC(C)C(CO)CC(C)C(CO)Nc1nc(Nc2ccc(C(=O)[O
--])c(Cl)c2)c2ncn(C(C)C)c2n1[][]"[])]|  
- []
-
-[17
-
-]) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
+(./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CA29D4C9AD4CE19A047FC7BB7E06233D;1249.
+(rerunfilecheck)             Checksum: A3E4ADA1D0408832B8D0B076152A9CB6;1162.
  ) 
 Here is how much of TeX's memory you used:
- 31036 strings out of 483107
- 560258 string characters out of 5964630
- 915767 words of memory out of 5000000
- 45004 multiletter control sequences out of 15000+600000
- 620179 words of font info for 305 fonts, out of 8000000 for 9000
+ 31059 strings out of 483107
+ 560930 string characters out of 5964630
+ 914492 words of memory out of 5000000
+ 45034 multiletter control sequences out of 15000+600000
+ 618542 words of font info for 294 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  71i,14n,96p,2024b,797s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1466,10 +1426,10 @@ share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive
 onts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (20 pages, 562128 bytes).
+Output written on main.pdf (21 pages, 616559 bytes).
 PDF statistics:
- 689 PDF objects out of 1000 (max. 8388607)
- 592 compressed objects within 6 object streams
- 112 named destinations out of 1000 (max. 500000)
- 48939 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 736 PDF objects out of 1000 (max. 8388607)
+ 631 compressed objects within 7 object streams
+ 120 named destinations out of 1000 (max. 500000)
+ 46880 words of extra memory for PDF output out of 51595 (max. 10000000)
 
