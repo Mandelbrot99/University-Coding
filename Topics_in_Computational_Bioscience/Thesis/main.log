@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.16)  2 MAY 2021 23:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.16)  3 MAY 2021 07:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1287,19 +1287,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--202
  []
 
 [4]
-<./figures/iterative_updating.png, id=310, 861.2175pt x 611.28375pt>
+<./figures/iterative_updating.png, id=311, 861.2175pt x 611.28375pt>
 File: ./figures/iterative_updating.png Graphic file (type png)
 <use ./figures/iterative_updating.png>
 Package pdftex.def Info: ./figures/iterative_updating.png  used on input line 2
 34.
 (pdftex.def)             Requested size: 861.2154pt x 611.28226pt.
  [5 <./figures/iterative_updating.png>]
-<./figures/test1.png, id=329, 602.25pt x 301.125pt>
+<./figures/test1.png, id=330, 602.25pt x 301.125pt>
 File: ./figures/test1.png Graphic file (type png)
 <use ./figures/test1.png>
 Package pdftex.def Info: ./figures/test1.png  used on input line 244.
 (pdftex.def)             Requested size: 602.24852pt x 301.12425pt.
-<./figures/test2.png, id=332, 602.25pt x 301.125pt>
+<./figures/test2.png, id=333, 602.25pt x 301.125pt>
 File: ./figures/test2.png Graphic file (type png)
 <use ./figures/test2.png>
 Package pdftex.def Info: ./figures/test2.png  used on input line 250.
@@ -1310,27 +1310,24 @@ Overfull \hbox (1.05318pt too wide) in alignment at lines 279--279
  []
 
 [6 <./figures/test1.png (PNG copy)> <./figures/test2.png (PNG copy)>]
-<./figures/MPNN.png, id=380, 819.06pt x 334.24875pt>
+<./figures/MPNN.png, id=381, 819.06pt x 334.24875pt>
 File: ./figures/MPNN.png Graphic file (type png)
 <use ./figures/MPNN.png>
 Package pdftex.def Info: ./figures/MPNN.png  used on input line 333.
 (pdftex.def)             Requested size: 819.058pt x 334.24792pt.
  [7 <./figures/MPNN.png>]
-<./figures/algos.png, id=415, 1314.9125pt x 556.0775pt>
+<./figures/algos.png, id=416, 1314.9125pt x 556.0775pt>
 File: ./figures/algos.png Graphic file (type png)
 <use ./figures/algos.png>
 Package pdftex.def Info: ./figures/algos.png  used on input line 368.
 (pdftex.def)             Requested size: 1314.9093pt x 556.07614pt.
  [8 <./figures/algos.png>]
-<./figures/table_du.png, id=445, 1293.83376pt x 287.0725pt>
+<./figures/table_du.png, id=446, 1293.83376pt x 287.0725pt>
 File: ./figures/table_du.png Graphic file (type png)
 <use ./figures/table_du.png>
 Package pdftex.def Info: ./figures/table_du.png  used on input line 397.
 (pdftex.def)             Requested size: 1293.8306pt x 287.0718pt.
- [9 <./figures/table_du.png>]
-Underfull \vbox (badness 5832) has occurred while \output is active []
-
- [10])
+ [9 <./figures/table_du.png>] [10])
 Underfull \vbox (badness 1424) has occurred while \output is active []
 
  [11]
@@ -1391,10 +1388,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 954C2E6C53C7D509EB8350C579F038BF;1162.
  ) 
 Here is how much of TeX's memory you used:
- 31064 strings out of 483107
- 561029 string characters out of 5964630
- 914626 words of memory out of 5000000
- 45038 multiletter control sequences out of 15000+600000
+ 31072 strings out of 483107
+ 561171 string characters out of 5964630
+ 914877 words of memory out of 5000000
+ 45044 multiletter control sequences out of 15000+600000
  618542 words of font info for 294 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  71i,14n,96p,2024b,797s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1414,10 +1411,10 @@ share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive
 onts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (21 pages, 617245 bytes).
+Output written on main.pdf (21 pages, 618644 bytes).
 PDF statistics:
- 745 PDF objects out of 1000 (max. 8388607)
- 640 compressed objects within 7 object streams
- 121 named destinations out of 1000 (max. 500000)
+ 758 PDF objects out of 1000 (max. 8388607)
+ 653 compressed objects within 7 object streams
+ 123 named destinations out of 1000 (max. 500000)
  46880 words of extra memory for PDF output out of 51595 (max. 10000000)
 
